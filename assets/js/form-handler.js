@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: data.email,
                 first_name: data.name.split(' ')[0],
                 last_name: data.name.split(' ').slice(1).join(' '),
+                phone: data.phone,
                 tags: ['gtm-lead', 'website-contact'],
                 custom_fields: {
                     website: data.website,

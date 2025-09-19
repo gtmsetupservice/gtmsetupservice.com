@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                // Send to FluentCRM API
-                const response = await fetch('YOUR_CRM_ENDPOINT/wp-json/fluent-crm/v2/contacts', {
+                // Send to FluentCRM API at getlocallyknown.com
+                const response = await fetch('https://getlocallyknown.com/wp-json/fluent-crm/v2/contacts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer YOUR_CRM_API_KEY'
+                        'Authorization': 'Bearer YOUR_API_KEY_HERE' // TODO: Replace with actual API key
                     },
                     body: JSON.stringify(payload)
                 });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'generate_lead', {
                             'currency': 'USD',
-                            'value': 497,
+                            'value': 397,
                             'service_type': 'gtm',
                             'problem_type': data.problem
                         });
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             'form_name': 'gtm_contact_form',
                             'service_type': 'gtm',
                             'problem_type': data.problem,
-                            'conversion_value': 497
+                            'conversion_value': 397
                         });
                     }
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Get Emergency GTM Fix - $497';
+                submitBtn.innerHTML = 'Get Your GTM Fixed Now - Starting at $397';
             }
         });
     }

@@ -1,0 +1,226 @@
+---
+layout: default
+---
+
+<!-- Blog Post Layout with AI/SEO Optimization -->
+<article class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Post Header -->
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
+
+        <div class="flex justify-center items-center space-x-4 text-gray-600 mb-6">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+
+            <!-- Reading Time -->
+            {% assign words = content | strip_html | number_of_words %}
+            {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
+            <span>📖 {{ reading_time }} min read</span>
+
+            <!-- Word Count -->
+            <span>{{ words }} words</span>
+        </div>
+
+        {% if page.description %}
+        <p class="text-xl text-gray-600 mb-8">{{ page.description }}</p>
+        {% endif %}
+    </header>
+
+    <!-- Table of Contents -->
+    {% if page.toc != false %}
+    <div class="bg-gray-50 p-6 rounded-lg mb-12">
+        <h3 class="font-bold mb-4">Quick Navigation</h3>
+        <div id="toc" class="space-y-2"></div>
+    </div>
+    {% endif %}
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+        <div id="progress-bar" class="h-full bg-blue-600 transition-all duration-200" style="width: 0%"></div>
+    </div>
+
+    <!-- Post Content -->
+    <div class="prose prose-lg max-w-none">
+        {{ content }}
+    </div>
+
+    <!-- Author Box -->
+    <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <div class="flex items-center">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-xl">GTM</span>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg">GTM Setup Services</h4>
+                <p class="text-gray-600">Emergency GTM recovery and tracking experts. 247+ successful recoveries completed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-12 text-center p-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Having GTM Tracking Issues?</h3>
+        <p class="text-lg mb-6">Get your tracking fixed by the experts. Emergency recovery in 2-4 hours.</p>
+        <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition duration-200">
+            Get Emergency GTM Fix - $497
+        </a>
+    </div>
+</article>
+
+<!-- Blog Post Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html }}",
+  "author": {
+    "@type": "Organization",
+    "name": "GTM Setup Services",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GTM Setup Services",
+    "logo": "{{ site.url }}/assets/logo.png"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "wordCount": {{ content | strip_html | number_of_words }},
+  "timeRequired": "PT{{ reading_time }}M",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+}
+</script>
+
+<!-- FAQ Schema (if FAQ data exists) -->
+{% if page.faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in page.faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+<!-- Table of Contents & Reading Progress JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Generate Table of Contents
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('h2, h3, h4');
+
+    if (toc && headings.length > 0) {
+        headings.forEach((heading, index) => {
+            const id = `heading-${index}`;
+            heading.id = id;
+
+            const li = document.createElement('div');
+            li.className = 'toc-item';
+
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = heading.textContent;
+            a.className = `block py-1 px-2 text-blue-600 hover:bg-blue-50 rounded ${heading.tagName.toLowerCase() === 'h3' ? 'ml-4' : heading.tagName.toLowerCase() === 'h4' ? 'ml-8' : ''}`;
+
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+    }
+
+    // Reading Progress Bar
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+
+        progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+
+        // Track scroll milestones
+        if (scrollPercent >= 25 && !window.scroll25Tracked) {
+            window.scroll25Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 25 });
+            }
+        }
+        if (scrollPercent >= 50 && !window.scroll50Tracked) {
+            window.scroll50Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 50 });
+            }
+        }
+        if (scrollPercent >= 75 && !window.scroll75Tracked) {
+            window.scroll75Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 75 });
+            }
+        }
+    });
+});
+</script>
+
+<style>
+/* Custom prose styles for better readability */
+.prose {
+    line-height: 1.7;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #374151;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+}
+
+.prose ul {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+.prose blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 1.5rem 0;
+    background-color: #f8fafc;
+    padding: 1rem;
+}
+</style>

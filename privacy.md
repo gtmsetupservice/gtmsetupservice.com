@@ -4,6 +4,8 @@ title: Privacy Policy - GTMSetupService
 description: Privacy policy for GTMSetupService, a division of B and B Holdings LLC. Learn how we protect your data and privacy.
 ---
 
+<div class="max-w-4xl mx-auto px-4 py-16">
+
 # Privacy Policy
 
 **Effective Date: August 29, 2025**
@@ -109,3 +111,5 @@ If you have any questions or concerns about this Privacy Policy or our data prac
 **B and B Holdings LLC**
 DBA GTMSetupService
 Email: privacy@gtmsetupservice.com
+
+</div>

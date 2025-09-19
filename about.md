@@ -4,6 +4,8 @@ title: About GTMSetupService - Professional GTM Implementation
 description: GTMSetupService is a specialized Google Tag Manager implementation company helping businesses unlock the full potential of their analytics.
 ---
 
+<div class="max-w-4xl mx-auto px-4 py-16">
+
 # About GTMSetupService
 
 GTMSetupService is a specialized Google Tag Manager implementation company dedicated to helping businesses unlock the full potential of their website analytics and marketing data.
@@ -113,4 +115,6 @@ To democratize advanced web analytics by making professional Google Tag Manager 
     <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
         Get Started - $397
     </a>
+</div>
+
 </div>

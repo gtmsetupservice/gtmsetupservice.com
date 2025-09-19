@@ -99,7 +99,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 </section>
 
 <!-- Section 8: Flex Section - Comparison Chart -->
-<section class="py-16 bg-gray-50">
+<section id="services" class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
             Why Choose GTMSetupService Over Others?
@@ -290,7 +290,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 </section>
 
 <!-- Section 10: FAQ/Objection Handling -->
-<section class="py-16 bg-gray-50">
+<section id="faq" class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
             Frequently Asked Questions
@@ -331,7 +331,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 </section>
 
 <!-- Pricing Section -->
-<section class="py-16">
+<section id="pricing" class="py-16">
     <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
             Choose Your GTM Service

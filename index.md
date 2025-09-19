@@ -147,10 +147,10 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                         <td class="px-6 py-4 text-center">❌ Usually none</td>
                     </tr>
                     <tr>
-                        <td class="px-6 py-4">Money-Back Guarantee</td>
-                        <td class="px-6 py-4 text-center">✅ 30 days</td>
-                        <td class="px-6 py-4 text-center">❌ No guarantee</td>
-                        <td class="px-6 py-4 text-center">❌ No guarantee</td>
+                        <td class="px-6 py-4">Guaranteed Results</td>
+                        <td class="px-6 py-4 text-center">✅ Fix or no charge</td>
+                        <td class="px-6 py-4 text-center">❌ Bill regardless</td>
+                        <td class="px-6 py-4 text-center">❌ No guarantees</td>
                     </tr>
                 </tbody>
             </table>
@@ -411,7 +411,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
             Get Your GTM Fixed Now →
         </a>
         <p class="mt-6 text-sm opacity-90">
-            30-day money-back guarantee • Average fix time: 2-4 hours
+            Fixed pricing • Average fix time: 2-4 hours
         </p>
     </div>
 </section>

@@ -55,11 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // Send to FluentCRM API at getlocallyknown.com
+                // Using Basic Auth with API credentials
+                const authString = btoa('fluent:RxEt Hnzh kH8x dmps pbxd S607');
                 const response = await fetch('https://getlocallyknown.com/wp-json/fluent-crm/v2/contacts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer YOUR_API_KEY_HERE' // TODO: Replace with actual API key
+                        'Authorization': 'Basic ' + authString
                     },
                     body: JSON.stringify(payload)
                 });

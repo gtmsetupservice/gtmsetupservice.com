@@ -50,7 +50,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                     </svg>
                     {% endfor %}
                 </div>
-                <p class="mb-4">"Was skeptical about hiring remote help for GTM. They screen-shared, explained every step, and had it fixed before lunch. Best $497 I've spent on marketing infrastructure."</p>
+                <p class="mb-4">"Was skeptical about hiring remote help for GTM. They screen-shared, explained every step, and had it fixed before lunch. Best $397 I've spent on marketing infrastructure."</p>
                 <p class="font-semibold">- Jennifer L., Marketing Manager</p>
             </div>
         </div>
@@ -124,7 +124,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                     </tr>
                     <tr>
                         <td class="px-6 py-4">Fixed Pricing</td>
-                        <td class="px-6 py-4 text-center">✅ $497 flat</td>
+                        <td class="px-6 py-4 text-center">✅ $397 flat</td>
                         <td class="px-6 py-4 text-center">❌ $150-300/hour</td>
                         <td class="px-6 py-4 text-center">❌ $75-150/hour</td>
                     </tr>
@@ -340,16 +340,20 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
         <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-lg shadow border-2 border-red-500">
                 <div class="text-center">
-                    <h3 class="text-2xl font-bold mb-2 text-red-600">🚨 EMERGENCY</h3>
-                    <p class="text-4xl font-bold mb-4">$497</p>
+                    <h3 class="text-2xl font-bold mb-2 text-red-600">🚨 EMERGENCY FIX</h3>
+                    <p class="text-4xl font-bold mb-4">$397</p>
                     <p class="text-gray-600 mb-6">Fixed Price</p>
-                    <ul class="text-left space-y-3 mb-8">
+                    <ul class="text-left space-y-3 mb-6">
                         <li>✓ 2-4 hour response time</li>
-                        <li>✓ Complete tracking restoration</li>
+                        <li>✓ Fix up to 3 conversion scenarios</li>
+                        <li>✓ Up to 50 pages/events tracked</li>
                         <li>✓ Root cause analysis</li>
-                        <li>✓ Prevention measures</li>
-                        <li>✓ Full documentation</li>
+                        <li>✓ Documentation included</li>
                     </ul>
+                    <div class="text-sm text-gray-500 mb-6">
+                        <p class="font-semibold mb-1">Includes:</p>
+                        <p>Single domain • Basic e-commerce OR lead gen • Standard GTM container</p>
+                    </div>
                     <a href="#contact" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-center">
                         Get Emergency Fix
                     </a>
@@ -358,34 +362,42 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 
             <div class="bg-white p-8 rounded-lg shadow">
                 <div class="text-center">
-                    <h3 class="text-2xl font-bold mb-2">Comprehensive Audit</h3>
+                    <h3 class="text-2xl font-bold mb-2">FULL SETUP</h3>
                     <p class="text-4xl font-bold mb-4">$797</p>
-                    <p class="text-gray-600 mb-6">Complete Analysis</p>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li>✓ 4-layer diagnostic audit</li>
-                        <li>✓ Performance optimization</li>
-                        <li>✓ Security review</li>
-                        <li>✓ Detailed findings report</li>
-                        <li>✓ Implementation roadmap</li>
+                    <p class="text-gray-600 mb-6">Complete Implementation</p>
+                    <ul class="text-left space-y-3 mb-6">
+                        <li>✓ Full GTM implementation</li>
+                        <li>✓ Up to 10 conversion scenarios</li>
+                        <li>✓ Unlimited pages tracked</li>
+                        <li>✓ Enhanced e-commerce setup</li>
+                        <li>✓ Cross-domain tracking</li>
                     </ul>
+                    <div class="text-sm text-gray-500 mb-6">
+                        <p class="font-semibold mb-1">Includes:</p>
+                        <p>Multiple domains • Complex funnels • Custom events • Full testing</p>
+                    </div>
                     <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-center">
-                        Get Full Audit
+                        Get Full Setup
                     </a>
                 </div>
             </div>
 
             <div class="bg-white p-8 rounded-lg shadow">
                 <div class="text-center">
-                    <h3 class="text-2xl font-bold mb-2">Monthly Monitoring</h3>
+                    <h3 class="text-2xl font-bold mb-2">MONITORING</h3>
                     <p class="text-4xl font-bold mb-4">$197</p>
                     <p class="text-gray-600 mb-6">Per Month</p>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li>✓ Proactive monitoring</li>
+                    <ul class="text-left space-y-3 mb-6">
+                        <li>✓ 24/7 uptime monitoring</li>
                         <li>✓ Break detection alerts</li>
                         <li>✓ Monthly health reports</li>
-                        <li>✓ Priority support access</li>
-                        <li>✓ Optimization recommendations</li>
+                        <li>✓ 2 hours included fixes/month</li>
+                        <li>✓ Priority support</li>
                     </ul>
+                    <div class="text-sm text-gray-500 mb-6">
+                        <p class="font-semibold mb-1">Coverage:</p>
+                        <p>Up to 100 pages • 5 conversion types • Monthly optimization</p>
+                    </div>
                     <a href="#contact" class="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-center">
                         Start Monitoring
                     </a>

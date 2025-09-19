@@ -44,6 +44,6 @@ crm_api_key: # Your FluentCRM API key
 
 # Service-specific settings
 service_type: gtm
-emergency_price: "$497"
-audit_price: "$797"
+emergency_price: "$397"
+full_setup_price: "$797"
 monitoring_price: "$197/month"

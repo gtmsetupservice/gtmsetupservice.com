@@ -50,8 +50,15 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                     </svg>
                     {% endfor %}
                 </div>
-                <p class="mb-4">"Was skeptical about hiring remote help for GTM. They screen-shared, explained every step, and had it fixed before lunch. Best $397 I've spent on marketing infrastructure."</p>
-                <p class="font-semibold">- Jennifer L., Marketing Manager</p>
+                <p class="mb-4">"You are the absolute best, thank you so much!!!"</p>
+                <div class="flex items-center">
+                    <div class="bg-purple-100 rounded-full p-2 mr-3">
+                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <p class="font-semibold">- Reddit User (Recent Client)</p>
+                </div>
             </div>
         </div>
     </div>

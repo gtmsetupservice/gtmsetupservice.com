@@ -31,7 +31,7 @@ layout: default
     {% if page.toc != false %}
     <div class="bg-gray-50 p-6 rounded-lg mb-12">
         <h3 class="font-bold mb-4">Quick Navigation</h3>
-        <div id="toc" class="space-y-2"></div>
+        <div id="toc" class="space-y-1"></div>
     </div>
     {% endif %}
 
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const a = document.createElement('a');
             a.href = `#${id}`;
             a.textContent = heading.textContent;
-            a.className = `block py-1 px-2 text-blue-600 hover:bg-blue-50 rounded ${heading.tagName.toLowerCase() === 'h3' ? 'ml-4' : heading.tagName.toLowerCase() === 'h4' ? 'ml-8' : ''}`;
+            a.className = `block py-0.5 px-2 text-blue-600 hover:bg-blue-50 rounded text-left`;
 
             li.appendChild(a);
             toc.appendChild(li);

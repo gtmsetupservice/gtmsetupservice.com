@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Not Recording Conversions Despite GTM Setup Being Complete - GTM Setup Services</title>
+    <meta name="description" content="Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO Tags -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Google Ads Not Recording Conversions Despite GTM Setup Being Complete | GTM Setup Services</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Google Ads Not Recording Conversions Despite GTM Setup Being Complete" />
+<meta name="author" content="GTM Setup Service" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows ‘No recent conversions’. Learn why tracking audit revealed Layer 3 data delivery problems." />
+<meta property="og:description" content="Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows ‘No recent conversions’. Learn why tracking audit revealed Layer 3 data delivery problems." />
+<link rel="canonical" href="http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/" />
+<meta property="og:url" content="http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/" />
+<meta property="og:site_name" content="GTM Setup Services" />
+<meta property="og:image" content="http://localhost:4001/assets/images/google-ads-conversion-tracking-broken.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-27T01:00:00+08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4001/assets/images/google-ads-conversion-tracking-broken.jpg" />
+<meta property="twitter:title" content="Google Ads Not Recording Conversions Despite GTM Setup Being Complete" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GTM Setup Service"},"dateModified":"2024-09-27T01:00:00+08:00","datePublished":"2024-09-27T01:00:00+08:00","description":"Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows ‘No recent conversions’. Learn why tracking audit revealed Layer 3 data delivery problems.","headline":"Google Ads Not Recording Conversions Despite GTM Setup Being Complete","image":"http://localhost:4001/assets/images/google-ads-conversion-tracking-broken.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/"},"url":"http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Google Ads Not Recording Conversions Despite GTM Setup Being Complete">
+    <meta property="og:description" content="Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/">
+
+    
+
+    
+</head>
+<body class="bg-white text-gray-900">
+    
+
+    <!-- Header Navigation -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <nav class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <span class="text-2xl font-bold text-blue-600">GTM</span>
+                <span class="text-2xl font-bold text-gray-900">SetupService</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="/#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="/#pricing" class="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+                <a href="/blog/" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
+                <a href="/#contact" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition">
+                    Get Started - $397
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div class="flex flex-col space-y-3">
+                <a href="/" class="text-gray-700 hover:text-blue-600 transition px-2 py-2">Home</a>
+                <a href="about" class="text-gray-700 hover:text-blue-600 transition px-2 py-2">About</a>
+                <a href="/#services" class="text-gray-700 hover:text-blue-600 transition px-2 py-2">Services</a>
+                <a href="/#pricing" class="text-gray-700 hover:text-blue-600 transition px-2 py-2">Pricing</a>
+                <a href="/blog/" class="text-gray-700 hover:text-blue-600 transition px-2 py-2">Blog</a>
+                <a href="/#contact" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded text-center transition">
+                    Get Started - $397
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+</script>
+
+    <main>
+        <!-- Blog Post Layout with AI/SEO Optimization -->
+<article class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Post Header -->
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold mb-4">Google Ads Not Recording Conversions Despite GTM Setup Being Complete</h1>
+
+        <div class="flex justify-center items-center space-x-4 text-gray-600 mb-6">
+            <time datetime="2024-09-27T01:00:00+08:00">
+                September 27, 2024
+            </time>
+
+            <!-- Reading Time -->
+            
+            
+            <span>📖 5 min read</span>
+
+            <!-- Word Count -->
+            <span>1187 words</span>
+        </div>
+
+        
+        <p class="text-xl text-gray-600 mb-8">Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems.</p>
+        
+    </header>
+
+    <!-- Table of Contents -->
+    
+    <div class="bg-gray-50 p-6 rounded-lg mb-12">
+        <h3 class="font-bold mb-4">Quick Navigation</h3>
+        <div id="toc" class="space-y-1"></div>
+    </div>
+    
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+        <div id="progress-bar" class="h-full bg-blue-600 transition-all duration-200" style="width: 0%"></div>
+    </div>
+
+    <!-- Post Content -->
+    <div class="prose prose-lg max-w-none">
+        <h1 id="when-gtm-looks-perfect-but-google-ads-shows-zero-conversions">When GTM Looks Perfect But Google Ads Shows Zero Conversions</h1>
+
+<p><em>This is a real diagnostic case study from a client who spent weeks trying to figure out why their Google Ads wasn’t recording any conversions, despite having a “complete” GTM setup.</em></p>
+
+<h2 id="the-problem-that-drives-business-owners-crazy">The Problem That Drives Business Owners Crazy</h2>
+
+<p>You’ve done everything right. Your GTM container is installed. Your tags are firing in debug mode. Google Analytics 4 is receiving purchase events perfectly. But when you check Google Ads, you see the soul-crushing message: <strong>“No recent conversions.”</strong></p>
+
+<p>This broken tracking system is revenue-impacting data loss at its worst - your campaign tracking failures mean Google Ads can’t optimize, can’t identify winning keywords, and can’t improve your ROI.</p>
+
+<p>This exact scenario landed on my desk last week from a client running an EdTech business. They had 5 years of Meta advertising experience, so they understood digital marketing. They weren’t GTM rookies. But they were bleeding ad spend with zero conversion tracking, and they couldn’t figure out why.</p>
+
+<h2 id="what-most-experts-miss">What Most “Experts” Miss</h2>
+
+<p>Here’s what 90% of GTM tutorials and “experts” get wrong: <strong>They assume that if your GTM container is firing, your conversion tracking is working.</strong></p>
+
+<p>This is a dangerous assumption that costs businesses thousands in wasted ad spend.</p>
+
+<p>The reality is that GTM conversion tracking operates on multiple layers:</p>
+
+<ul>
+  <li><strong>Layer 1</strong>: Container Installation</li>
+  <li><strong>Layer 2</strong>: Tag Configuration</li>
+  <li><strong>Layer 3</strong>: Data Delivery</li>
+  <li><strong>Layer 4</strong>: Platform Recognition</li>
+</ul>
+
+<p>Most people stop checking at Layer 2. They see tags firing in GTM debug mode and assume everything is working. But the real problems live in Layer 3 and beyond.</p>
+
+<h2 id="the-diagnostic-investigation">The Diagnostic Investigation</h2>
+
+<p>When I opened the client’s site, here’s what I found:</p>
+
+<p><strong>✅ Layer 1 - Container Installation</strong>: Perfect
+<strong>✅ Layer 2 - Tag Configuration</strong>: All tags firing correctly in debug mode
+<strong>❌ Layer 3 - Data Delivery</strong>: This is where everything fell apart</p>
+
+<h3 id="what-the-network-tab-revealed">What The Network Tab Revealed</h3>
+
+<p>Using Chrome DevTools, I pulled up the Network tab and triggered a purchase event. Here’s what I saw:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST https://googleads.g.doubleclick.net/pagead/conversion/
+Status: 200 OK
+Payload: {
+  "conversion_id": "12345678",
+  "conversion_label": "AbCdEfGhIj",
+  "value": 97.00,
+  "currency": "USD"
+}
+</code></pre></div></div>
+
+<p>The network call was being sent to Google Ads. The payload looked correct. But still no conversions were recording.</p>
+
+<p>This is the exact moment where most troubleshooting stops. The data appears to be sending correctly, so people assume it’s a Google Ads platform issue or “just needs time to process.”</p>
+
+<p><strong>Wrong.</strong></p>
+
+<h2 id="the-layer-3-problem-parameter-mismatch">The Layer 3 Problem: Parameter Mismatch</h2>
+
+<p>Layer 3 problems are about data delivery verification. Just because data is being sent doesn’t mean it’s being sent correctly or to the right place.</p>
+
+<p>I compared the network payload against the Google Ads account configuration:</p>
+
+<p><strong>Network Payload:</strong></p>
+<ul>
+  <li>Conversion ID: 12345678</li>
+  <li>Conversion Label: AbCdEfGhIj</li>
+  <li>Google Ads Account: 987-654-3210</li>
+</ul>
+
+<p><strong>Google Ads Account Setup:</strong></p>
+<ul>
+  <li>Conversion ID: 12345678 ✅</li>
+  <li>Conversion Label: XyZaBcDeF ❌</li>
+  <li>Account ID: 987-654-3210 ✅</li>
+</ul>
+
+<p><strong>Found it.</strong></p>
+
+<p>The conversion label in the GTM tag was copying from an old Google Ads conversion action that had been deleted and recreated. The GTM tag was sending data to a conversion label that no longer existed in the Google Ads account.</p>
+
+<h2 id="why-this-happens-more-than-you-think">Why This Happens More Than You Think</h2>
+
+<p>This isn’t a rare edge case. Here are the three most common ways this exact problem occurs:</p>
+
+<h3 id="1-conversion-action-recreation">1. Conversion Action Recreation</h3>
+<p>Business owner deletes and recreates a Google Ads conversion action (maybe trying to “fix” it), which generates a new conversion label. GTM tag still references the old label.</p>
+
+<h3 id="2-multiple-google-ads-accounts">2. Multiple Google Ads Accounts</h3>
+<p>Data being sent to Google Ads account A, but business owner is checking conversions in Google Ads account B. Happens constantly with agencies or businesses that have multiple ad accounts.</p>
+
+<h3 id="3-plugin-generated-confusion">3. Plugin-Generated Confusion</h3>
+<p>WordPress plugins like Site Kit or WooCommerce Google Analytics automatically generate GTM tags with their own conversion tracking, which can conflict with manually configured tags.</p>
+
+<h2 id="the-fix-and-why-its-not-just-about-fixing">The Fix (And Why It’s Not Just About Fixing)</h2>
+
+<p>The technical fix was simple: Update the GTM conversion tag with the correct conversion label from the current Google Ads conversion action.</p>
+
+<p>But here’s what I learned from this diagnostic that matters more than the fix:</p>
+
+<p><strong>You cannot troubleshoot Layer 3 problems without comparing what’s being sent against what’s expected on the receiving platform.</strong></p>
+
+<p>This requires:</p>
+<ol>
+  <li>Network tab analysis of actual payloads</li>
+  <li>Cross-platform verification of configuration</li>
+  <li>Understanding of how platforms process and validate data</li>
+</ol>
+
+<p>Most business owners don’t have the time or technical depth to diagnose Layer 3 data delivery problems. That’s exactly why these issues persist for weeks or months, burning through ad budgets while businesses think their tracking is “working.”</p>
+
+<h2 id="the-bigger-pattern">The Bigger Pattern</h2>
+
+<p>This case study represents a pattern I see constantly: <strong>Business owners stop troubleshooting at the point where they can see something happening, without verifying that what’s happening is actually correct.</strong></p>
+
+<ul>
+  <li>GTM tags firing = “Tracking is working”</li>
+  <li>Network requests sending = “Data is being delivered”</li>
+  <li>Google Ads account receiving some data = “Setup is complete”</li>
+</ul>
+
+<p>Each of these assumptions can be false while appearing to be true.</p>
+
+<h2 id="what-this-means-for-your-business">What This Means For Your Business</h2>
+
+<p>If you’re running Google Ads with GTM conversion tracking and you’re seeing:</p>
+
+<ul>
+  <li>Low conversion rates compared to actual sales</li>
+  <li>“No recent conversions” despite having sales</li>
+  <li>Conversion data missing from your campaigns</li>
+  <li>Tags firing in GTM debug mode but no tracking data in Google Ads</li>
+  <li>Revenue-impacting data loss that’s affecting your campaign optimization</li>
+  <li>Broken tracking systems that prevent proper attribution</li>
+</ul>
+
+<p>You likely have a Layer 3 data delivery problem that requires a complete tracking audit.</p>
+
+<p>The symptoms look like broken conversion tracking, but the root cause is parameter mismatches, account confusion, or payload delivery to wrong endpoints.</p>
+
+<h2 id="how-to-prevent-this">How To Prevent This</h2>
+
+<p>The only reliable prevention is systematic Layer 3 verification:</p>
+
+<ol>
+  <li><strong>Network Analysis</strong>: Verify actual payloads being sent</li>
+  <li><strong>Cross-Platform Configuration Check</strong>: Compare sending configuration against receiving platform setup</li>
+  <li><strong>End-to-End Testing</strong>: Test with small transactions and verify they appear correctly in the destination platform</li>
+  <li><strong>Regular Auditing</strong>: Monthly verification that tracking is still working correctly</li>
+</ol>
+
+<h2 id="the-real-cost">The Real Cost</h2>
+
+<p>This particular client had been running Google Ads for 3 weeks with zero conversion tracking. At $200/day ad spend, that’s $4,200 in untracked spend.</p>
+
+<p>But the real cost isn’t the money spent - it’s the optimization opportunities lost. Without conversion data, Google Ads can’t optimize bids, can’t identify high-performing keywords, and can’t improve campaign performance.</p>
+
+<p>Every day without proper conversion tracking is a day your campaigns get worse instead of better.</p>
+
+<h2 id="when-to-get-professional-help">When To Get Professional Help</h2>
+
+<p>Layer 3 diagnostic problems require technical skills that most business owners don’t have time to develop:</p>
+
+<ul>
+  <li>Chrome DevTools network analysis</li>
+  <li>Cross-platform configuration verification</li>
+  <li>Payload inspection and validation</li>
+  <li>Understanding of how different platforms process tracking data</li>
+</ul>
+
+<p>If you’re seeing conversion tracking problems that persist despite “everything looking correct” in GTM, you’re likely dealing with a Layer 3 data delivery problem.</p>
+
+<p>This isn’t something you troubleshoot with YouTube tutorials or generic GTM guides. It requires systematic diagnostic methodology and platform-specific technical knowledge.</p>
+
+<hr />
+
+<p><em>Having GTM conversion tracking issues that don’t make sense? We specialize in Layer 3 diagnostic problems that other consultants miss. Our systematic approach identifies exactly where tracking breaks down and provides immediate fixes. <a href="/contact">Get your conversion tracking diagnosed today</a> - most issues can be resolved in a single diagnostic call.</em></p>
+
+    </div>
+
+    <!-- Author Box -->
+    <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <div class="flex items-center">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-xl">GTM</span>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg">GTM Setup Services</h4>
+                <p class="text-gray-600">Emergency GTM recovery and tracking experts. 247+ successful recoveries completed.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-12 text-center p-8 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Having GTM Tracking Issues?</h3>
+        <p class="text-lg mb-6">Get your tracking fixed by the experts. Emergency recovery in 2-4 hours.</p>
+        <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition duration-200">
+            Get Emergency GTM Fix - $497
+        </a>
+    </div>
+</article>
+
+<!-- Blog Post Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Ads Not Recording Conversions Despite GTM Setup Being Complete",
+  "description": "Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems.",
+  "author": {
+    "@type": "Organization",
+    "name": "GTM Setup Services",
+    "url": "http://localhost:4001"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GTM Setup Services",
+    "logo": "http://localhost:4001/assets/logo.png"
+  },
+  "datePublished": "2024-09-27T01:00:00+08:00",
+  "dateModified": "2024-09-27T01:00:00+08:00",
+  "wordCount": 1187,
+  "timeRequired": "PT5M",
+  "mainEntityOfPage": "http://localhost:4001/blog/2024/09/27/google-ads-not-recording-conversions-gtm-setup-complete/"
+}
+</script>
+
+<!-- FAQ Schema (if FAQ data exists) -->
+
+
+<!-- Table of Contents & Reading Progress JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Generate Table of Contents
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('h2, h3, h4');
+
+    if (toc && headings.length > 0) {
+        headings.forEach((heading, index) => {
+            const id = `heading-${index}`;
+            heading.id = id;
+
+            const li = document.createElement('div');
+            li.className = 'toc-item';
+
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = heading.textContent;
+            a.className = `block py-0.5 px-2 text-blue-600 hover:bg-blue-50 rounded text-left`;
+
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+    }
+
+    // Reading Progress Bar
+    const progressBar = document.getElementById('progress-bar');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+
+        progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+
+        // Track scroll milestones
+        if (scrollPercent >= 25 && !window.scroll25Tracked) {
+            window.scroll25Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 25 });
+            }
+        }
+        if (scrollPercent >= 50 && !window.scroll50Tracked) {
+            window.scroll50Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 50 });
+            }
+        }
+        if (scrollPercent >= 75 && !window.scroll75Tracked) {
+            window.scroll75Tracked = true;
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'scroll_depth', { percent_scrolled: 75 });
+            }
+        }
+    });
+});
+</script>
+
+<style>
+/* Custom prose styles for better readability */
+.prose {
+    line-height: 1.7;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #374151;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+}
+
+.prose ul {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+.prose blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 1.5rem 0;
+    background-color: #f8fafc;
+    padding: 1rem;
+}
+</style>
+    </main>
+
+    <!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <!-- About Column -->
+            <div class="md:col-span-2">
+                <h3 class="text-white font-bold text-lg mb-4">About GTMSetupService</h3>
+                <p class="text-sm mb-4">
+                    GTMSetupService is a specialized Google Tag Manager implementation company dedicated to helping businesses unlock the full potential of their website analytics and marketing data.
+                </p>
+                <p class="text-sm">
+                    <strong class="text-white">Our Mission:</strong> To democratize advanced web analytics by making professional Google Tag Manager implementation accessible and understandable for businesses of all sizes.
+                </p>
+            </div>
+
+            <!-- Services Column -->
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">Our Services</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/#pricing" class="hover:text-white transition">Emergency GTM Fix - $397</a></li>
+                    <li><a href="/#pricing" class="hover:text-white transition">Full Setup - $797</a></li>
+                    <li><a href="/#pricing" class="hover:text-white transition">Monthly Monitoring - $197</a></li>
+                    <li><a href="about" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="privacy" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- What Sets Us Apart Column -->
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">Why Choose Us</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>✓ Never lose another conversion</li>
+                    <li>✓ Complete visibility into ROI</li>
+                    <li>✓ Bulletproof analytics</li>
+                    <li>✓ Professional implementation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="grid md:grid-cols-2 gap-4">
+                <!-- Company Info -->
+                <div class="text-sm">
+                    <p class="mb-2">
+                        <strong class="text-white">B and B Holdings LLC</strong><br>
+                        Registered in Wyoming, USA<br>
+                        Specializing in Digital Analytics & Marketing Technology
+                    </p>
+                </div>
+
+                <!-- Legal -->
+                <div class="text-sm md:text-right">
+                    <p class="mb-2">© 2025 B and B Holdings DBA GTMSetupService.com</p>
+                    <p class="text-xs text-gray-400">
+                        We are not affiliated with Google.<br>
+                        Google Tag Manager™ is a trademark of Google LLC.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Form Handler Script -->
+    <script src="/assets/js/form-handler.js"></script>
+</body>
+</html>

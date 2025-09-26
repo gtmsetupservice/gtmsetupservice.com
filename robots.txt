@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /assets/js/form-handler.js
+Disallow: /.jekyll-cache/
+Disallow: /_site/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://gtmsetupservices.com/sitemap.xml

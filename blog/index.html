@@ -1,0 +1,146 @@
+---
+layout: default
+title: GTM Diagnostic Case Studies & Expert Insights
+description: Real case studies from emergency GTM fixes, Layer 3 diagnostic problems, and proven solutions. Learn from actual client emergencies and tracking failures.
+permalink: /blog/
+---
+
+<!-- Blog Index Page -->
+<div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Page Header -->
+    <header class="text-center mb-16">
+        <h1 class="text-4xl font-bold mb-4">GTM Diagnostic Case Studies</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Real case studies from emergency GTM fixes and Layer 3 diagnostic problems.
+            Learn from actual client emergencies, tracking failures, and proven solutions.
+        </p>
+    </header>
+
+    <!-- Featured Post -->
+    {% assign featured_post = site.posts.first %}
+    {% if featured_post %}
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 text-center">Latest Case Study</h2>
+        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8">
+            <div class="max-w-4xl mx-auto">
+                <span class="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mb-4">Featured</span>
+                <h3 class="text-2xl font-bold mb-4">
+                    <a href="{{ featured_post.url }}" class="text-gray-900 hover:text-blue-600 transition">
+                        {{ featured_post.title }}
+                    </a>
+                </h3>
+                <p class="text-gray-700 mb-6">{{ featured_post.description }}</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4 text-sm text-gray-600">
+                        <time datetime="{{ featured_post.date | date_to_xmlschema }}">
+                            {{ featured_post.date | date: "%B %d, %Y" }}
+                        </time>
+                        {% assign words = featured_post.content | strip_html | number_of_words %}
+                        {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
+                        <span>{{ reading_time }} min read</span>
+                        <span>{{ words }} words</span>
+                    </div>
+                    <a href="{{ featured_post.url }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                        Read Case Study
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Blog Posts Grid -->
+    <section>
+        <h2 class="text-2xl font-bold mb-8">All Case Studies</h2>
+
+        {% if site.posts.size > 0 %}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for post in site.posts %}
+            <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition">
+                {% if post.image %}
+                <div class="aspect-video bg-gray-200 rounded-t-lg"></div>
+                {% endif %}
+
+                <div class="p-6">
+                    <!-- Categories/Tags -->
+                    {% if post.categories.size > 0 %}
+                    <div class="mb-3">
+                        {% for category in post.categories %}
+                        <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded mr-2">
+                            {{ category }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <h3 class="text-xl font-bold mb-3">
+                        <a href="{{ post.url }}" class="text-gray-900 hover:text-blue-600 transition">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+
+                    <p class="text-gray-600 mb-4 line-clamp-3">{{ post.description | default: post.excerpt | strip_html }}</p>
+
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-gray-500">
+                            <time datetime="{{ post.date | date_to_xmlschema }}">
+                                {{ post.date | date: "%b %d, %Y" }}
+                            </time>
+                            {% assign words = post.content | strip_html | number_of_words %}
+                            {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
+                            <span class="ml-2">{{ reading_time }} min read</span>
+                        </div>
+                        <a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800 font-medium text-sm transition">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-12">
+            <p class="text-gray-600 text-lg">No case studies published yet. Check back soon for real GTM diagnostic examples!</p>
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="mt-16 bg-gray-50 rounded-lg p-8 text-center">
+        <h3 class="text-2xl font-bold mb-4">Get GTM Emergency Alerts</h3>
+        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Subscribe to receive immediate notifications when we publish new case studies about critical GTM failures and their solutions.
+        </p>
+        <form class="max-w-md mx-auto flex gap-4">
+            <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+            >
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition">
+                Subscribe
+            </button>
+        </form>
+        <p class="text-xs text-gray-500 mt-2">Unsubscribe anytime. We respect your privacy.</p>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mt-16 text-center p-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg">
+        <h3 class="text-2xl font-bold mb-4">Having GTM Tracking Issues?</h3>
+        <p class="text-lg mb-6">Don't let broken tracking cost you conversions. Get emergency GTM recovery in 2-4 hours.</p>
+        <a href="/#contact" class="inline-block bg-white text-green-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">
+            Get Emergency GTM Fix - $497
+        </a>
+    </section>
+</div>
+
+<style>
+/* Line clamp utility for post excerpts */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>

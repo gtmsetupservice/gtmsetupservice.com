@@ -9,6 +9,33 @@ tagline: Fix Your GTM Tracking Issues Today
 author:
   name: GTM Setup Services
   email: support@gtmsetupservices.com
+  twitter: gtmsetupservice
+  linkedin: company/gtm-setup-services
+
+# SEO Plugin Configuration
+social:
+  name: GTM Setup Services
+  links:
+    - https://linkedin.com/company/gtm-setup-services
+    - https://github.com/gtmsetupservice
+
+# SEO Defaults for jekyll-seo-tag
+seo:
+  type: Organization
+  logo: /assets/images/gtm-setup-services-logo.png
+
+# Schema.org structured data
+organization:
+  name: GTM Setup Services
+  url: https://gtmsetupservices.com
+  logo: https://gtmsetupservices.com/assets/images/gtm-setup-services-logo.png
+  sameAs:
+    - https://linkedin.com/company/gtm-setup-services
+
+# Twitter Card defaults
+twitter:
+  username: gtmsetupservice
+  card: summary_large_image
 
 # Jekyll Configuration
 markdown: kramdown
@@ -35,8 +62,8 @@ defaults:
       author: "GTM Setup Services"
 
 # Analytics (to be configured)
-google_analytics: # GA4 Measurement ID
-gtm_container: # GTM Container ID
+google_analytics: "G-QD2PEKQ375"
+gtm_container: "GTM-M3CR8QZP"
 
 # CRM Settings
 crm_endpoint: # Your FluentCRM API endpoint

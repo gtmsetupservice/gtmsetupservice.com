@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gray to white gradient transition -->
+    <linearGradient id="grayToWhiteWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3F4F6;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#E5E7EB;stop-opacity:0.08" />
+      <stop offset="70%" style="stop-color:#F9FAFB;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.18" />
+    </linearGradient>
+
+    <!-- Shadow for depth -->
+    <filter id="grayWhiteShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.06"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Base layer - gray fade -->
+  <path d="M 0,90 C 320,120 640,60 960,80 C 1200,95 1380,105 1440,85 L 1440,200 L 0,200 Z"
+        fill="url(#grayToWhiteWave)"
+        opacity="0.5" />
+
+  <!-- Middle layer - transition wave -->
+  <path d="M 0,110 C 240,150 480,70 720,100 C 960,115 1200,130 1440,110 L 1440,200 L 0,200 Z"
+        fill="url(#grayToWhiteWave)"
+        opacity="0.7"
+        filter="url(#grayWhiteShadow)" />
+
+  <!-- Top layer - white blend -->
+  <path d="M 0,140 C 360,170 720,100 1080,130 C 1260,140 1380,150 1440,135 L 1440,200 L 0,200 Z"
+        fill="#FFFFFF"
+        opacity="0.8" />
+
+  <!-- Subtle accent elements -->
+  <circle cx="200" cy="125" r="50" fill="#E5E7EB" opacity="0.04" />
+  <circle cx="1150" cy="110" r="65" fill="#F3F4F6" opacity="0.05" />
+</svg>

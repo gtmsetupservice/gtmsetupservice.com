@@ -8,6 +8,8 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 
 <!-- Combined Quick Wins & Testimonial Section -->
 <section id="testimonial" class="py-16 bg-gray-50 relative overflow-hidden">
+    <!-- Bottom transition wave -->
+    <div class="absolute bottom-0 left-0 right-0 h-48" style="background-image: url('/assets/images/bg-wave-gray-to-white.svg'); background-size: cover; background-position: top; background-repeat: no-repeat;"></div>
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-30" style="background-image: url('/assets/images/bg-dots.svg'); background-size: 30px 30px;"></div>
     <div class="max-w-7xl mx-auto px-4 relative z-10">

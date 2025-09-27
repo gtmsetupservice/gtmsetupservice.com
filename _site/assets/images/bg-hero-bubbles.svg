@@ -17,57 +17,145 @@
     </radialGradient>
   </defs>
 
-  <!-- Top section bubbles -->
-  <circle cx="150" cy="60" r="35" fill="url(#bubble1)" />
-  <circle cx="320" cy="45" r="22" fill="url(#bubble2)" />
-  <circle cx="480" cy="75" r="28" fill="url(#bubble3)" />
-  <circle cx="650" cy="55" r="18" fill="url(#bubble1)" />
-  <circle cx="820" cy="80" r="32" fill="url(#bubble2)" />
-  <circle cx="980" cy="40" r="25" fill="url(#bubble3)" />
-  <circle cx="1150" cy="70" r="30" fill="url(#bubble1)" />
-  <circle cx="1320" cy="50" r="20" fill="url(#bubble2)" />
+  <!-- Top section bubbles with animations -->
+  <circle cx="150" cy="60" r="35" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="320" cy="45" r="22" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="480" cy="75" r="28" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="3.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="650" cy="55" r="18" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="820" cy="80" r="32" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-11; 0,0" dur="6s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="980" cy="40" r="25" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="4.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1150" cy="70" r="30" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1320" cy="50" r="20" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="3.8s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Middle section bubbles -->
-  <circle cx="80" cy="150" r="40" fill="url(#bubble2)" />
-  <circle cx="250" cy="130" r="24" fill="url(#bubble3)" />
-  <circle cx="420" cy="160" r="36" fill="url(#bubble1)" />
-  <circle cx="590" cy="140" r="26" fill="url(#bubble2)" />
-  <circle cx="750" cy="170" r="31" fill="url(#bubble3)" />
-  <circle cx="920" cy="125" r="19" fill="url(#bubble1)" />
-  <circle cx="1080" cy="155" r="38" fill="url(#bubble2)" />
-  <circle cx="1250" cy="135" r="23" fill="url(#bubble3)" />
-  <circle cx="1380" cy="165" r="29" fill="url(#bubble1)" />
+  <!-- Middle section bubbles with animations -->
+  <circle cx="80" cy="150" r="40" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-13; 0,0" dur="5.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="250" cy="130" r="24" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4.8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="420" cy="160" r="36" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="6.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="590" cy="140" r="26" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="3.9s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="750" cy="170" r="31" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-11; 0,0" dur="5.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="920" cy="125" r="19" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4.3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1080" cy="155" r="38" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-14; 0,0" dur="6.8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1250" cy="135" r="23" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="4.1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1380" cy="165" r="29" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5.4s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Lower section bubbles -->
-  <circle cx="120" cy="240" r="27" fill="url(#bubble3)" />
-  <circle cx="290" cy="220" r="33" fill="url(#bubble1)" />
-  <circle cx="460" cy="250" r="21" fill="url(#bubble2)" />
-  <circle cx="630" cy="230" r="37" fill="url(#bubble3)" />
-  <circle cx="800" cy="260" r="25" fill="url(#bubble1)" />
-  <circle cx="970" cy="210" r="34" fill="url(#bubble2)" />
-  <circle cx="1140" cy="245" r="28" fill="url(#bubble3)" />
-  <circle cx="1310" cy="225" r="22" fill="url(#bubble1)" />
+  <!-- Lower section bubbles with animations -->
+  <circle cx="120" cy="240" r="27" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="4.6s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="290" cy="220" r="33" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="5.9s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="460" cy="250" r="21" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="4.4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="630" cy="230" r="37" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-13; 0,0" dur="6.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="800" cy="260" r="25" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="970" cy="210" r="34" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-11; 0,0" dur="5.3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1140" cy="245" r="28" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="4.9s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1310" cy="225" r="22" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="4.2s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Bottom section bubbles -->
-  <circle cx="60" cy="320" r="30" fill="url(#bubble2)" />
-  <circle cx="220" cy="310" r="26" fill="url(#bubble3)" />
-  <circle cx="380" cy="340" r="35" fill="url(#bubble1)" />
-  <circle cx="540" cy="315" r="20" fill="url(#bubble2)" />
-  <circle cx="700" cy="335" r="32" fill="url(#bubble3)" />
-  <circle cx="860" cy="305" r="24" fill="url(#bubble1)" />
-  <circle cx="1020" cy="325" r="39" fill="url(#bubble2)" />
-  <circle cx="1180" cy="315" r="27" fill="url(#bubble3)" />
-  <circle cx="1350" cy="330" r="31" fill="url(#bubble1)" />
+  <!-- Bottom section bubbles with animations -->
+  <circle cx="60" cy="320" r="30" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5.1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="220" cy="310" r="26" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="380" cy="340" r="35" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="6.1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="540" cy="315" r="20" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="3.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="700" cy="335" r="32" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-11; 0,0" dur="5.8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="860" cy="305" r="24" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4.3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1020" cy="325" r="39" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-14; 0,0" dur="6.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1180" cy="315" r="27" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-9; 0,0" dur="4.8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1350" cy="330" r="31" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5.6s" repeatCount="indefinite" />
+  </circle>
 
   <!-- Small accent bubbles scattered throughout -->
-  <circle cx="40" cy="90" r="12" fill="url(#bubble3)" />
-  <circle cx="180" cy="180" r="15" fill="url(#bubble1)" />
-  <circle cx="340" cy="280" r="14" fill="url(#bubble2)" />
-  <circle cx="500" cy="110" r="16" fill="url(#bubble3)" />
-  <circle cx="670" cy="190" r="13" fill="url(#bubble1)" />
-  <circle cx="830" cy="280" r="17" fill="url(#bubble2)" />
-  <circle cx="990" cy="85" r="11" fill="url(#bubble3)" />
-  <circle cx="1120" cy="195" r="14" fill="url(#bubble1)" />
-  <circle cx="1280" cy="285" r="15" fill="url(#bubble2)" />
-  <circle cx="1420" cy="95" r="12" fill="url(#bubble3)" />
+  <circle cx="40" cy="90" r="12" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3.6s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="180" cy="180" r="15" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4.4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="340" cy="280" r="14" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="5.1s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="500" cy="110" r="16" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="3.9s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="670" cy="190" r="13" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4.7s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="830" cy="280" r="17" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="5.3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="990" cy="85" r="11" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-4; 0,0" dur="3.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1120" cy="195" r="14" fill="url(#bubble1)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="4.6s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1280" cy="285" r="15" fill="url(#bubble2)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="5.0s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1420" cy="95" r="12" fill="url(#bubble3)">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3.7s" repeatCount="indefinite" />
+  </circle>
 </svg>

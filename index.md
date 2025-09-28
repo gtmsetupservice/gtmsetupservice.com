@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Emergency GTM Recovery & Tracking Fixes
-description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Google Tag Manager and restore conversion tracking. $497 fixed price.
+description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Google Tag Manager and restore conversion tracking. $397 fixed price.
 ---
 
 {% include hero.html %}
 
 <!-- Combined Quick Wins & Testimonial Section -->
-<section id="testimonial" class="py-16 bg-gray-50 relative overflow-hidden">
+<section id="testimonial" class="pt-11 pb-16 bg-gray-50 relative overflow-hidden">
     <!-- Bottom transition wave -->
     <div class="absolute bottom-0 left-0 right-0 h-48" style="background-image: url('/assets/images/bg-wave-gray-to-white.svg'); background-size: cover; background-position: top; background-repeat: no-repeat;"></div>
     <!-- Background Pattern -->

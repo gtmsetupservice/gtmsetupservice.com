@@ -24,7 +24,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                                 <path d="M7.5 5.6L5 7l1.4-2.5L5 2l2.5 1.4L10 2 8.6 4.5 10 7 7.5 5.6zM19.5 15.4L22 14l-1.4 2.5L22 19l-2.5-1.4L17 19l1.4-2.5L17 14l2.5 1.4zM22 2l-2.5 1.4L17 2l1.4 2.5L17 7l2.5-1.4L22 7l-1.4-2.5L22 2z"/>
                             </svg>
                         </div>
-                        <h3 class="text-lg font-bold text-gray-800">Recent Client Success</h3>
+                        <h2 class="text-lg font-bold text-gray-800">Recent Client Success</h2>
                     </div>
 
                     <!-- Reddit Testimonial -->
@@ -39,7 +39,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                                     <p class="text-gray-400 text-xs">1 day ago</p>
                                 </div>
                             </div>
-                            <h4 class="text-white text-sm font-bold mb-2">Check out Vscodr</h4>
+                            <h3 class="text-white text-sm font-bold mb-2">Check out Vscodr</h3>
                             <p class="text-gray-300 text-sm leading-relaxed">
                                 Hey guys. I wanna shoutout vscodr (he is in this group) for helping me with some of the problems I have been facing with GTM. He knows what he is doing and has coding experience as well. I highly recommend him if you are facing any GTM issues.
                             </p>

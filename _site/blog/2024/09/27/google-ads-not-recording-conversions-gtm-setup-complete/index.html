@@ -6,8 +6,11 @@
     <title>Google Ads Not Recording Conversions Despite GTM Setup Being Complete - GTM Setup Services</title>
     <meta name="description" content="Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems.">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <!-- SEO Tags -->
     <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -93,8 +96,8 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle navigation menu" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>

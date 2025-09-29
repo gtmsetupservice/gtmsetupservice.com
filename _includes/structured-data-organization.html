@@ -1,0 +1,79 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}/#organization",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "telephone": "+1-307-269-2691",
+  "email": "{{ site.author.email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "@id": "{{ site.url }}/#address",
+    "addressCountry": "US",
+    "addressRegion": "Nationwide"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.8283,
+    "longitude": -98.5795
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": "Google Tag Manager Emergency Recovery Service",
+  "priceRange": "$397-$797",
+  "paymentAccepted": ["Cash", "Credit Card", "PayPal"],
+  "currenciesAccepted": "USD",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "availableLanguage": "English",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "GTM Emergency Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GTM Emergency Recovery",
+          "description": "2-4 hour Google Tag Manager emergency fixes including broken tracking, lost conversions, and GA4 setup issues"
+        },
+        "price": "397",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Full GTM Setup & Audit",
+          "description": "Complete Google Tag Manager implementation with GA4, Google Ads conversion tracking, and comprehensive audit"
+        },
+        "price": "797",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GTM Monitoring & Maintenance",
+          "description": "Monthly GTM monitoring with automated alerts and priority emergency support"
+        },
+        "price": "197",
+        "priceCurrency": "USD",
+        "billingPeriod": "Monthly"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "89"
+  },
+  "sameAs": [
+    "https://linkedin.com/{{ site.author.linkedin }}",
+    "https://github.com/{{ site.github_username }}"
+  ]
+}
+</script>

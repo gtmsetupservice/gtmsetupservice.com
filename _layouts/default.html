@@ -43,6 +43,15 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','{{ site.gtm_container }}');</script>
     {% endif %}
+
+    <!-- Structured Data -->
+    {%- include structured-data-organization.html -%}
+    {%- include structured-data-breadcrumb.html -%}
+    {%- include structured-data-article.html -%}
+    {%- if page.url == "/" -%}
+      {%- include structured-data-faq.html -%}
+      {%- include structured-data-reviews.html -%}
+    {%- endif -%}
 </head>
 <body class="bg-white text-gray-900">
     {% if site.gtm_container %}

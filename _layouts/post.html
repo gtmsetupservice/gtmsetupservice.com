@@ -8,6 +8,12 @@ layout: default
     <header class="mb-12 text-center">
         <h1 class="text-4xl font-bold mb-4">{{ page.title }}</h1>
 
+        {% if page.image %}
+        <div class="mb-8">
+            <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full rounded-lg shadow-lg">
+        </div>
+        {% endif %}
+
         <div class="flex justify-center items-center space-x-4 text-gray-600 mb-6">
             <time datetime="{{ page.date | date_to_xmlschema }}">
                 {{ page.date | date: "%B %d, %Y" }}

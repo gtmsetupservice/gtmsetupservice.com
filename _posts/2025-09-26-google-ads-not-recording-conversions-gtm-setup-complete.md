@@ -6,7 +6,7 @@ categories: [GTM Diagnostics, Conversion Tracking]
 tags: [google-ads, gtm, conversion-tracking, layer-3-problems, data-delivery, tracking-broken, campaign-tracking-failures, revenue-impacting-data-loss]
 author: GTM Setup Service
 description: "Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems."
-image: /assets/images/google-ads-conversion-tracking-broken.jpg
+image: /assets/images/No-ad-conversions.png
 ---
 
 # When GTM Looks Perfect But Google Ads Shows Zero Conversions

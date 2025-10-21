@@ -6,4 +6,4 @@ Disallow: /_site/
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://gtmsetupservices.com/sitemap.xml
+Sitemap: https://gtmsetupservice.com/sitemap.xml

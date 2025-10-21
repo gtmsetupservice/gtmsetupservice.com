@@ -1,0 +1,15 @@
+# Netlify/Cloudflare Pages redirect rules
+# 301 redirects for old WordPress feed URLs
+
+# Redirect old WordPress feeds to homepage
+/feed/*                     /                    301
+/author/*/feed/*           /                    301
+/comments/feed/*           /                    301
+/*/feed/*                  /blog/:splat         301
+
+# Redirect old WordPress author pages
+/author/*                  /about               301
+
+# Redirect hello-world post if it was WordPress default
+/hello-world/*             /blog/               301
+/hello-world               /blog/               301

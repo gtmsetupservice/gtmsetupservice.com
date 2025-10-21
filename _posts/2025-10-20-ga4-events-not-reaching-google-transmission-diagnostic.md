@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "Tags Fire in GTM But Nothing Reaches GA4? Fix Your Transmission Layer"
-date: 2025-01-17
+date: 2025-10-20 09:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, transmission]
 tags: [gtm, ga4, transmission, network, debugging]
-excerpt: "Your GTM tags fire perfectly in Preview Mode, but GA4 shows no data. This is Layer 3 (Transmission) failure—where data gets lost between your browser and Google's servers. Here's how to diagnose and fix it."
+description: "Your GTM tags fire perfectly in Preview Mode, but GA4 shows no data. This is Layer 3 (Transmission) failure—where data gets lost between your browser and Google's servers. Here's how to diagnose and fix it."
+featured_image: /assets/images/Fix-Your-Transmission.png
 ---
 
 ## The "Everything Looks Fine" Problem That Cost $300K

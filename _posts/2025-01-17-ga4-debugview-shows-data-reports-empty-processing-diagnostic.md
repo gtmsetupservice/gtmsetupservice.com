@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Data Shows in DebugView But Not Reports? Your GA4 Processing Is Broken"
-date: 2025-01-17
+date: 2025-01-17 09:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, processing]
 tags: [ga4, processing, data-thresholding, reporting, debugging]
-excerpt: "Your events appear in GA4 DebugView perfectly, but standard reports show zero data. This is Layer 4 (Processing) failure—where Google's internal systems reject, filter, or withhold your data. Here's what's actually happening."
-image: /assets/images/data-missing-from-reports.png
+description: "Your events appear in GA4 DebugView perfectly, but standard reports show zero data. This is Layer 4 (Processing) failure—where Google's internal systems reject, filter, or withhold your data. Here's what's actually happening."
+featured_image: /assets/images/flow-diagram.png
 ---
 
 ## The Most Frustrating GA4 Problem: "It's Working But It's Not"

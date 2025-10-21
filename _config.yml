@@ -1,51 +1,23 @@
 # Site Settings
 title: GTM Setup Services
 description: Emergency GTM recovery and comprehensive tracking audits. Fix broken Google Tag Manager in 2-4 hours.
-url: https://gtmsetupservices.com
+url: https://gtmsetupservice.com
 baseurl: ""
 
 # SEO Settings
 tagline: Fix Your GTM Tracking Issues Today
 author:
   name: GTM Setup Services
-  email: support@gtmsetupservices.com
-  twitter: gtmsetupservice
-  linkedin: company/gtm-setup-services
-
-# SEO Plugin Configuration
-social:
-  name: GTM Setup Services
-  links:
-    - https://linkedin.com/company/gtm-setup-services
-    - https://github.com/gtmsetupservice
-
-# SEO Defaults for jekyll-seo-tag
-seo:
-  type: Organization
-  logo: /assets/images/gtm-setup-services-logo.png
-
-# Schema.org structured data
-organization:
-  name: GTM Setup Services
-  url: https://gtmsetupservices.com
-  logo: https://gtmsetupservices.com/assets/images/gtm-setup-services-logo.png
-  sameAs:
-    - https://linkedin.com/company/gtm-setup-services
-
-# Twitter Card defaults
-twitter:
-  username: gtmsetupservice
-  card: summary_large_image
+  email: support@gtmsetupservice.com
 
 # Jekyll Configuration
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 
 # Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
 
 # Collections
 collections:
@@ -61,9 +33,9 @@ defaults:
       layout: "post"
       author: "GTM Setup Services"
 
-# Analytics (to be configured)
-google_analytics: "G-QD2PEKQ375"
-gtm_container: "GTM-M3CR8QZP"
+# Analytics
+google_analytics: G-QD2PEKQ375 # GA4 Measurement ID
+gtm_container: GTM-M3CR8QZP # GTM Container ID
 
 # CRM Settings
 crm_endpoint: # Your FluentCRM API endpoint
@@ -72,5 +44,5 @@ crm_api_key: # Your FluentCRM API key
 # Service-specific settings
 service_type: gtm
 emergency_price: "$397"
-full_setup_price: "$797"
+audit_price: "$797"
 monitoring_price: "$197/month"

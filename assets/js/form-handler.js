@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 email: data.email,
                 first_name: data.name.split(' ')[0],
                 last_name: data.name.split(' ').slice(1).join(' '),
-                phone: data.phone,
                 tags: ['gtm-lead', 'website-contact'],
                 custom_fields: {
                     website: data.website,
@@ -55,14 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                // Send to FluentCRM API at getlocallyknown.com
-                // Using Basic Auth with API credentials
-                const authString = btoa('fluent:RxEt Hnzh kH8x dmps pbxd S607');
-                const response = await fetch('https://getlocallyknown.com/wp-json/fluent-crm/v2/contacts', {
+                // Send to FluentCRM API
+                const response = await fetch('YOUR_CRM_ENDPOINT/wp-json/fluent-crm/v2/contacts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Basic ' + authString
+                        'Authorization': 'Bearer YOUR_CRM_API_KEY'
                     },
                     body: JSON.stringify(payload)
                 });
@@ -110,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Get Your GTM Fixed Now - Starting at $397';
+                submitBtn.innerHTML = 'Get Emergency GTM Fix - $397';
             }
         });
     }

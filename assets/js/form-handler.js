@@ -33,33 +33,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 data[key] = value;
             }
 
-            // Prepare payload for FluentCRM
+            // Prepare payload for Pipedream webhook
             const payload = {
                 email: data.email,
-                first_name: data.name.split(' ')[0],
-                last_name: data.name.split(' ').slice(1).join(' '),
-                tags: ['gtm-lead', 'website-contact'],
-                custom_fields: {
-                    website: data.website,
-                    problem_type: data.problem,
-                    problem_details: data.details,
-                    service_type: data.service_type,
-                    source_domain: data.source_domain,
-                    utm_source: data.utm_source,
-                    utm_medium: data.utm_medium,
-                    utm_campaign: data.utm_campaign,
-                    form_submitted: new Date().toISOString()
-                },
-                lists: [1] // Add to main list (ID to be configured)
+                name: data.name,
+                phone: data.phone || '',
+                website: data.website,
+                problem: data.problem,
+                details: data.details || '',
+                service_type: data.service_type,
+                source_domain: data.source_domain,
+                utm_source: data.utm_source || '',
+                utm_medium: data.utm_medium || '',
+                utm_campaign: data.utm_campaign || '',
+                form_submitted: new Date().toISOString()
             };
 
             try {
-                // Send to FluentCRM API
-                const response = await fetch('YOUR_CRM_ENDPOINT/wp-json/fluent-crm/v2/contacts', {
+                // Send to Pipedream webhook
+                const response = await fetch('https://eocrrf0lm1scxwv.m.pipedream.net', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer YOUR_CRM_API_KEY'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
                 });

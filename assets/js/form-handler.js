@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const payload = {
                 email: data.email,
                 name: data.name,
-                phone: data.phone || '',
+                phone: data.phone,
                 website: data.website,
                 problem: data.problem,
                 details: data.details || '',
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Get Emergency GTM Fix - $397';
+                submitBtn.innerHTML = 'Contact GTM Expert';
             }
         });
     }

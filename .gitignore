@@ -1,0 +1,13 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Temporary files
+*.gem
+*.swp
+*~
+.DS_Store
+toc_revision.md
+Gemfile.lock

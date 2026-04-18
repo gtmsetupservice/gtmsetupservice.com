@@ -7,6 +7,7 @@ categories: [diagnostics, consent-mode]
 tags: [GTM, Consent-Mode-V2, Layer-2, Implementation, GDPR, CMP]
 author: GTM Setup Service
 featured_image: /assets/images/ga4-communication-breakdown.png
+fix_time: "Immediate"
 faq:
   - question: "Why do my GTM tags fire before consent but not after?"
     answer: "This is a common Consent Mode V2 issue. It happens when your tags are set to fire on 'Page View' but don't have a trigger to re-evaluate after the user clicks 'Accept'. The 'Page View' event happens before consent is granted, and the tags don't try again."

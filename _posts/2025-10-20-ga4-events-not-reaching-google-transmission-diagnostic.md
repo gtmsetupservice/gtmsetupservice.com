@@ -7,6 +7,8 @@ categories: [diagnostics, transmission]
 tags: [gtm, ga4, transmission, network, debugging]
 description: "Your GTM tags fire perfectly in Preview Mode, but GA4 shows no data. This is Layer 3 (Transmission) failure—where data gets lost between your browser and Google's servers. Here's how to diagnose and fix it."
 featured_image: /assets/images/Fix-Your-Transmission.png
+diagnosis_time: "90 Second"
+problem_layer: "Layer 3 (Transmission)"
 faq:
   - question: "My GTM tags are firing, so why is GA4 empty?"
     answer: "This is a classic Layer 3 (Transmission) failure. It means the data is leaving your browser but being blocked before it reaches Google. The most common causes are ad blockers, browser privacy settings (like Firefox's Enhanced Tracking Protection), or corporate firewalls."

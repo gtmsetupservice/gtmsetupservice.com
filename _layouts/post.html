@@ -29,6 +29,42 @@ layout: default
             <span>{{ words }} words</span>
         </div>
 
+        <!-- Trust Indicators -->
+        {% if page.fix_rate or page.fix_time or page.diagnosis_time or page.problem_layer or page.fix_method %}
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 my-6 text-lg border-t border-b border-gray-200 py-4">
+            {% if page.fix_rate %}
+            <div class="flex items-center text-green-600 font-semibold">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>{{ page.fix_rate }} Success Rate</span>
+            </div>
+            {% endif %}
+            {% if page.fix_time %}
+            <div class="flex items-center text-blue-600 font-semibold">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>{{ page.fix_time }} Fix</span>
+            </div>
+            {% endif %}
+            {% if page.diagnosis_time %}
+            <div class="flex items-center text-blue-600 font-semibold">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span>{{ page.diagnosis_time }} Diagnosis</span>
+            </div>
+            {% endif %}
+            {% if page.problem_layer %}
+            <div class="flex items-center text-purple-600 font-semibold">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <span>{{ page.problem_layer }} Issue</span>
+            </div>
+            {% endif %}
+            {% if page.fix_method %}
+            <div class="flex items-center text-green-600 font-semibold">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>{{ page.fix_method }}</span>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
         {% if page.description %}
         <p class="text-xl text-gray-600 mb-8">{{ page.description }}</p>
         {% endif %}

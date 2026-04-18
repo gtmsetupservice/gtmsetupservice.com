@@ -7,6 +7,8 @@ author: GTM Setup Service
 categories: [diagnostics, implementation]
 tags: [gtm, triggers, variables, implementation, debugging]
 excerpt: "Your GTM container loads perfectly, but your tags aren't firing. This is a Layer 2 (Implementation) problem—and it's costing you more than you think. Here's the systematic diagnostic that identifies the root cause in minutes."
+fix_rate: "90%"
+fix_time: "5 Minute"
 faq:
   - question: "Why are my GTM tags not firing even when they work in Preview Mode?"
     answer: "This often happens for two reasons: 1) A 'race condition' where your trigger fires before the necessary data is available on the page, resulting in 'undefined' variables. 2) The request to Google is being blocked by an ad blocker, firewall, or browser privacy setting after it leaves GTM."

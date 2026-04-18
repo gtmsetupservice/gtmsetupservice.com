@@ -7,6 +7,8 @@ categories: [diagnostics, processing]
 tags: [ga4, processing, data-thresholding, reporting, debugging]
 description: "Your events appear in GA4 DebugView perfectly, but standard reports show zero data. This is Layer 4 (Processing) failure—where Google's internal systems reject, filter, or withhold your data. Here's what's actually happening."
 featured_image: /assets/images/flow-diagram.png
+diagnosis_time: "20 Minute"
+problem_layer: "Layer 4 (Processing)"
 faq:
   - question: "Why does GA4 DebugView show events, but my reports are empty?"
     answer: "This is usually a Layer 4 (Processing) issue. The most common causes are: 1) Data Thresholding, where Google hides data from low-traffic reports to protect privacy. 2) A 24-48 hour processing delay for standard reports. 3) Internal traffic filters that are incorrectly filtering out real user data."

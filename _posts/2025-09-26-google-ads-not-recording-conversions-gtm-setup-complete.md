@@ -7,6 +7,8 @@ tags: [google-ads, gtm, conversion-tracking, layer-3-problems, data-delivery, tr
 author: GTM Setup Service
 description: "Real diagnostic case study: GTM container firing correctly, GA4 receiving purchase data, but Google Ads shows 'No recent conversions'. Learn why tracking audit revealed Layer 3 data delivery problems."
 image: /assets/images/No-ad-conversions.png
+fix_rate: "95%"
+fix_method: "3-Step Verification"
 faq:
   - question: "Why is Google Ads not recording conversions when GTM says the tag is firing?"
     answer: "This is usually a parameter mismatch. Your GTM tag might be sending an old or incorrect 'Conversion Label' that no longer exists in your Google Ads account. You must verify that the Conversion ID and Conversion Label in your GTM tag exactly match the active conversion action in Google Ads."

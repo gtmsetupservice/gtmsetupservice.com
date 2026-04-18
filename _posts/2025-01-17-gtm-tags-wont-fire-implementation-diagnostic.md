@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "GTM Tags Won't Fire? Your Implementation Has These 3 Problems"
+title: "How to Fix GTM Tags That Aren't Firing"
+description: "Frustrated when GTM tags won't fire? Don't waste another hour debugging. Our guide provides a clear, step-by-step diagnostic. Get your tracking fixed now!"
 date: 2025-01-17
 author: GTM Setup Service
 categories: [diagnostics, implementation]

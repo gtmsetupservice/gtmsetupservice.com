@@ -6,6 +6,9 @@ author: GTM Setup Service
 categories: [diagnostics, infrastructure]
 tags: [gtm, troubleshooting, infrastructure, debugging]
 excerpt: "When your GTM container fails to load, you're not just missing analytics data—you're hemorrhaging conversion tracking, remarketing audiences, and revenue attribution. Here's how to diagnose infrastructure failures in under 5 minutes."
+diagnosis_time: "4 Minute"
+fix_time: "30 Second"
+problem_layer: "Layer 1 (Infrastructure)"
 ---
 
 ## The $50K Question: Is Your GTM Container Actually Loading?

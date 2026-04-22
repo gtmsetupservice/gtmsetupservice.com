@@ -112,8 +112,8 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
             <div class="bg-white p-8 rounded-lg shadow border-2 border-red-500">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-2 text-red-600">🚨 EMERGENCY</h3>
-                    <p class="text-4xl font-bold mb-4">$397</p>
-                    <p class="text-gray-600 mb-6">Fixed Price</p>
+                    <p class="text-4xl font-bold mb-4">from $397</p>
+                    <p class="text-gray-600 mb-6">expedited service</p>
                     <ul class="text-left space-y-3 mb-8">
                         <li>✓ 2-4 hour response time</li>
                         <li>✓ Complete tracking restoration</li>
@@ -130,7 +130,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
             <div class="bg-white p-8 rounded-lg shadow">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-2">Comprehensive Audit</h3>
-                    <p class="text-4xl font-bold mb-4">$797</p>
+                    <p class="text-4xl font-bold mb-4">from $797</p>
                     <p class="text-gray-600 mb-6">Complete Analysis</p>
                     <ul class="text-left space-y-3 mb-8">
                         <li>✓ 4-layer diagnostic audit</li>
@@ -148,7 +148,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
             <div class="bg-white p-8 rounded-lg shadow">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-2">Monthly Monitoring</h3>
-                    <p class="text-4xl font-bold mb-4">$197</p>
+                    <p class="text-4xl font-bold mb-4">from $197</p>
                     <p class="text-gray-600 mb-6">Per Month</p>
                     <ul class="text-left space-y-3 mb-8">
                         <li>✓ Proactive monitoring</li>

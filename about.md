@@ -4,17 +4,17 @@ title: About GTMSetupService - Professional GTM Implementation
 description: GTMSetupService is a specialized Google Tag Manager implementation company helping businesses unlock the full potential of their analytics.
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-16">
+<div class="max-w-4xl mx-auto px-4 py-16" markdown="1">
 
-# About GTMSetupService
+<h1 class="text-4xl md:text-5xl font-bold mb-6">About GTMSetupService</h1>
 
-GTMSetupService is a specialized Google Tag Manager implementation company dedicated to helping businesses unlock the full potential of their website analytics and marketing data.
+<p class="text-lg mb-12">GTMSetupService is a specialized Google Tag Manager implementation company dedicated to helping businesses unlock the full potential of their website analytics and marketing data.</p>
 
-## Our Mission
+<h2 class="text-3xl font-bold mt-16 mb-6">Our Mission</h2>
 
 To democratize advanced web analytics by making professional Google Tag Manager implementation accessible and understandable for businesses of all sizes.
 
-## What Sets Us Apart
+<h2 class="text-3xl font-bold mt-16 mb-6">What Sets Us Apart</h2>
 
 <div class="grid md:grid-cols-2 gap-8 my-12">
     <div class="bg-blue-50 p-6 rounded-lg">
@@ -38,7 +38,7 @@ To democratize advanced web analytics by making professional Google Tag Manager 
     </div>
 </div>
 
-## Our Services
+<h2 class="text-3xl font-bold mt-16 mb-6">Our Services</h2>
 
 <div class="bg-gray-50 p-8 rounded-lg my-12">
     <ul class="space-y-4">
@@ -87,7 +87,16 @@ To democratize advanced web analytics by making professional Google Tag Manager 
     </ul>
 </div>
 
-## Company Information
+<h2 class="text-3xl font-bold mt-16 mb-6">Ready to Fix Your Tracking?</h2>
+
+<div class="text-center py-8">
+    <p class="text-xl mb-6">Stop losing money to broken tracking. Get your GTM fixed today.</p>
+    <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+        Get Started - $397
+    </a>
+</div>
+
+<h2 class="text-3xl font-bold mt-16 mb-6">Company Information</h2>
 
 <div class="bg-white border-2 border-gray-200 p-8 rounded-lg my-12">
     <p class="mb-6 text-lg">GTMSetupService is a division of <strong>B and B Holdings LLC</strong>, a Wyoming limited liability company committed to providing professional digital marketing and analytics services.</p>
@@ -106,15 +115,6 @@ To democratize advanced web analytics by making professional Google Tag Manager 
             <p class="text-gray-600 text-sm">We are not affiliated with Google. Google Tag Manager™ is a trademark of Google LLC.</p>
         </div>
     </div>
-</div>
-
-## Ready to Fix Your Tracking?
-
-<div class="text-center py-8">
-    <p class="text-xl mb-6">Stop losing money to broken tracking. Get your GTM fixed today.</p>
-    <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-        Get Started - $397
-    </a>
 </div>
 
 </div>

@@ -13,6 +13,7 @@ author:
 # Jekyll Configuration
 markdown: kramdown
 permalink: /blog/:title/
+future: true
 
 # Plugins
 plugins:
@@ -34,7 +35,7 @@ defaults:
       author: "GTM Setup Services"
 
 # Analytics
-google_analytics: G-NGBXXFKXHK # GA4 Measurement ID
+google_analytics: G-EL900BEWMS # GA4 Measurement ID
 gtm_container: GTM-M3CR8QZP # GTM Container ID
 
 # CRM Settings

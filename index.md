@@ -57,6 +57,8 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
     </div>
 </section>
 
+{% include case-studies.html %}
+
 <!-- Section 7: Simple 3-Step Process -->
 <section class="py-16">
     <div class="max-w-6xl mx-auto px-4">

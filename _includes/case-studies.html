@@ -1,0 +1,83 @@
+<!-- Case Studies / Diagnostic Resources Section -->
+<section class="py-16 bg-white" id="case-studies">
+    <div class="max-w-6xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Real GTM Problems We've Diagnosed & Fixed</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Every tracking failure follows a pattern. These are the exact problems our clients came to us with — and the diagnostic process we used to fix them.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for post in site.posts %}
+            <a href="{{ post.url }}" class="group block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-blue-300 transition duration-200">
+
+                <div class="flex items-center justify-between mb-3">
+                    {% if post.problem_layer %}
+                    <span class="text-xs font-semibold px-2 py-1 rounded
+                        {% if post.problem_layer contains 'Layer 1' %}bg-gray-100 text-gray-700
+                        {% elsif post.problem_layer contains 'Layer 2' %}bg-purple-100 text-purple-700
+                        {% elsif post.problem_layer contains 'Layer 3' %}bg-orange-100 text-orange-700
+                        {% elsif post.problem_layer contains 'Layer 4' %}bg-red-100 text-red-700
+                        {% else %}bg-blue-100 text-blue-700{% endif %}">
+                        {{ post.problem_layer }}
+                    </span>
+                    {% elsif post.categories.first %}
+                    <span class="text-xs font-semibold px-2 py-1 rounded bg-blue-100 text-blue-700">
+                        {{ post.categories.first }}
+                    </span>
+                    {% endif %}
+
+                    {% if post.fix_time %}
+                    <span class="text-xs text-gray-500">{{ post.fix_time }} fix</span>
+                    {% endif %}
+                </div>
+
+                <h3 class="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition leading-snug">
+                    {{ post.title }}
+                </h3>
+
+                {% if post.description %}
+                <p class="text-sm text-gray-600 line-clamp-2">{{ post.description }}</p>
+                {% endif %}
+
+                <div class="mt-4 flex items-center justify-between">
+                    <time class="text-xs text-gray-400" datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%b %d, %Y" }}
+                    </time>
+                    <span class="text-xs font-semibold text-blue-600 group-hover:underline">Read diagnostic →</span>
+                </div>
+
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="/blog/" class="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-3 px-8 rounded-lg transition duration-200">
+                View All Diagnostics
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ItemList Schema: Hub-spoke relationship between homepage and all posts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "GTM & GA4 Diagnostic Case Studies",
+  "description": "Real-world GTM and GA4 tracking failures diagnosed and resolved by GTM Setup Service",
+  "numberOfItems": {{ site.posts.size }},
+  "itemListElement": [
+    {% for post in site.posts %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "url": "{{ site.url }}{{ post.url }}",
+      "name": "{{ post.title }}",
+      "description": "{{ post.description }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

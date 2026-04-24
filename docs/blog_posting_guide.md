@@ -13,13 +13,13 @@ Every post begins with a YAML front matter block. This controls the post's metad
 layout: post
 title: "[Problem]? [Number] [Fixes/Steps] That Work [Metric] ([Year])"
 description: "A concise, compelling summary of the problem and solution, under 155 characters."
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: YYYY-MM-DD HH:MM:SS +0800
 author: GTM Setup Service
 categories: [primary-category, secondary-category]
 tags: [tag1, tag2, tag3]
 featured_image: /assets/images/your-image.png
 
-# --- Custom Trust Indicators (Use any combination) ---
+# --- Custom Trust Indicators (include 2-3 minimum) ---
 fix_rate: "95%"
 fix_time: "5 Minute"
 diagnosis_time: "90 Second"
@@ -38,13 +38,29 @@ faq:
 
 ### Custom Field Explanations
 
-- **Trust Indicators**: These are displayed prominently below the title. Use any combination that is credible and extracted from the article's content.
-  - `fix_rate`: The success rate of the proposed solution (e.g., "95%").
-  - `fix_time`: How long the fix takes (e.g., "5 Minute").
-  - `diagnosis_time`: How long it takes to find the problem (e.g., "90 Second").
-  - `problem_layer`: The diagnostic layer of the issue, e.g., "Layer 3 (Transmission)". This builds technical authority.
-  - `fix_method`: A specific methodology mentioned in the post (e.g., "3-Step Verification").
-- **`faq`**: This is critical for SEO. Each item in this list will be converted into a question and answer for the FAQPage JSON-LD schema, helping you win rich results in search.
+**Trust Indicators** are displayed as icon + text badges directly below the post title. Include at least 2-3 — a single badge looks sparse. Choose only values that are credible and backed by the article's content.
+
+Each field renders as follows:
+
+| Field | Renders as | Example value |
+|---|---|---|
+| `fix_rate` | ✓ checkmark + "X% Fix Rate" | `"95%"` |
+| `fix_time` | ⏱ clock + "X Fix" | `"5 Minute"` |
+| `diagnosis_time` | ⚡ bolt + "X Diagnosis" | `"90 Second"` |
+| `problem_layer` | 🔧 wrench + layer name | `"Layer 3 (Transmission)"` |
+| `fix_method` | 📋 clipboard + method name | `"3-Step Verification"` |
+
+**Available `problem_layer` values:**
+- `"Layer 1 (Installation)"` — GTM snippet missing or wrong
+- `"Layer 2 (Implementation)"` — tags, triggers, or variables misconfigured
+- `"Layer 3 (Transmission)"` — hits not reaching Google's servers
+- `"Layer 4 (Processing)"` — data arrives but GA4 filters or drops it
+
+**`faq`**: Critical for SEO. Each item is converted into `FAQPage` JSON-LD schema, helping win rich results in search. Include 2-3 questions minimum. Answers should be self-contained — Google surfaces them without surrounding context.
+
+**`featured_image`**: Store images in `/assets/images/`. Use descriptive kebab-case filenames matching the post topic (e.g., `ga4-communication-breakdown.png`). Recommended size: 1200×630px.
+
+**`description`**: Keep under 155 characters. Verify length at [charactercounter.com](https://charactercounter.com) or count manually — Google truncates at ~155–160 characters in search results.
 
 ## 2. Titling Strategy
 
@@ -64,28 +80,59 @@ The body of the post should be structured to reduce cognitive load and guide the
 1.  **Introduction (The Hook)**:
     - State the problem in emotional, frustrating terms that the user is experiencing.
     - Briefly introduce that the cause is a specific "Layer" failure.
-    - Provide a symptom-based Table of Contents.
+    - Transition directly into the Table of Contents.
 
 2.  **Symptom-Based Table of Contents**:
-    - Do not use generic headings like "Introduction".
-    - Create a bulleted list of anchor links to the main `H2` or `H3` sections.
-    - Each link should describe a specific failure scenario (e.g., "GTM Tag Shows 'Complete' But Google Ads Isn't Firing").
+    - A single flat bulleted list of anchor links — do not split into groups.
+    - Do not use generic labels like "Introduction" or "The Fix" as link text.
+    - Each link describes a specific failure scenario or credibility section.
+    - Anchor links use inline HTML: place `<a name="your-anchor"></a>` immediately above the target heading in the post body.
+
+    **Example TOC:**
+    ```markdown
+    *   [DebugView Shows Events, But No Data in Reports](#debugview-works-reports-empty)
+    *   [Processing Delay is Making GA4 Reports Empty](#processing-delay)
+    *   [The #1 Hidden Setting That Breaks Reports](#case-sensitivity)
+    ```
+
+    **Corresponding anchor in body:**
+    ```markdown
+    <a name="debugview-works-reports-empty"></a>
+    ### DebugView Shows Events, But No Data in Reports
+    ```
 
 3.  **Main Content Sections**:
     - Each `H2` or `H3` should be a clear, symptom-focused heading.
-    - Start each section with a "What's Happening" explanation.
-    - Follow with a "The Diagnostic" or "The Fix" subsection containing actionable steps, code snippets, and screenshots.
+    - Start each section with a **"What's Happening"** explanation.
+    - Follow with a **"The Diagnostic"** or **"The Fix"** subsection containing actionable steps, code snippets, and console commands.
+    - Separate major sections with a horizontal rule (`---`).
 
 4.  **Credibility Section**:
     - Include a section like "Why Standard Fixes Fail" or "The #1 Hidden Setting People Miss".
-    - This section demonstrates a deeper level of expertise and builds significant trust.
+    - This section demonstrates deeper expertise and builds significant trust.
+    - Place it last, after all diagnostic/fix sections.
+
+5.  **Closing CTA**:
+    - End every post with an italic service pitch linking to the contact section.
+    - Keep it one sentence. Do not use a heading — just an italicised paragraph.
+
+    **Template:**
+    ```markdown
+    *Need a comprehensive GTM implementation audit? Our diagnostic service reviews your complete tag, trigger, and variable configuration, identifies gaps and errors, and provides a prioritized remediation plan. [Learn more about our GTM Audit Service](/#contact).*
+    ```
 
 ## 4. Final Checklist
 
 Before publishing, ensure your post includes:
-- [ ] A complete front matter block with all relevant custom fields.
-- [ ] A title that follows the solution-focused formula.
-- [ ] A symptom-based TOC with anchor links.
-- [ ] At least 2-3 FAQ questions and answers in the `faq` front matter variable.
-- [ ] At least one custom trust indicator (`fix_rate`, `diagnosis_time`, etc.).
-- [ ] Clear, actionable diagnostic steps with code snippets where appropriate.
+- [ ] Front matter has `layout`, `title`, `description`, `date`, `author`, `categories`, `tags`, `featured_image`
+- [ ] Description is 155 characters or fewer (verify with a character counter)
+- [ ] Title follows the solution-focused formula
+- [ ] At least 2-3 trust indicators set in front matter
+- [ ] At least 2-3 FAQ questions and answers in the `faq` front matter variable
+- [ ] Single flat symptom-based TOC with anchor links (no grouping)
+- [ ] Each TOC link has a matching `<a name="..."></a>` anchor above its heading in the body
+- [ ] Each main section starts with "What's Happening" and "The Diagnostic" or "The Fix"
+- [ ] A credibility section ("Why X% of Fixes Fail" or "The #1 Hidden Setting")
+- [ ] Closing CTA paragraph in italics at the bottom
+- [ ] `featured_image` points to a real file in `/assets/images/`
+- [ ] Clear, actionable diagnostic steps with code snippets where appropriate

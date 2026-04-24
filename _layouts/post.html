@@ -95,7 +95,7 @@ layout: default
                 <span class="text-white font-bold text-xl">GTM</span>
             </div>
             <div>
-                <h4 class="font-bold text-lg">GTM Setup Services</h4>
+                <h4 class="font-bold text-lg">GTM Setup Service</h4>
                 <p class="text-gray-600">Emergency GTM recovery and tracking experts. 247+ successful recoveries completed.</p>
             </div>
         </div>
@@ -111,28 +111,31 @@ layout: default
     </div>
 </article>
 
-<!-- Blog Post Schema Markup -->
+<!-- BreadcrumbList Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ page.title }}",
-  "description": "{{ page.description | default: page.excerpt | strip_html }}",
-  "author": {
-    "@type": "Organization",
-    "name": "GTM Setup Services",
-    "url": "{{ site.url }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "GTM Setup Services",
-    "logo": "{{ site.url }}/assets/logo.png"
-  },
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-  "wordCount": {{ content | strip_html | number_of_words }},
-  "timeRequired": "PT{{ reading_time }}M",
-  "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ site.url }}/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
 }
 </script>
 

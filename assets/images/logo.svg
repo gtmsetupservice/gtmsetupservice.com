@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <rect width="50" height="50" rx="8" fill="#2563eb"/>
+  <text x="25" y="33" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">GTM</text>
+  <text x="115" y="20" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#1f2937">GTM Setup</text>
+  <text x="115" y="37" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#2563eb">Service</text>
+</svg>

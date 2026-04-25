@@ -159,7 +159,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                         <li>✓ Priority support access</li>
                         <li>✓ Optimization recommendations</li>
                     </ul>
-                    <a href="#contact" class="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-center">
+                    <a href="#contact" class="block w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded text-center">
                         Start Monitoring
                     </a>
                 </div>

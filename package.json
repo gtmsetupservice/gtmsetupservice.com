@@ -1,0 +1,10 @@
+{
+  "name": "gtmsetupservice",
+  "version": "1.0.0",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.min.css --minify"
+  }
+}

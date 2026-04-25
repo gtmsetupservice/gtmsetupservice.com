@@ -7,7 +7,7 @@
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
 
     <!-- SEO Tags -->
     {% seo %}
@@ -155,6 +155,6 @@
     </script>
 
     <!-- Form Handler Script -->
-    <script src="/assets/js/form-handler.js"></script>
+    <script src="/assets/js/form-handler.js" defer></script>
 </body>
 </html>

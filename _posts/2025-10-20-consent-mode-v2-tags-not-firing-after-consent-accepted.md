@@ -17,6 +17,8 @@ faq:
     answer: "Consent Mode V2 introduced new consent states like `ad_user_data` and `ad_personalization`. If your CMP is only granting `ad_storage` and `analytics_storage`, your ad tags may still be blocked. Ensure all four consent states are being granted upon user acceptance."
 ---
 
+Consent Mode V2 tags fail to fire after consent when the CMP pushes consent signals in the wrong format, GTM's consent initialization fires before the CMP loads, or the tag requires all four consent states — ad_storage, analytics_storage, ad_user_data, ad_personalization — but only some are granted. Check the dataLayer for a consent_update event immediately after acceptance.
+
 You set up Consent Mode V2. Your users click "Accept All Cookies." But your marketing tags still won't fire. The most frustrating part? GTM Preview Mode shows everything working perfectly, but on the live site, you have zero data, zero attribution, and zero revenue tracking.
 
 Your ad campaigns are running blind. This is a Layer 2 (Implementation) failure. Here’s how to fix it.

@@ -18,6 +18,8 @@ faq:
     answer: "Case sensitivity. GTM is case-insensitive, but GA4 is strictly case-sensitive. A common error is sending currency as 'usd' (lowercase) instead of the required 'USD' (uppercase). This causes GA4 to receive the event but discard the revenue value, leading to reports with $0 revenue."
 ---
 
+GA4 reports stay empty despite DebugView activity when data thresholds filter out low-traffic properties, internal traffic filters block real users, the reporting identity is misconfigured, or Google's processing pipeline has a 24-48 hour delay. DebugView bypasses all filters — standard reports apply them all.
+
 It's the most frustrating problem in GA4. Your GTM setup is perfect. Tags are firing. Events stream into DebugView in real-time. But days later, your reports are empty. Zero revenue, zero conversions, zero users.
 
 You can *see* the data reaching Google, so why isn't it showing up? This is a **Layer 4 (Processing) failure**. It means your tracking is working, but Google's internal systems are either filtering, withholding, or rejecting your data *after* they receive it.

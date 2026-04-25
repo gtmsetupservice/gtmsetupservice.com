@@ -11,6 +11,8 @@ fix_time: "30 Second"
 problem_layer: "Layer 1 (Infrastructure)"
 ---
 
+A GTM container fails to load when the snippet code is malformed, placed in the wrong location, or blocked by a Content Security Policy. Check using your browser's Network tab: if the request to googletagmanager.com returns a 4xx error or never appears at all, the container code is broken or blocked at the infrastructure level.
+
 ## The $50K Question: Is Your GTM Container Actually Loading?
 
 I recently took a call from an e-commerce director who'd been fighting with their development team for three weeks. Their GTM container "should be working" according to the devs, but $50K in monthly ad spend was going untracked.

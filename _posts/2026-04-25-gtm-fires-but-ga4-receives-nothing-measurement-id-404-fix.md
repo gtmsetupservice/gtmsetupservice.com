@@ -21,6 +21,8 @@ faq:
     answer: "The 'Data collection active' indicator updates from GTM Preview Mode (Tag Assistant) sessions. Preview mode sends debug hits to the property regardless of whether the live container is broken. This makes the status indicator an unreliable signal when diagnosing live tracking failures."
 ---
 
+GTM can show tags firing while GA4 receives nothing when the gtag/js file for your Measurement ID returns a 404 from Google's servers — a silent failure that passes every GTM check. This happens when a GA4 data stream is deleted and recreated, leaving a stale ID in the container. One command confirms it: `curl -I "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"`.
+
 Your GTM container is published. The tag shows "Succeeded" in Tag Assistant. The GA4 data stream says "Data collection active in the past 48 hours." Every indicator says the setup is working.
 
 But GA4 Realtime shows zero users. DebugView is waiting for events that never arrive. Your conversion data is gone.

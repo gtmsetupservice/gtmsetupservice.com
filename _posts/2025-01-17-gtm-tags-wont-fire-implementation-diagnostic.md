@@ -18,6 +18,8 @@ faq:
     answer: "Two common mistakes are using the wrong trigger type (e.g., 'All Clicks' instead of a specific one, creating noise) and forgetting about old trigger exceptions that block tags from firing on certain pages."
 ---
 
+GTM tags stop firing when trigger conditions don't match the actual page event, variables return undefined at fire time, or the container version isn't published. Diagnose in three steps: inspect the dataLayer in your browser console, verify trigger conditions in Preview Mode, and confirm your published container version matches your edits.
+
 Your GTM container is loading, but your tags are silent. Data is missing. This isn't just a technical glitch; it's a business intelligence failure that costs thousands in wasted ad spend and bad decisions. Before you randomly click through GTM's Preview Mode, use this proven 3-step diagnostic.
 
 This guide is for you if you're seeing these symptoms:

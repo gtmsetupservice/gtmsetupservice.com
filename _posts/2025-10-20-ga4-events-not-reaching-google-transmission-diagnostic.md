@@ -18,6 +18,8 @@ faq:
     answer: "You cannot stop a user's browser from blocking requests to Google's domains. The most effective mitigation is to implement Server-Side GTM (sGTM). This routes data through your own domain first, which is not on ad blocker lists, allowing you to capture data from users who would otherwise be invisible."
 ---
 
+GA4 events stop reaching Google when ad blockers or browser privacy settings intercept the /g/collect request, a Content Security Policy blocks outbound requests to google-analytics.com, or the Measurement ID points to a deleted data stream. Confirm delivery in the Network tab: a 204 response to /g/collect means success; ERR_BLOCKED_BY_CLIENT means the request was intercepted.
+
 Your GTM setup looks perfect. Tags fire in Preview Mode, variables are correct, and there are no console errors. But your GA4 property is a ghost town. Zero events, zero users. This is a **Layer 3 (Transmission) failure**: the data is leaving GTM correctly but getting lost or blocked on its way to Google's servers.
 
 An enterprise client lost **$300K in ad spend** because of this. Their agency spent weeks rebuilding GTM, assuming it was a configuration problem. The real issue? A corporate firewall was blocking the data transmission. The diagnostic took 90 seconds once we knew where to look.

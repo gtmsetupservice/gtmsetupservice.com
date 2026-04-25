@@ -80,7 +80,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 
             <div class="text-center">
                 <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-2xl font-bold text-green-600">2</span>
+                    <span class="text-2xl font-bold text-green-800">2</span>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">We Diagnose & Fix Everything</h3>
                 <p class="text-gray-600">

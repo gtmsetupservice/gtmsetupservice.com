@@ -123,7 +123,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                         <li>✓ Prevention measures</li>
                         <li>✓ Full documentation</li>
                     </ul>
-                    <a href="#contact" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-center">
+                    <a href="#contact" class="cta-link block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-center">
                         Get Emergency Fix
                     </a>
                 </div>
@@ -141,7 +141,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                         <li>✓ Detailed findings report</li>
                         <li>✓ Implementation roadmap</li>
                     </ul>
-                    <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-center">
+                    <a href="#contact" class="cta-link block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-center">
                         Get Full Audit
                     </a>
                 </div>
@@ -159,7 +159,7 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
                         <li>✓ Priority support access</li>
                         <li>✓ Optimization recommendations</li>
                     </ul>
-                    <a href="#contact" class="block w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded text-center">
+                    <a href="#contact" class="cta-link block w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded text-center">
                         Start Monitoring
                     </a>
                 </div>

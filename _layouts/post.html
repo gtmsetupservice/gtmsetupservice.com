@@ -196,25 +196,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         progressBar.style.width = Math.min(scrollPercent, 100) + '%';
 
-        // Track scroll milestones
-        if (scrollPercent >= 25 && !window.scroll25Tracked) {
-            window.scroll25Tracked = true;
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'scroll_depth', { percent_scrolled: 25 });
+        // Track scroll milestones via dataLayer
+        var milestones = [25, 50, 75, 100];
+        milestones.forEach(function(milestone) {
+            if (scrollPercent >= milestone && !window['scroll' + milestone + 'Tracked']) {
+                window['scroll' + milestone + 'Tracked'] = true;
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'scroll_milestone',
+                    'percent_scrolled': milestone,
+                    'page_title': document.title,
+                    'page_path': window.location.pathname
+                });
             }
-        }
-        if (scrollPercent >= 50 && !window.scroll50Tracked) {
-            window.scroll50Tracked = true;
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'scroll_depth', { percent_scrolled: 50 });
-            }
-        }
-        if (scrollPercent >= 75 && !window.scroll75Tracked) {
-            window.scroll75Tracked = true;
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'scroll_depth', { percent_scrolled: 75 });
-            }
-        }
+        });
     });
 });
 </script>

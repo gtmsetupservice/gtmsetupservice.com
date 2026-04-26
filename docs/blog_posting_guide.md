@@ -1,70 +1,134 @@
-# GTM Setup Service - Blog Post Structure Guide
+# GTM Setup Service — Blog Post Guide
 
-This guide outlines the standardized structure for all technical blog posts on gtmsetupservice.com. Following this structure ensures consistency, maximizes SEO impact through rich results, and builds user trust by providing clear, scannable solutions.
+Every post published here automatically inherits structured data, GA4 tracking, and carousel eligibility. This guide covers what fires automatically, what you must provide in front matter, and how to structure content for maximum rich result coverage.
 
-## 1. Front Matter Configuration
+---
 
-Every post begins with a YAML front matter block. This controls the post's metadata, layout, and our custom features like FAQ schema and trust indicators.
+## 1. What Fires Automatically on Every Post
 
-### Complete Front Matter Template
+The `post.html` layout injects these schemas and tracking without any per-post configuration:
+
+### Schemas (always present)
+
+| Schema | Type | Purpose |
+|---|---|---|
+| `TechArticle` | Structured data | Article rich results, Google Discover eligibility |
+| `BreadcrumbList` | Structured data | Breadcrumb display in SERPs |
+| `FAQPage` | Structured data | FAQ rich results (only when `faq` front matter exists) |
+
+The `TechArticle` schema is pre-wired with:
+- `headline` ← `page.title`
+- `description` ← `page.description`
+- `image` ← `page.featured_image` (falls back to `page.image`)
+- `author` ← Bradley Hamilton, `@id: https://gtmsetupservice.com/#person`
+- `publisher` ← GTM Setup Service, `@id: https://gtmsetupservice.com/#organization`
+- `datePublished` ← `page.date`
+- `dateModified` ← `page.last_modified_at` (falls back to `page.date`)
+- `mainEntityOfPage` ← the post URL
+
+The `author` and `publisher` reference the sitewide `Person` and `Organization` schemas by `@id` — Google connects authorship and E-E-A-T signals automatically.
+
+### GA4 Tracking (always active)
+
+| Event | Fires at | Parameters |
+|---|---|---|
+| `scroll_milestone` | 25%, 50%, 75%, 100% scroll | `percent_scrolled`, `page_title`, `page_path` |
+| `post_read_complete` | 100% scroll only | (separate GA4 event, key event in GA4) |
+
+A reading progress bar also renders at the top of the viewport on every post.
+
+### Homepage Carousel Connection
+
+Every published post is automatically included in the `ItemList` schema on the homepage (`case-studies.html`). The carousel entries reference each post's `#article` fragment — which is the `TechArticle` `@id`. This means each new post you publish immediately becomes a carousel-eligible spoke connected to the homepage hub.
+
+---
+
+## 2. Front Matter — Complete Template
 
 ```yaml
 ---
 layout: post
 title: "[Problem]? [Number] [Fixes/Steps] That Work [Metric] ([Year])"
-description: "A concise, compelling summary of the problem and solution, under 155 characters."
-date: YYYY-MM-DD HH:MM:SS +0800
-author: GTM Setup Service
+description: "Concise summary of problem and solution. Keep under 155 characters."
+date: YYYY-MM-DD HH:MM:SS +0000
+author: Bradley Hamilton
 categories: [primary-category, secondary-category]
 tags: [tag1, tag2, tag3]
+
+# REQUIRED for rich results — post will be schema-incomplete without this
 featured_image: /assets/images/your-image.png
 
-# --- Custom Trust Indicators (include 2-3 minimum) ---
+# Trust indicator badges displayed below the post title (include 2-3 minimum)
 fix_rate: "95%"
 fix_time: "5 Minute"
 diagnosis_time: "90 Second"
 problem_layer: "Layer 3 (Transmission)"
 fix_method: "3-Step Verification"
 
-# --- FAQ Schema ---
-# Each question/answer pair will appear as a rich result in Google Search.
+# FAQ schema — each item becomes a FAQPage rich result in Google Search
 faq:
-  - question: "Why is my GTM tag not working even if it fires in Preview Mode?"
-    answer: "This is often a Layer 3 (Transmission) or Layer 4 (Processing) issue. The data is leaving GTM but is being blocked by an ad blocker, filtered by Google, or sent with incorrect parameters."
+  - question: "Why is my GTM tag not working even though it fires in Preview Mode?"
+    answer: "This is a Layer 3 (Transmission) or Layer 4 (Processing) issue. Data is leaving GTM but being blocked by an ad blocker, filtered by Google, or sent with incorrect parameters."
   - question: "What is the first step to diagnose a GTM issue?"
-    answer: "Use the Network tab in your browser's Developer Tools to see if data is successfully being sent to Google's servers. A '204' status code indicates success, while a 'failed' or 'blocked' status points to a transmission problem."
+    answer: "Use the Network tab in browser DevTools to check if data is reaching Google's servers. A 204 status code means success. A failed or blocked status means a transmission problem."
 ---
 ```
 
-### Custom Field Explanations
+### Field Reference
 
-**Trust Indicators** are displayed as icon + text badges directly below the post title. Include at least 2-3 — a single badge looks sparse. Choose only values that are credible and backed by the article's content.
+**`featured_image`** — Required for rich results. Missing this field means:
+- The `TechArticle` schema renders with an empty `image` field → Google flags it as incomplete → ineligible for Article carousel
+- The homepage `ItemList` entry for this post also loses its image
+- Store files in `/assets/images/`. Use descriptive kebab-case names (`ga4-consent-mode-fix.png`). Recommended size: 1200×630px.
 
-Each field renders as follows:
+**`description`** — Used in three places: meta description tag, `TechArticle` schema, and homepage `ItemList` carousel entry. Keep under 155 characters. Verify at [charactercounter.com](https://charactercounter.com). Google truncates at ~155–160 in SERPs.
 
-| Field | Renders as | Example value |
+**`author`** — Set to `Bradley Hamilton`. This matches the sitewide `Person` schema. Using a different value breaks the `@id` link and weakens E-E-A-T signals.
+
+**`faq`** — Each question/answer pair renders as `FAQPage` JSON-LD and is eligible to appear as expandable Q&A directly in SERPs. Include 2–3 minimum. Answers must be self-contained — Google surfaces them without surrounding context.
+
+**Trust indicators** — displayed as icon + text badges below the post title:
+
+| Field | Renders as | Example |
 |---|---|---|
-| `fix_rate` | ✓ checkmark + "X% Fix Rate" | `"95%"` |
-| `fix_time` | ⏱ clock + "X Fix" | `"5 Minute"` |
-| `diagnosis_time` | ⚡ bolt + "X Diagnosis" | `"90 Second"` |
-| `problem_layer` | 🔧 wrench + layer name | `"Layer 3 (Transmission)"` |
-| `fix_method` | 📋 clipboard + method name | `"3-Step Verification"` |
+| `fix_rate` | ✓ X% Fix Rate | `"95%"` |
+| `fix_time` | ⏱ X Fix | `"5 Minute"` |
+| `diagnosis_time` | ⚡ X Diagnosis | `"90 Second"` |
+| `problem_layer` | 🔧 layer name | `"Layer 3 (Transmission)"` |
+| `fix_method` | 📋 method name | `"3-Step Verification"` |
 
-**Available `problem_layer` values:**
+**`problem_layer`** valid values:
 - `"Layer 1 (Installation)"` — GTM snippet missing or wrong
 - `"Layer 2 (Implementation)"` — tags, triggers, or variables misconfigured
 - `"Layer 3 (Transmission)"` — hits not reaching Google's servers
 - `"Layer 4 (Processing)"` — data arrives but GA4 filters or drops it
 
-**`faq`**: Critical for SEO. Each item is converted into `FAQPage` JSON-LD schema, helping win rich results in search. Include 2-3 questions minimum. Answers should be self-contained — Google surfaces them without surrounding context.
+---
 
-**`featured_image`**: Store images in `/assets/images/`. Use descriptive kebab-case filenames matching the post topic (e.g., `ga4-communication-breakdown.png`). Recommended size: 1200×630px.
+## 3. Rich Results — What You Get and What Requires Your Input
 
-**`description`**: Keep under 155 characters. Verify length at [charactercounter.com](https://charactercounter.com) or count manually — Google truncates at ~155–160 characters in search results.
+| Rich Result Type | Auto or Manual | Requirement |
+|---|---|---|
+| Article carousel eligibility | Auto (once front matter is correct) | `featured_image` + `description` + `faq` |
+| FAQ rich results | Manual — needs `faq` in front matter | 2–3 Q&A pairs |
+| Breadcrumb trail | Auto — always fires | Nothing |
+| Sitewide price rich results | Auto — on homepage | Nothing per-post |
 
-## 2. Titling Strategy
+### Why `featured_image` is the gating field
 
-Titles are the most important element for click-through rate. They must be solution-focused and build immediate confidence.
+Google's Article/TechArticle rich result requires `headline`, `image`, `author`, and `datePublished`. The layout auto-provides everything except `image` — that comes from your `featured_image` front matter. Without it, the schema is technically invalid and the post won't appear in Article carousels.
+
+### Validating a new post
+
+After publishing, check with [Google's Rich Results Test](https://search.google.com/test/rich-results):
+- Should detect: `TechArticle`, `BreadcrumbList`, `FAQPage` (if faq present)
+- `TechArticle` should show: `headline`, `image`, `author.name = Bradley Hamilton`, `datePublished`
+- No "Unnamed item" warnings
+- Non-critical warnings about optional fields are acceptable
+
+---
+
+## 4. Titling Strategy
 
 **Formula:** `[Problem]? [Number] [Solution] That Work [Metric] ([Year])`
 
@@ -73,66 +137,81 @@ Titles are the most important element for click-through rate. They must be solut
 - `Consent Mode V2 Tags Won't Fire After Consent? 3 Fixes That Work Immediately (2026)`
 - `GA4 DebugView Shows Data But Reports Empty? 4 Fixes That Work (2026)`
 
-## 3. Post Body Structure
+The year in the title signals freshness to both users and Google. Update it when you revise a post significantly — also update `last_modified_at` in front matter when you do.
 
-The body of the post should be structured to reduce cognitive load and guide the user to a solution as quickly as possible.
+---
 
-1.  **Introduction (The Hook)**:
-    - State the problem in emotional, frustrating terms that the user is experiencing.
-    - Briefly introduce that the cause is a specific "Layer" failure.
-    - Transition directly into the Table of Contents.
+## 5. Post Body Structure
 
-2.  **Symptom-Based Table of Contents**:
-    - A single flat bulleted list of anchor links — do not split into groups.
-    - Do not use generic labels like "Introduction" or "The Fix" as link text.
-    - Each link describes a specific failure scenario or credibility section.
-    - Anchor links use inline HTML: place `<a name="your-anchor"></a>` immediately above the target heading in the post body.
+### Introduction
+- State the problem in emotional terms the user is experiencing
+- Identify the Layer failure briefly
+- Transition directly into the Table of Contents
 
-    **Example TOC:**
-    ```markdown
-    *   [DebugView Shows Events, But No Data in Reports](#debugview-works-reports-empty)
-    *   [Processing Delay is Making GA4 Reports Empty](#processing-delay)
-    *   [The #1 Hidden Setting That Breaks Reports](#case-sensitivity)
-    ```
+### Table of Contents
+- Single flat bulleted list of anchor links — no grouping
+- Each link describes a specific failure scenario, not a generic label
+- Use inline HTML anchors: place `<a name="your-anchor"></a>` immediately above the target heading
 
-    **Corresponding anchor in body:**
-    ```markdown
-    <a name="debugview-works-reports-empty"></a>
-    ### DebugView Shows Events, But No Data in Reports
-    ```
+```markdown
+* [DebugView Shows Events But No Data in Reports](#debugview-works-reports-empty)
+* [Processing Delay Making GA4 Reports Empty](#processing-delay)
+* [The Hidden Setting That Breaks Reports](#case-sensitivity)
+```
 
-3.  **Main Content Sections**:
-    - Each `H2` or `H3` should be a clear, symptom-focused heading.
-    - Start each section with a **"What's Happening"** explanation.
-    - Follow with a **"The Diagnostic"** or **"The Fix"** subsection containing actionable steps, code snippets, and console commands.
-    - Separate major sections with a horizontal rule (`---`).
+```markdown
+<a name="debugview-works-reports-empty"></a>
+### DebugView Shows Events, But No Data in Reports
+```
 
-4.  **Credibility Section**:
-    - Include a section like "Why Standard Fixes Fail" or "The #1 Hidden Setting People Miss".
-    - This section demonstrates deeper expertise and builds significant trust.
-    - Place it last, after all diagnostic/fix sections.
+### Main Content Sections
+- Each `H2`/`H3` is a clear symptom-focused heading
+- Start each section with **"What's Happening"**
+- Follow with **"The Diagnostic"** or **"The Fix"** with actionable steps, code snippets, console commands
+- Separate major sections with `---`
 
-5.  **Closing CTA**:
-    - End every post with an italic service pitch linking to the contact section.
-    - Keep it one sentence. Do not use a heading — just an italicised paragraph.
+### Direct Answer Paragraph
+Include a short 2–3 sentence direct answer near the top of the post that answers the title question plainly. This is the text Google pulls for featured snippets. Write it as if answering someone who asked the question verbally.
 
-    **Template:**
-    ```markdown
-    *Need a comprehensive GTM implementation audit? Our diagnostic service reviews your complete tag, trigger, and variable configuration, identifies gaps and errors, and provides a prioritized remediation plan. [Learn more about our GTM Audit Service](/#contact).*
-    ```
+### Credibility Section
+- Include one section like "Why Standard Fixes Fail" or "The #1 Hidden Setting People Miss"
+- Demonstrates deeper expertise, builds trust
+- Place after all diagnostic/fix sections
 
-## 4. Final Checklist
+### Closing CTA
+End with a single italicised paragraph — no heading:
 
-Before publishing, ensure your post includes:
-- [ ] Front matter has `layout`, `title`, `description`, `date`, `author`, `categories`, `tags`, `featured_image`
-- [ ] Description is 155 characters or fewer (verify with a character counter)
-- [ ] Title follows the solution-focused formula
-- [ ] At least 2-3 trust indicators set in front matter
-- [ ] At least 2-3 FAQ questions and answers in the `faq` front matter variable
-- [ ] Single flat symptom-based TOC with anchor links (no grouping)
-- [ ] Each TOC link has a matching `<a name="..."></a>` anchor above its heading in the body
-- [ ] Each main section starts with "What's Happening" and "The Diagnostic" or "The Fix"
-- [ ] A credibility section ("Why X% of Fixes Fail" or "The #1 Hidden Setting")
-- [ ] Closing CTA paragraph in italics at the bottom
-- [ ] `featured_image` points to a real file in `/assets/images/`
-- [ ] Clear, actionable diagnostic steps with code snippets where appropriate
+```markdown
+*Need a comprehensive GTM implementation audit? Our diagnostic service reviews your complete tag, trigger, and variable configuration, identifies gaps and errors, and provides a prioritized remediation plan. [Learn more about our GTM Audit Service](/#contact).*
+```
+
+---
+
+## 6. Pre-Publish Checklist
+
+### Front Matter
+- [ ] `layout: post`
+- [ ] `title` follows solution-focused formula with year
+- [ ] `description` is 155 characters or fewer
+- [ ] `date` is set (use future dates carefully — `future: true` is enabled)
+- [ ] `author: Bradley Hamilton`
+- [ ] `categories` and `tags` set
+- [ ] `featured_image` points to a real file in `/assets/images/` — **required for rich results**
+- [ ] 2–3 trust indicator fields set (`fix_rate`, `fix_time`, `diagnosis_time`, `problem_layer`, `fix_method`)
+- [ ] `faq` has 2–3 self-contained question/answer pairs
+
+### Content
+- [ ] Direct answer paragraph near the top (for featured snippet)
+- [ ] Single flat symptom-based TOC with anchor links
+- [ ] Each TOC link has a matching `<a name="..."></a>` anchor in the body
+- [ ] Each main section has "What's Happening" + "The Diagnostic" or "The Fix"
+- [ ] Credibility section present
+- [ ] Closing CTA in italics at the bottom
+
+### Schema Validation (after publishing)
+- [ ] Run through [Rich Results Test](https://search.google.com/test/rich-results)
+- [ ] `TechArticle` detected with `headline`, `image`, `author`, `datePublished`
+- [ ] `BreadcrumbList` detected
+- [ ] `FAQPage` detected (if `faq` front matter present)
+- [ ] No "Unnamed item" warnings
+- [ ] Post appears in homepage `ItemList` after site rebuild

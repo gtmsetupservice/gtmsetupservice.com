@@ -119,6 +119,7 @@ layout: default
   "@id": "{{ site.url }}{{ page.url }}#article",
   "headline": "{{ page.title | escape }}",
   "description": "{{ page.description | default: page.excerpt | strip_html | escape }}",
+  "image": "{{ site.url }}{{ page.featured_image | default: page.image }}",
   "author": {
     "@type": "Person",
     "@id": "{{ site.url }}/#person",

@@ -77,9 +77,15 @@
       "item": {
         "@type": "Article",
         "@id": "{{ site.url }}{{ post.url }}#article",
-        "name": "{{ post.title }}",
+        "headline": "{{ post.title }}",
         "description": "{{ post.description }}",
-        "url": "{{ site.url }}{{ post.url }}"
+        "url": "{{ site.url }}{{ post.url }}",
+        "image": "{{ site.url }}{{ post.featured_image | default: post.image }}",
+        "author": {
+          "@type": "Person",
+          "@id": "{{ site.url }}/#person",
+          "name": "Bradley Hamilton"
+        }
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}

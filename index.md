@@ -172,33 +172,23 @@ description: GTM not working? Get emergency recovery in 2-4 hours. Fix broken Go
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org/",
+  "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Google Tag Manager Emergency Recovery",
   "provider": {
-    "@type": "LocalBusiness",
-    "name": "GTM Setup Service"
+    "@type": "Organization",
+    "@id": "https://gtmsetupservice.com/#organization"
   },
   "description": "2-4 hour emergency recovery for broken Google Tag Manager and GA4 tracking setups.",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
     "price": "397.00",
-    "description": "Starting price for emergency GTM diagnostic and repair."
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://gtmsetupservice.com/#contact",
+    "description": "Emergency GTM diagnostic and repair. Fixed price, 2-4 hour turnaround."
   },
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "GTM Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Comprehensive GTM Audit"
-        }
-      }
-    ]
-  }
+  "areaServed": "Worldwide"
 }
 </script>

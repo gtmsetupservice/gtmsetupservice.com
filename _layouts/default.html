@@ -30,10 +30,15 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
       "name": "GTM Setup Service",
       "url": "{{ site.url }}",
       "logo": "{{ site.url }}/assets/images/logo.svg",
       "description": "{{ site.description }}",
+      "employee": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -49,33 +54,67 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Emergency GTM Recovery",
-              "description": "Fix broken Google Tag Manager in 2-4 hours.",
-              "price": "397",
-              "priceCurrency": "USD"
-            }
+              "description": "Fix broken Google Tag Manager in 2-4 hours."
+            },
+            "price": "397",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "{{ site.url }}/#contact"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
               "name": "GTM Comprehensive Audit",
-              "description": "Full GTM audit with tag, trigger, variable, and conversion tracking review.",
-              "price": "797",
-              "priceCurrency": "USD"
-            }
+              "description": "Full GTM audit with tag, trigger, variable, and conversion tracking review."
+            },
+            "price": "797",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "{{ site.url }}/#contact"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
               "name": "GTM Monthly Monitoring",
-              "description": "Ongoing GTM monitoring to catch tracking failures before they cost you.",
-              "price": "197",
-              "priceCurrency": "USD"
-            }
+              "description": "Ongoing GTM monitoring to catch tracking failures before they cost you."
+            },
+            "price": "197",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "{{ site.url }}/#contact"
           }
         ]
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Bradley Hamilton",
+      "jobTitle": "Google Tag Manager Specialist",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization"
+      },
+      "knowsAbout": [
+        "Google Tag Manager",
+        "Google Analytics 4",
+        "Server-Side Tagging",
+        "Conversion Tracking",
+        "dataLayer Implementation",
+        "GTM Debugging",
+        "GA4 Migration",
+        "Web Analytics"
+      ],
+      "url": "{{ site.url }}/about/"
     }
     </script>
 

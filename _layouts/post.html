@@ -111,6 +111,38 @@ layout: default
     </div>
 </article>
 
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "{{ site.url }}{{ page.url }}#article",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | escape }}",
+  "author": {
+    "@type": "Person",
+    "@id": "{{ site.url }}/#person",
+    "name": "Bradley Hamilton"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}/#organization",
+    "name": "GTM Setup Service"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "about": [
+    "Google Tag Manager",
+    "Web Analytics",
+    "Conversion Tracking"
+  ]
+}
+</script>
+
 <!-- BreadcrumbList Schema -->
 <script type="application/ld+json">
 {

@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 form_submitted: new Date().toISOString()
             };
 
+            let errorType = 'network_error';
+
             try {
                 // Send to Pipedream webhook
                 const response = await fetch('https://eocrrf0lm1scxwv.m.pipedream.net', {
@@ -60,31 +62,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 if (response.ok) {
-                    // Track successful form submission
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'generate_lead', {
-                            'currency': 'USD',
-                            'value': 397,
-                            'service_type': 'gtm',
-                            'problem_type': data.problem
-                        });
-                    }
-
-                    // Track in GTM dataLayer
-                    if (typeof dataLayer !== 'undefined') {
-                        dataLayer.push({
-                            'event': 'form_submission',
-                            'form_name': 'gtm_contact_form',
-                            'service_type': 'gtm',
-                            'problem_type': data.problem,
-                            'conversion_value': 397
-                        });
-                    }
+                    window.dataLayer = window.dataLayer || [];
+                    dataLayer.push({
+                        'event': 'form_submission',
+                        'form_name': 'gtm_contact_form',
+                        'service_type': 'gtm',
+                        'problem_type': data.problem,
+                        'conversion_value': 397,
+                        'utm_source': data.utm_source || '',
+                        'utm_medium': data.utm_medium || '',
+                        'utm_campaign': data.utm_campaign || '',
+                        'page_referrer': document.referrer
+                    });
 
                     // Show success message
                     successMsg.classList.remove('hidden');
                     form.reset();
                 } else {
+                    errorType = 'server_error';
                     throw new Error('Form submission failed');
                 }
 
@@ -92,13 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Form submission error:', error);
                 errorMsg.classList.remove('hidden');
 
-                // Track form error
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_error', {
-                        'service_type': 'gtm',
-                        'error_type': 'submission_failed'
-                    });
-                }
+                window.dataLayer = window.dataLayer || [];
+                dataLayer.push({
+                    'event': 'form_error',
+                    'error_type': errorType
+                });
             } finally {
                 // Re-enable submit button
                 submitBtn.disabled = false;

@@ -241,6 +241,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     'page_title': document.title,
                     'page_path': window.location.pathname
                 });
+                if (milestone === 100) {
+                    dataLayer.push({
+                        'event': 'post_read_complete',
+                        'page_title': document.title,
+                        'page_path': window.location.pathname
+                    });
+                }
             }
         });
     });

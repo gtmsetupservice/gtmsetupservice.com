@@ -6,7 +6,7 @@ date: 2026-05-05 09:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, facebook-ads, cross-domain]
 tags: [GTM, GA4, fbclid, cross-domain, Facebook-Ads, Layer-2, Implementation, attribution]
-featured_image: /assets/images/ga4-debugview-waiting-no-events.png
+featured_image: /assets/images/fbcdconnection.png
 fix_time: "5 Minute"
 diagnosis_time: "90 Second"
 problem_layer: "Layer 2 (Implementation)"

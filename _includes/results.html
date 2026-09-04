@@ -42,7 +42,7 @@
   </div>
 </section>
 
-{% elsif site.show_results_placeholder %}
+{% elsif site.show_results_placeholder and jekyll.environment != "production" %}
 <section id="results" class="py-14 md:py-[72px] bg-concrete border-y border-rule">
   <div class="max-w-6xl mx-auto px-5 md:px-7">
     <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight mb-9">Results</h2>

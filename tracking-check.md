@@ -49,15 +49,17 @@ permalink: /tracking-check/
   </div>
 </section>
 
+{% if jekyll.environment != "production" %}
 <section class="pb-4">
   <div class="max-w-6xl mx-auto px-5 md:px-7">
     <div class="verify-box max-w-measure">
-      <span class="font-mono text-[.72rem] block mb-2">BUILD NOTE — remove before launch</span>
+      <span class="font-mono text-[.72rem] block mb-2">DEV-ONLY NOTE — hidden in production</span>
       This page currently posts to the same endpoint as the main contact form. Decide
       whether free checks should route somewhere separate so they don't sit in the same
-      queue as paying enquiries, and set the honest turnaround below before this goes live.
+      queue as paying enquiries, and set an honest turnaround before promoting this page.
     </div>
   </div>
 </section>
+{% endif %}
 
 {% include contact-form.html %}

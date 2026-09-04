@@ -1,32 +1,17 @@
 ---
-layout: default
+layout: page
 title: About
+heading: One operator, not an agency
 description: One technical operator, not an agency. Conversion tracking for local service businesses running Google Ads.
+lede: Brad Hamilton checks the tracking himself. There's no account manager, no team you never speak to, and nobody to hand your account off to.
 permalink: /about/
 ---
 
-<section class="pt-16 pb-2">
-  <div class="max-w-6xl mx-auto px-5 md:px-7 max-w-prose">
-    <h1 class="text-[clamp(2rem,4.4vw,3rem)] leading-tight">One operator, not an agency</h1>
-    <div class="stripe-rule" role="presentation"></div>
-    <p class="text-[1.14rem] text-slate">
-      Brad Hamilton checks the tracking himself. There's no account manager, no
-      team you never speak to, and nobody to hand your account off to.
-    </p>
-  </div>
-</section>
-
-<div class="max-w-6xl mx-auto px-5 md:px-7 pb-14 md:pb-[72px]">
-<div class="max-w-prose prose-headings:tracking-tight">
-
-<div class="verify-box mb-8">
-<span class="font-mono text-[.72rem] block mb-2">CONFIRM BEFORE LAUNCH</span>
-The copy below states experience as <code class="font-mono">{{ site.years_experience }}</code>,
-set in <code class="font-mono">_config.yml</code>. Unlike the claims removed from the old
-site, this one is your own verifiable work history — settle on the exact figure you're
-comfortable defending publicly and set it as a specific number rather than a range,
-then delete this block.
-</div>
+<!-- BUILD NOTE (HTML comment — not rendered to visitors):
+     Experience below reads from site.years_experience in _config.yml,
+     currently "two decades". Unlike the claims removed from the old site,
+     this is your own verifiable work history. Set it to the exact figure
+     you're comfortable defending publicly rather than a range. -->
 
 ## Why a systems engineer ended up doing this
 
@@ -59,7 +44,7 @@ everyone. If you're a multi-location brand with an analytics team, you don't nee
 
 Async by default. You don't need to take a call to start, and I won't ask for one to
 close. Fixed prices, quoted before anything begins. Support hours are
-{{ site.support_hours }} — stated plainly because a vague "we respond fast" promise is
+{{ site.support_hours }} — stated plainly, because a vague "we respond fast" promise is
 worth nothing to someone deciding whether to trust a stranger with account access.
 
 If I can tell you the fix in a sentence, I'll tell you the fix in a sentence, and you
@@ -70,8 +55,3 @@ can go do it yourself. That happens reasonably often and it's fine.
 I don't manage Google Ads campaigns, write ad copy, or advise on bids. I make sure the
 numbers those decisions rest on are real. Plenty of people do the campaign side well;
 far fewer check whether the measurement underneath it works.
-
-</div>
-</div>
-
-{% include contact-form.html %}

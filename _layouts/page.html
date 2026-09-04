@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<!-- Generic content page. Markdown in the page body is rendered by Jekyll
+     BEFORE it lands in {{ content }}, so it is never nested inside raw HTML
+     in the source file — which is what stops kramdown parsing it. Any page
+     wanting prose should use this layout rather than wrapping its own body
+     in a <div>. -->
+<section class="pt-16 pb-2">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-prose">
+      {% if page.kicker %}<div class="font-mono text-[.72rem] text-slate-light mb-3">{{ page.kicker }}</div>{% endif %}
+      <h1 class="text-[clamp(2rem,4.4vw,3rem)] leading-tight">{{ page.heading | default: page.title }}</h1>
+      <div class="stripe-rule" role="presentation"></div>
+      {% if page.lede %}<p class="text-[1.14rem] text-slate">{{ page.lede }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="pb-14 md:pb-[72px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="copy">
+      {{ content }}
+    </div>
+  </div>
+</section>
+
+{% unless page.hide_contact %}{% include contact-form.html %}{% endunless %}

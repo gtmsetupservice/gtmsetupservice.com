@@ -19,17 +19,19 @@ sitemap: false
 
 {% include results.html %}
 
+{% if jekyll.environment != "production" %}
 <section class="py-14 md:py-[72px]">
   <div class="max-w-6xl mx-auto px-5 md:px-7">
     <div class="verify-box max-w-measure">
-      <span class="font-mono text-[.72rem] block mb-2">NOT LINKED IN NAVIGATION YET</span>
+      <span class="font-mono text-[.72rem] block mb-2">DEV-ONLY NOTE — hidden in production</span>
       This page is live but deliberately excluded from the sitemap
       (<code class="font-mono">sitemap: false</code>) and absent from the nav until at
       least one real case study exists in <code class="font-mono">_data/case_studies.yml</code>.
-      Add the entry, delete this block, remove the <code class="font-mono">sitemap: false</code>
+      Add the entry, remove the <code class="font-mono">sitemap: false</code>
       line, and add the nav link in <code class="font-mono">_layouts/default.html</code>.
     </div>
   </div>
 </section>
+{% endif %}
 
 {% include contact-form.html %}

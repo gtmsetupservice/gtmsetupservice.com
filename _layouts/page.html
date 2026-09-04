@@ -1,11 +1,19 @@
 ---
 layout: default
 ---
-<!-- Generic content page. Markdown in the page body is rendered by Jekyll
-     BEFORE it lands in {{ content }}, so it is never nested inside raw HTML
-     in the source file — which is what stops kramdown parsing it. Any page
-     wanting prose should use this layout rather than wrapping its own body
-     in a <div>. -->
+{% comment %}
+  Generic content page.
+
+  Use a Liquid comment, never an HTML comment, for notes in a layout:
+  Liquid expands its tags inside HTML comments, and an HTML comment in the
+  injected page body would close this one early (comments do not nest).
+  Liquid comments are stripped before any HTML exists, so neither happens.
+
+  Markdown in the page body is rendered by Jekyll before the layout injects
+  it, so it is never nested inside raw HTML in the source file — which is
+  what stops kramdown parsing it. Pages wanting prose should use this
+  layout rather than wrapping their own body in a container element.
+{% endcomment %}
 <section class="pt-16 pb-2">
   <div class="max-w-6xl mx-auto px-5 md:px-7">
     <div class="max-w-prose">

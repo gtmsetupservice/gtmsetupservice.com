@@ -7,11 +7,15 @@ lede: Brad Hamilton checks the tracking himself. There's no account manager, no 
 permalink: /about/
 ---
 
-<!-- BUILD NOTE (HTML comment — not rendered to visitors):
-     Experience below reads from site.years_experience in _config.yml,
-     currently "two decades". Unlike the claims removed from the old site,
-     this is your own verifiable work history. Set it to the exact figure
-     you're comfortable defending publicly rather than a range. -->
+{% comment %}
+  Experience below reads from site.years_experience in _config.yml,
+  currently "two decades". Unlike the claims removed from the old site,
+  this is your own verifiable work history. Set it to the exact figure
+  you are comfortable defending publicly rather than a range.
+
+  Liquid comment, not an HTML one — an HTML comment here would terminate
+  any comment in the surrounding layout, since HTML comments do not nest.
+{% endcomment %}
 
 ## Why a systems engineer ended up doing this
 

@@ -1,11 +1,11 @@
 # Site Settings
 title: GTM Setup Service
-description: Emergency GTM recovery and comprehensive tracking audits. Fix broken Google Tag Manager in 2-4 hours.
+description: Google Ads and GA4 tracking for local service businesses. We find where call and form tracking breaks between the click and the booked job, and fix it.
 url: https://gtmsetupservice.com
 baseurl: ""
 
 # SEO Settings
-tagline: Fix Your GTM Tracking Issues Today
+tagline: Find out which ads actually book jobs
 author:
   name: GTM Setup Service
   email: support@gtmsetupservice.com
@@ -38,12 +38,35 @@ defaults:
 google_analytics: G-EL900BEWMS # GA4 Measurement ID
 gtm_container: GTM-M3CR8QZP # GTM Container ID
 
-# CRM Settings
-crm_endpoint: # Your FluentCRM API endpoint
-crm_api_key: # Your FluentCRM API key
+# Forms
+# TODO(brad): point this at the Pipedream endpoint before launch.
+form_endpoint:
 
-# Service-specific settings
-service_type: Google Tag Manager Setup and Audits
-emergency_price: "$397"
-audit_price: "$797"
-monitoring_price: "$197/month"
+# ---------------------------------------------------------------------------
+# Offer + contact settings (single source of truth for prices and hours).
+# Prices repriced for the local-service ICP: the retainer is now the flagship
+# and the audit is scoped to smaller local ad budgets.
+# ---------------------------------------------------------------------------
+service_type: Google Ads and GA4 conversion tracking for local service businesses
+rescue_price: "$397"
+audit_price: "$497"
+retainer_price: "$297–$497"
+retainer_price_from: "297"
+
+turnaround: "2-business-day turnaround"
+support_hours: "Mon–Fri, 8am – 6pm Central · form replies within one business day"
+support_hours_short: "Central time hours"
+
+# TODO(brad): add the business number, then both the nav and the contact
+# sidebar call block appear automatically. Left blank so no fake number ships.
+phone:
+phone_e164:
+
+# TODO(brad): confirm the exact figure you're comfortable defending publicly,
+# then this appears on the homepage and /about/. Your own work history, unlike
+# the claims being removed — but state it as a specific number, not a range.
+years_experience: "two decades"
+
+# Set false to ship the homepage with no Results section at all, until the
+# first real case study lands in _data/case_studies.yml (Phase 2).
+show_results_placeholder: true

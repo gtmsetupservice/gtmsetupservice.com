@@ -1,0 +1,65 @@
+<!-- Hero: reconciliation ticket. Replaces the old "Stop Losing Money to GTM
+     Tracking Failures" emergency-siren hero. -->
+<section class="pt-16 pb-2 md:pt-[70px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-7 grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-14 items-start">
+
+    <div>
+      <h1 class="text-[clamp(2.05rem,5vw,3.35rem)] leading-[1.08]">
+        Google Ads says <span class="font-mono font-semibold">4</span> leads.<br>
+        You booked <span class="font-mono font-semibold">19</span> jobs.
+      </h1>
+
+      <div class="stripe-rule" role="presentation"></div>
+
+      <p class="text-[1.14rem] text-slate max-w-[48ch] mb-6">
+        One of those numbers is lying to you — and it's usually the one you're
+        optimizing your ad spend against. We check the four places tracking breaks
+        between the click and the booked job, and tell you which one is failing.
+      </p>
+
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3.5 items-stretch sm:items-center mt-7">
+        <a href="#contact" class="btn text-center focus-ring">Check my tracking — {{ site.rescue_price }}</a>
+        <a href="#four-steps" class="btn-plain text-center focus-ring">See what we check</a>
+      </div>
+
+      <p class="font-mono text-[.78rem] text-slate-light mt-5 leading-relaxed">
+        {{ site.turnaround }} · {{ site.support_hours_short }} · fixed price, no hourly surprises<br>
+        Built for asphalt &amp; sealcoating, hydroseeding, HVAC, roofing and other
+        local trades running Google Ads.
+      </p>
+    </div>
+
+    <!-- Itemised reconciliation, not two big numbers. The line items are what
+         let a contractor map this onto his own month. -->
+    <div class="ticket">
+      <div class="ticket-head">
+        <span>Last 30 days — before a tracking check</span>
+        <span class="text-right">Sealcoating contractor, 2 counties</span>
+      </div>
+
+      <div class="ticket-cols">
+        <div class="tcol">
+          <h2 class="text-[.83rem] font-semibold text-slate mb-3 tracking-normal">What Google Ads reported</h2>
+          <div class="trow"><span>Form submissions</span><b>4</b></div>
+          <div class="trow"><span>Phone calls</span><b>0</b></div>
+          <div class="trow"><span>Local Services Ads</span><b>0</b></div>
+          <div class="tsum is-leak"><span>Counted</span><span class="big">4</span></div>
+        </div>
+        <div class="tcol">
+          <h2 class="text-[.83rem] font-semibold text-slate mb-3 tracking-normal">What actually got booked</h2>
+          <div class="trow"><span>Calls answered</span><b>12</b></div>
+          <div class="trow"><span>Forms in the inbox</span><b>5</b></div>
+          <div class="trow"><span>LSA messages</span><b>2</b></div>
+          <div class="tsum is-booked"><span>Booked</span><span class="big">19</span></div>
+        </div>
+      </div>
+
+      <div class="ticket-foot">
+        <b>Fifteen booked jobs with no conversion event attached.</b>
+        Google is optimizing your budget toward the wrong campaigns, and you can't
+        tell which ads are actually working.
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<!-- Diagnostics library. Driven from site.posts (NOT hardcoded) so new posts
+     appear automatically. Step tag comes from each post's `step:` front matter
+     and resolves against _data/four_steps.yml.
+     Every URL here is an existing, unchanged permalink — see the SEO doc. -->
+<section id="diagnostics" class="py-14 md:py-[72px] bg-concrete border-y border-rule">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-[58ch] mb-9">
+      <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight">The Diagnostics Library</h2>
+      <p class="text-slate mt-3.5 text-[1.04rem]">
+        {{ site.posts | size }} real fixes, written for whoever handles your website —
+        not just for you. Every one came out of an actual account.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-px bg-rule border-t border-rule">
+      {% comment %}
+        Iterate the steps in numeric order, then the posts within each step.
+        Sorting site.posts by `step` directly would order them alphabetically
+        by slug (configuration, delivery, loading, processing) — wrong sequence.
+        Any post without a `step:` is appended at the end rather than dropped.
+      {% endcomment %}
+      {% for s in site.data.four_steps %}
+        {% assign in_step = site.posts | where: 'step', s.slug %}
+        {% for post in in_step %}
+          {% include diagnostic-card.html post=post stepdata=s %}
+        {% endfor %}
+      {% endfor %}
+      {% assign untagged = site.posts | where_exp: "p", "p.step == nil" %}
+      {% for post in untagged %}
+        {% include diagnostic-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    <!-- Contractor conversion block — shown here as a preview of the component
+         that _layouts/post.html appends to every diagnostic. -->
+    <div class="mt-7 border-2 border-dashed border-[#B8B4AB] p-5 bg-paper">
+      <p class="font-mono text-[.72rem] text-slate-light mb-3.5">
+        Appended to the bottom of every diagnostic above — article text unchanged
+      </p>
+      {% include contractor-cta.html %}
+    </div>
+  </div>
+</section>

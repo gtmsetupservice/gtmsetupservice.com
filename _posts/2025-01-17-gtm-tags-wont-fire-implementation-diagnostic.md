@@ -16,6 +16,8 @@ faq:
     answer: "1. Run an Immediate Diagnostic Test using the browser console to inspect the dataLayer. 2. Check for 'hidden variable' issues caused by race conditions. 3. Use the Final Verification Checklist to systematically test the user journey in GTM Preview Mode."
   - question: "What common GTM 'fixes' actually make tracking problems worse?"
     answer: "Two common mistakes are using the wrong trigger type (e.g., 'All Clicks' instead of a specific one, creating noise) and forgetting about old trigger exceptions that block tags from firing on certain pages."
+step: configuration
+card_blurb: "A three-step check: inspect the dataLayer, verify trigger conditions in Preview Mode, confirm the published version matches your edits."
 ---
 
 GTM tags stop firing when trigger conditions don't match the actual page event, variables return undefined at fire time, or the container version isn't published. Diagnose in three steps: inspect the dataLayer in your browser console, verify trigger conditions in Preview Mode, and confirm your published container version matches your edits.

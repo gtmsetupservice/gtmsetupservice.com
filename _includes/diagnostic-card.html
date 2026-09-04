@@ -1,0 +1,16 @@
+<!-- One diagnostic card. Shared by the homepage grid and /blog/.
+     Params: post (required), stepdata (optional, from _data/four_steps.yml). -->
+<a href="{{ include.post.url }}"
+   class="block no-underline p-6 focus-ring group
+          {% if include.post.bridge %}bg-[#FFFBEF] shadow-[inset_4px_0_0_#F0BE24]{% else %}bg-paper{% endif %}">
+  <span class="font-mono text-[.71rem] text-slate-light block mb-2.5">
+    {% if include.stepdata %}Step {{ include.stepdata.n }} · {{ include.stepdata.title }}{% else %}Diagnostic{% endif %}
+    {% if include.post.bridge %} · <span class="text-[#8A6A0B] font-semibold">Bridge post</span>{% endif %}
+  </span>
+  <h3 class="text-[1.08rem] font-semibold leading-snug mb-1.5 group-hover:underline underline-offset-4 decoration-2">
+    {{ include.post.title }}
+  </h3>
+  <p class="text-[.91rem] text-slate leading-normal m-0">
+    {{ include.post.card_blurb | default: include.post.description | strip_html | truncate: 130 }}
+  </p>
+</a>

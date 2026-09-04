@@ -19,6 +19,8 @@ faq:
     answer: "No. The referral exclusion list prevents GA4 from overwriting an existing session with a new facebook referral — it doesn't preserve the original fbclid attribution when crossing to a different domain. You need cross-domain measurement configured in GA4 Admin and linked domains set in your GTM GA4 configuration tag."
   - question: "How do I verify fbclid is being passed between domains in GTM?"
     answer: "Open GTM Preview Mode, click any cross-domain link, and check the next page's URL in the browser bar. You should see a _gl parameter appended (e.g., ?_gl=1*abc123*...). If _gl is missing, the GTM cross-domain linker is not firing. If _gl is present but GA4 still shows a new session, check that the destination domain is listed in GA4's cross-domain measurement settings."
+step: configuration
+card_blurb: "The cross-domain fix that preserves the original traffic source when visitors move between your domains."
 ---
 
 When fbclid is in the URL but GA4 shows the session as "direct," you've got a cross-domain measurement failure — not a Facebook problem. The fbclid correctly identifies the first session as Facebook traffic. That attribution breaks when the user crosses to a second domain (a separate checkout, a booking platform, a subdomain) and GA4 treats it as a fresh session from nowhere. Two settings fix it: cross-domain measurement in GA4 Admin, and linked domains in your GTM GA4 configuration tag.

@@ -1,0 +1,37 @@
+<!-- The 4-layer diagnostic, rewritten in plain language for contractors.
+     Same framework as before — this is the differentiator, not the jargon.
+     Content lives in _data/four_steps.yml so the step names stay in one place
+     (they are also used by the diagnostics grid tags). -->
+<section id="four-steps" class="py-14 md:py-[72px] bg-asphalt text-concrete">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-[58ch] mb-9">
+      <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight text-white">
+        The four places tracking breaks
+      </h2>
+      <p class="text-[#A9B0B7] mt-3.5 text-[1.04rem]">
+        Every tracking failure we've diagnosed falls into one of four steps between
+        the ad click and the number in your reports. We check all four, every time —
+        not just the obvious one.
+      </p>
+    </div>
+
+    <!-- Breaks 4 -> 2 at lg, 2 -> 1 at sm. Four columns at tablet width was cramped.
+         Gap-px over a border-coloured background draws the hairlines without
+         per-cell border juggling. -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#3C4148] border-y border-[#3C4148]">
+      {% for s in site.data.four_steps %}
+      <div class="bg-asphalt px-5 pt-6 pb-7">
+        <span class="font-mono text-[.78rem] text-stripe block mb-3 font-medium">Step {{ s.n }}</span>
+        <h3 class="text-white text-[1.08rem] font-semibold mb-2 leading-snug">{{ s.title }}</h3>
+        <p class="text-[.93rem] text-[#A9B0B7] leading-relaxed m-0">{{ s.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="mt-7 text-[.97rem] text-[#A9B0B7] max-w-prose">
+      We've written up the exact diagnostic for each step, with the console checks we
+      run. <a href="#diagnostics" class="text-stripe underline underline-offset-4 focus-ring">Read the diagnostics library</a>
+      — it's free, and if you're technical you can work through it yourself.
+    </p>
+  </div>
+</section>

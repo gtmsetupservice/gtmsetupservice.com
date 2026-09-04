@@ -16,6 +16,8 @@ faq:
     answer: "Use the Network tab in your browser's Developer Tools. Filter for 'collect' to see requests to Google Analytics. A '204' status means success. A status of '(failed) net::ERR_BLOCKED_BY_CLIENT' is 100% confirmation that something on the client-side is blocking the request."
   - question: "Can I prevent ad blockers from blocking my GA4 tracking?"
     answer: "You cannot stop a user's browser from blocking requests to Google's domains. The most effective mitigation is to implement Server-Side GTM (sGTM). This routes data through your own domain first, which is not on ad blocker lists, allowing you to capture data from users who would otherwise be invisible."
+step: delivery
+card_blurb: "Tags fire in Preview Mode but GA4 shows nothing. Diagnosing the gap between the browser and Google's servers."
 ---
 
 GA4 events stop reaching Google when ad blockers or browser privacy settings intercept the /g/collect request, a Content Security Policy blocks outbound requests to google-analytics.com, or the Measurement ID points to a deleted data stream. Confirm delivery in the Network tab: a 204 response to /g/collect means success; ERR_BLOCKED_BY_CLIENT means the request was intercepted.

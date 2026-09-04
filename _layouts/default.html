@@ -6,7 +6,12 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <!-- Tailwind CSS -->
+    <!-- Fonts: Archivo (workhorse grotesque) + IBM Plex Mono (tabular figures) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (compiled at deploy time by npm run build:css) -->
     <link rel="preload" href="/assets/css/tailwind.min.css" as="style">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
 
@@ -26,7 +31,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "{{ site.url }}/#organization",
       "name": "GTM Setup Service",
       "url": "{{ site.url }}",
@@ -39,51 +44,59 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "url": "{{ site.url }}/#contact"
+        {% if site.phone_e164 %}"telephone": "{{ site.phone_e164 }}",
+        {% endif %}"url": "{{ site.url }}/#contact"
       },
-      "areaServed": "Worldwide",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Local service businesses running Google Ads"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "GTM Services",
+        "name": "Conversion tracking services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Emergency GTM Recovery",
-              "description": "Fix broken Google Tag Manager in 2-4 hours."
+              "name": "Tracking Rescue",
+              "description": "One-time diagnostic and fix. All four steps checked, the failing step identified and repaired."
             },
             "price": "397",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31",
-            "url": "{{ site.url }}/#contact"
+            "priceValidUntil": "2027-12-31",
+            "url": "{{ site.url }}/services/tracking-rescue/"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "GTM Comprehensive Audit",
-              "description": "Full GTM audit with tag, trigger, variable, and conversion tracking review."
+              "name": "Google Ads Tracking Audit",
+              "description": "Full account and site audit across all four steps, with call tracking and Local Services Ads reconciliation."
             },
-            "price": "797",
+            "price": "497",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31",
-            "url": "{{ site.url }}/#contact"
+            "priceValidUntil": "2027-12-31",
+            "url": "{{ site.url }}/services/google-ads-tracking-audit/"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "GTM Monthly Monitoring",
-              "description": "Ongoing GTM monitoring to catch tracking failures before they cost you."
+              "name": "Tracking Reliability Retainer",
+              "description": "Continuous monitoring of every conversion action, with a monthly ad-spend against booked-jobs report."
             },
-            "price": "197",
+            "price": "{{ site.retainer_price_from }}",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "priceValidUntil": "2026-12-31",
-            "url": "{{ site.url }}/#contact"
+            "priceValidUntil": "2027-12-31",
+            "url": "{{ site.url }}/services/tracking-reliability/"
           }
         ]
       }
@@ -96,20 +109,20 @@
       "@type": "Person",
       "@id": "{{ site.url }}/#person",
       "name": "Bradley Hamilton",
-      "jobTitle": "Google Tag Manager Specialist",
+      "jobTitle": "Conversion Tracking Specialist",
       "worksFor": {
         "@type": "Organization",
         "@id": "{{ site.url }}/#organization"
       },
       "knowsAbout": [
+        "Google Ads conversion tracking",
         "Google Tag Manager",
         "Google Analytics 4",
+        "Call tracking",
+        "Local Services Ads",
         "Server-Side Tagging",
-        "Conversion Tracking",
         "dataLayer Implementation",
-        "GTM Debugging",
-        "GA4 Migration",
-        "Web Analytics"
+        "GTM Debugging"
       ],
       "url": "{{ site.url }}/about/"
     }
@@ -124,48 +137,51 @@
     })(window,document,'script','dataLayer','{{ site.gtm_container }}');</script>
     {% endif %}
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-paper text-ink font-sans antialiased">
     {% if site.gtm_container %}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_container }}"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% endif %}
 
-    <!-- Navigation Header -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo/Brand -->
-                <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition">
-                    GTM Setup Services
+    <!-- Navigation -->
+    <nav class="bg-paper border-b border-rule sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-5 md:px-7">
+            <div class="flex justify-between items-center min-h-[70px] gap-6">
+                <a href="/" class="no-underline leading-tight focus-ring">
+                    <span class="block font-extrabold tracking-tight text-[1.06rem]">GTM Setup Service</span>
+                    <span class="block font-mono font-normal text-[.63rem] text-slate-light mt-0.5">tracking that matches your job board</span>
                 </a>
 
-                <!-- Navigation Links -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="/#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
-                    <a href="/blog/" class="text-gray-700 hover:text-blue-600 transition">Blog</a>
-                    <a href="/about/" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    <a href="/#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
-                        Get Emergency Fix
-                    </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/#four-steps" class="text-[.93rem] text-slate no-underline border-b-2 border-transparent hover:text-ink hover:border-stripe pb-0.5 focus-ring">What we check</a>
+                    <a href="/blog/" class="text-[.93rem] text-slate no-underline border-b-2 border-transparent hover:text-ink hover:border-stripe pb-0.5 focus-ring">Diagnostics</a>
+                    <a href="/pricing/" class="text-[.93rem] text-slate no-underline border-b-2 border-transparent hover:text-ink hover:border-stripe pb-0.5 focus-ring">Pricing</a>
+                    <a href="/about/" class="text-[.93rem] text-slate no-underline border-b-2 border-transparent hover:text-ink hover:border-stripe pb-0.5 focus-ring">About</a>
+                    {% if site.phone %}
+                    <a href="tel:{{ site.phone_e164 }}" class="font-mono text-[.93rem] font-medium text-ink no-underline whitespace-nowrap hover:underline underline-offset-4 focus-ring">{{ site.phone }}</a>
+                    {% else %}
+                    <a href="/#contact" class="btn text-[.9rem] px-5 py-2.5 focus-ring">Check my tracking</a>
+                    {% endif %}
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-600" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-button" class="md:hidden text-ink focus-ring" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="/#services" class="block py-2 text-gray-700 hover:text-blue-600 transition">Services</a>
-                <a href="/blog/" class="block py-2 text-gray-700 hover:text-blue-600 transition">Blog</a>
-                <a href="/about/" class="block py-2 text-gray-700 hover:text-blue-600 transition">About</a>
-                <a href="/#contact" class="block py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 rounded text-center transition">
-                    Get Emergency Fix
-                </a>
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-1">
+                <a href="/#four-steps" class="block py-2 text-slate no-underline hover:text-ink">What we check</a>
+                <a href="/#fit" class="block py-2 text-slate no-underline hover:text-ink">Who it's for</a>
+                <a href="/blog/" class="block py-2 text-slate no-underline hover:text-ink">Diagnostics</a>
+                <a href="/pricing/" class="block py-2 text-slate no-underline hover:text-ink">Pricing</a>
+                <a href="/about/" class="block py-2 text-slate no-underline hover:text-ink">About</a>
+                {% if site.phone %}
+                <a href="tel:{{ site.phone_e164 }}" class="block py-2 font-mono font-medium text-ink no-underline">{{ site.phone }}</a>
+                {% endif %}
+                <a href="/#contact" class="btn block text-center mt-2 focus-ring">Check my tracking</a>
             </div>
         </div>
     </nav>
@@ -175,15 +191,32 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 mt-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center">
-                <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    <footer class="border-t border-rule py-11 text-[.9rem] text-slate">
+        <div class="max-w-6xl mx-auto px-5 md:px-7">
+            <div class="flex flex-wrap gap-8 justify-between items-start">
+                <div>
+                    <div class="font-extrabold tracking-tight text-ink mb-2">GTM Setup Service</div>
+                    <div class="font-mono text-[.74rem] text-slate-light">
+                        Google Ads &amp; GA4 tracking for local service businesses.
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-5">
+                    <a href="/#four-steps" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">What we check</a>
+                    <a href="/#fit" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">Who it's for</a>
+                    <a href="/blog/" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">Diagnostics</a>
+                    <a href="/pricing/" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">Pricing</a>
+                    <a href="/about/" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">About</a>
+                    <a href="/privacy/" class="text-slate no-underline hover:text-ink hover:underline underline-offset-4">Privacy</a>
+                </div>
+
+                <div class="font-mono text-[.74rem] text-slate-light">
+                    &copy; {{ site.time | date: '%Y' }} {{ site.title }}
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Toggle Script -->
     <script>
         document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -192,7 +225,6 @@
         });
     </script>
 
-    <!-- Form Handler Script -->
     <script src="/assets/js/form-handler.js" defer></script>
 </body>
 </html>

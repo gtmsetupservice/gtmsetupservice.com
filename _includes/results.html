@@ -1,0 +1,66 @@
+<!-- Results. Renders real case studies from _data/case_studies.yml when any
+     exist; otherwise renders a build-time placeholder that is NOT shipped.
+     Set `show_results_placeholder: false` in _config.yml to hide this section
+     entirely until the first real case study lands (Phase 2). -->
+{% assign cases = site.data.case_studies %}
+{% assign case_count = cases | size %}
+
+{% if case_count > 0 %}
+<section id="results" class="py-14 md:py-[72px] bg-concrete border-y border-rule">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-[58ch] mb-9">
+      <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight">What changed after the fix</h2>
+      <p class="text-slate mt-3.5 text-[1.04rem]">
+        Real accounts, shared with permission. Numbers come from the client's own
+        Google Ads and job records.
+      </p>
+    </div>
+    {% comment %}
+      Full class names per branch — Tailwind scans source text, so a class
+      assembled across a Liquid tag (grid-cols-{% raw %}{{ n }}{% endraw %})
+      would never be generated.
+    {% endcomment %}
+    {% if case_count == 1 %}{% assign grid_cls = 'grid gap-5 md:grid-cols-1' %}
+    {% elsif case_count == 2 %}{% assign grid_cls = 'grid gap-5 md:grid-cols-2' %}
+    {% else %}{% assign grid_cls = 'grid gap-5 md:grid-cols-3' %}{% endif %}
+    <div class="{{ grid_cls }}">
+      {% for c in cases %}
+      <div class="bg-white border border-rule p-6 {% if case_count == 1 %}max-w-md{% endif %}">
+        <div class="font-mono text-[.73rem] text-slate-light mb-3.5">{{ c.trade }}</div>
+        {% for m in c.metrics %}
+        <div class="flex justify-between font-mono text-[.86rem] py-1.5 border-b border-rule-soft text-slate">
+          <span>{{ m.label }}</span><b class="text-ink font-medium tabular-nums">{{ m.value }}</b>
+        </div>
+        {% endfor %}
+        {% if c.quote %}
+        <blockquote class="mt-4 mb-0 text-[.96rem] text-slate leading-normal">{{ c.quote }}</blockquote>
+        <cite class="block mt-2.5 not-italic text-[.87rem] text-slate-light">{{ c.attribution }}</cite>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% elsif site.show_results_placeholder %}
+<section id="results" class="py-14 md:py-[72px] bg-concrete border-y border-rule">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight mb-9">Results</h2>
+    <div class="placeholder-box">
+      <p class="font-mono text-[.72rem] text-leak mb-3">
+        PLACEHOLDER — do not launch with fabricated numbers or names
+      </p>
+      <p class="text-slate mb-2">
+        This section stays empty — no invented recovery counts, no
+        first-name-and-initial quotes — until a real, permissioned before/after
+        case study exists.
+      </p>
+      <p class="text-[.94rem] text-slate-light m-0">
+        Add the first named case study to <code class="font-mono">_data/case_studies.yml</code>
+        and this block is replaced automatically. To ship without it, set
+        <code class="font-mono">show_results_placeholder: false</code> in <code class="font-mono">_config.yml</code>.
+      </p>
+    </div>
+  </div>
+</section>
+{% endif %}

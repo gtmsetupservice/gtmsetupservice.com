@@ -1,220 +1,70 @@
 ---
 layout: default
-title: GTM Diagnostic Case Studies & Expert Insights
-description: Real case studies from emergency GTM fixes, Layer 3 diagnostic problems, and proven solutions. Learn from actual client emergencies and tracking failures.
+title: The Diagnostics Library
+description: Every way Google Ads and GA4 conversion tracking breaks, grouped by the four steps between the ad click and the booked job. Real fixes from real accounts.
 permalink: /blog/
 ---
 
-<!-- Blog Index Page -->
-<div class="max-w-6xl mx-auto px-4 py-12">
-    <!-- Page Header -->
-    <header class="text-center mb-16">
-        <h1 class="text-4xl font-bold mb-4">GTM Diagnostic Case Studies</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real case studies from emergency GTM fixes and Layer 3 diagnostic problems.
-            Learn from actual client emergencies, tracking failures, and proven solutions.
-        </p>
-    </header>
+<!-- Reframed as the Diagnostics Library. URL unchanged (/blog/), every post
+     permalink unchanged. Grouped by the four steps rather than by date. -->
 
-    <!-- Featured Post -->
-    {% assign featured_post = site.posts.first %}
-    {% if featured_post %}
-    <section class="mb-16">
-        <h2 class="text-2xl font-bold mb-8 text-center">Latest Case Study</h2>
-        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8">
-            <div class="max-w-4xl mx-auto">
-                <span class="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mb-4">Featured</span>
-                <h3 class="text-2xl font-bold mb-4">
-                    <a href="{{ featured_post.url }}" class="text-gray-900 hover:text-blue-600 transition">
-                        {{ featured_post.title }}
-                    </a>
-                </h3>
-                <p class="text-gray-700 mb-6">{{ featured_post.description }}</p>
+<section class="pt-16 pb-2">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-prose">
+      <h1 class="text-[clamp(2rem,4.6vw,3.1rem)] leading-tight">The Diagnostics Library</h1>
+      <div class="stripe-rule" role="presentation"></div>
+      <p class="text-[1.14rem] text-slate">
+        Every one of these came out of a real account. They're written for whoever
+        ends up doing the work — you, your web person, or us — and they're grouped
+        by which of the four steps between the ad click and the booked job has
+        failed.
+      </p>
+      <p class="text-[1.14rem] text-slate">
+        If you'd rather not work through it yourself,
+        <a href="/#contact" class="font-semibold underline underline-offset-4 decoration-2 focus-ring">we'll check all four steps on your account</a>
+        for {{ site.rescue_price }}.
+      </p>
+    </div>
+  </div>
+</section>
 
-                <!-- Mini Trust Indicators -->
-                {% if featured_post.fix_rate or featured_post.fix_time or featured_post.diagnosis_time or featured_post.problem_layer or featured_post.fix_method %}
-                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-6 text-sm">
-                    {% if featured_post.fix_rate %}
-                    <div class="flex items-center text-green-600 font-semibold">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span>{{ featured_post.fix_rate }} Success</span>
-                    </div>
-                    {% endif %}
-                    {% if featured_post.fix_time %}
-                    <div class="flex items-center text-blue-600 font-semibold">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span>{{ featured_post.fix_time }} Fix</span>
-                    </div>
-                    {% endif %}
-                    {% if featured_post.diagnosis_time %}
-                    <div class="flex items-center text-blue-600 font-semibold">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <span>{{ featured_post.diagnosis_time }} Diagnosis</span>
-                    </div>
-                    {% endif %}
-                    {% if featured_post.problem_layer %}
-                    <div class="flex items-center text-purple-600 font-semibold">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                        <span>{{ featured_post.problem_layer }}</span>
-                    </div>
-                    {% endif %}
-                    {% if featured_post.fix_method %}
-                    <div class="flex items-center text-green-600 font-semibold">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span>{{ featured_post.fix_method }}</span>
-                    </div>
-                    {% endif %}
-                </div>
-                {% endif %}
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-4 text-sm text-gray-600">
-                        <time datetime="{{ featured_post.date | date_to_xmlschema }}">
-                            {{ featured_post.date | date: "%B %d, %Y" }}
-                        </time>
-                        {% assign words = featured_post.content | strip_html | number_of_words %}
-                        {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
-                        <span>{{ reading_time }} min read</span>
-                        <span>{{ words }} words</span>
-                    </div>
-                    <a href="{{ featured_post.url }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
-                        Read Case Study
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endif %}
+{% for s in site.data.four_steps %}
+  {% assign in_step = site.posts | where: 'step', s.slug %}
+  {% if in_step.size > 0 %}
+  <section class="pt-10 pb-2">
+    <div class="max-w-6xl mx-auto px-5 md:px-7">
+      <div class="flex items-baseline gap-3 border-b border-rule pb-3 mb-0">
+        <span class="font-mono text-[.78rem] text-slate-light">Step {{ s.n }}</span>
+        <h2 class="text-[1.35rem] font-extrabold tracking-tight">{{ s.title }}</h2>
+      </div>
+      <p class="text-slate text-[.97rem] mt-3 mb-5 max-w-prose">{{ s.body }}</p>
 
-    <!-- Blog Posts Grid -->
-    <section>
-        <h2 class="text-2xl font-bold mb-8">All Case Studies</h2>
+      <div class="grid md:grid-cols-2 gap-px bg-rule border border-rule">
+        {% for post in in_step %}
+          {% include diagnostic-card.html post=post stepdata=s %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
 
-        {% if site.posts.size > 0 %}
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for post in site.posts %}
-            <article class="bg-white border rounded-lg shadow-sm hover:shadow-md transition">
-                {% if post.featured_image %}
-                <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-full object-cover">
-                </div>
-                {% endif %}
+{% assign untagged = site.posts | where_exp: "p", "p.step == nil" %}
+{% if untagged.size > 0 %}
+<section class="pt-10 pb-2">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <h2 class="text-[1.35rem] font-extrabold tracking-tight border-b border-rule pb-3 mb-5">More</h2>
+    <div class="grid md:grid-cols-2 gap-px bg-rule border border-rule">
+      {% for post in untagged %}
+        {% include diagnostic-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
 
-                <div class="p-6">
-                    <!-- Categories/Tags -->
-                    {% if post.categories.size > 0 %}
-                    <div class="mb-3">
-                        {% for category in post.categories %}
-                        <span class="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded mr-2">
-                            {{ category }}
-                        </span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-
-                    <h3 class="text-xl font-bold mb-3">
-                        <a href="{{ post.url }}" class="text-gray-900 hover:text-blue-600 transition">
-                            {{ post.title }}
-                        </a>
-                    </h3>
-
-                    <p class="text-gray-600 mb-4 line-clamp-3">{{ post.description | default: post.excerpt | strip_html }}</p>
-
-                    <!-- Mini Trust Indicators -->
-                    {% if post.fix_rate or post.fix_time or post.diagnosis_time or post.problem_layer or post.fix_method %}
-                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 my-4 text-xs">
-                        {% if post.fix_rate %}
-                        <div class="flex items-center text-green-600 font-semibold">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span>{{ post.fix_rate }} Success</span>
-                        </div>
-                        {% endif %}
-                        {% if post.fix_time %}
-                        <div class="flex items-center text-blue-600 font-semibold">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span>{{ post.fix_time }} Fix</span>
-                        </div>
-                        {% endif %}
-                        {% if post.diagnosis_time %}
-                        <div class="flex items-center text-blue-600 font-semibold">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            <span>{{ post.diagnosis_time }} Diagnosis</span>
-                        </div>
-                        {% endif %}
-                        {% if post.problem_layer %}
-                        <div class="flex items-center text-purple-600 font-semibold">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                            <span>{{ post.problem_layer }}</span>
-                        </div>
-                        {% endif %}
-                        {% if post.fix_method %}
-                        <div class="flex items-center text-green-600 font-semibold">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span>{{ post.fix_method }}</span>
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-
-                    <div class="flex items-center justify-between">
-                        <div class="text-sm text-gray-500">
-                            <time datetime="{{ post.date | date_to_xmlschema }}">
-                                {{ post.date | date: "%b %d, %Y" }}
-                            </time>
-                            {% assign words = post.content | strip_html | number_of_words %}
-                            {% assign reading_time = words | divided_by: 200 | at_least: 1 %}
-                            <span class="ml-2">{{ reading_time }} min read</span>
-                        </div>
-                        <a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800 font-medium text-sm transition">
-                            Read More →
-                        </a>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
-        </div>
-        {% else %}
-        <div class="text-center py-12">
-            <p class="text-gray-600 text-lg">No case studies published yet. Check back soon for real GTM diagnostic examples!</p>
-        </div>
-        {% endif %}
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="mt-16 bg-gray-50 rounded-lg p-8 text-center">
-        <h3 class="text-2xl font-bold mb-4">Get GTM Emergency Alerts</h3>
-        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Subscribe to receive immediate notifications when we publish new case studies about critical GTM failures and their solutions.
-        </p>
-        <form class="max-w-md mx-auto flex gap-4">
-            <input
-                type="email"
-                placeholder="Enter your email"
-                class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-            >
-            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-2 rounded-lg transition">
-                Subscribe
-            </button>
-        </form>
-        <p class="text-xs text-gray-500 mt-2">Unsubscribe anytime. We respect your privacy.</p>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="mt-16 text-center p-8 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg">
-        <h3 class="text-2xl font-bold mb-4">Having GTM Tracking Issues?</h3>
-        <p class="text-lg mb-6">Don't let broken tracking cost you conversions. Get emergency GTM recovery in 2-4 hours.</p>
-        <a href="/#contact" class="cta-link inline-block bg-white text-green-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition">
-            Get Emergency GTM Fix - $397
-        </a>
-    </section>
-</div>
-
-<style>
-/* Line clamp utility for post excerpts */
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-</style>
+<section class="py-14 md:py-[72px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    {% include contractor-cta.html %}
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<!-- Pricing. Retainer is now the flagship (per the migration plan), not the
+     afterthought it was on the old site. Prices come from _config.yml. -->
+<section id="pricing" class="py-14 md:py-[72px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-[58ch] mb-9">
+      <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight">Pricing</h2>
+      <p class="text-slate mt-3.5 text-[1.04rem]">
+        One-time fixes, or ongoing peace of mind. No packages built around hours —
+        you're buying a working answer, not a timesheet.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 items-stretch">
+
+      <div class="bg-white border border-rule p-6 flex flex-col">
+        <div class="font-mono text-[.72rem] text-slate-light mb-2.5">Something's broken now</div>
+        <h3 class="text-[1.2rem] font-extrabold tracking-tight">Tracking Rescue</h3>
+        <p class="text-[.9rem] text-slate-light mt-1.5 mb-0">One-time diagnostic + fix</p>
+        <div class="font-mono text-[1.8rem] font-semibold mt-4 mb-0.5 tracking-tight">{{ site.rescue_price }}</div>
+        <ul class="price-list mt-4 mb-6">
+          <li>All four steps checked on your account</li>
+          <li>Broken step(s) identified and fixed</li>
+          <li>{{ site.turnaround }}</li>
+          <li>Plain-English write-up of what broke</li>
+        </ul>
+        <a href="/services/tracking-rescue/" class="btn-plain text-center mt-auto focus-ring">Get started</a>
+      </div>
+
+      <div class="bg-white border border-rule p-6 flex flex-col">
+        <div class="font-mono text-[.72rem] text-slate-light mb-2.5">Most common starting point</div>
+        <h3 class="text-[1.2rem] font-extrabold tracking-tight">Google Ads Tracking Audit</h3>
+        <p class="text-[.9rem] text-slate-light mt-1.5 mb-0">Scoped for local service ad budgets</p>
+        <div class="font-mono text-[1.8rem] font-semibold mt-4 mb-0.5 tracking-tight">{{ site.audit_price }}</div>
+        <ul class="price-list mt-4 mb-6">
+          <li>Full account + site audit, all four steps</li>
+          <li>Written report ranked by revenue impact</li>
+          <li>Priority fix list, plain-English</li>
+          <li>Call-tracking and LSA review included</li>
+        </ul>
+        <a href="/services/google-ads-tracking-audit/" class="btn-plain text-center mt-auto focus-ring">Get started</a>
+      </div>
+
+      <div class="bg-white border-2 border-ink shadow-flag p-6 flex flex-col">
+        <div class="font-mono text-[.72rem] text-slate-light mb-2.5">Flagship</div>
+        <h3 class="text-[1.2rem] font-extrabold tracking-tight">Tracking Reliability Retainer</h3>
+        <p class="text-[.9rem] text-slate-light mt-1.5 mb-0">Ongoing monitoring, monthly report</p>
+        <div class="font-mono text-[1.8rem] font-semibold mt-4 mb-0.5 tracking-tight">
+          {{ site.retainer_price }}<span class="text-[.8rem] font-normal text-slate-light tracking-normal"> / month</span>
+        </div>
+        <p class="text-[.8rem] text-slate-light mt-1 mb-0">
+          Can be added as a line item to an existing marketing retainer
+        </p>
+        <ul class="price-list mt-4 mb-6">
+          <li>Continuous monitoring, all four steps</li>
+          <li>Monthly call/lead report</li>
+          <li>Alerted before broken tracking costs you ad spend</li>
+          <li>Priority turnaround on fixes</li>
+        </ul>
+        <a href="/services/tracking-reliability/" class="btn text-center mt-auto focus-ring">Get started</a>
+      </div>
+
+    </div>
+  </div>
+</section>

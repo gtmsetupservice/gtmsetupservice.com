@@ -1,3 +1,120 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Local-service ICP redesign — component layer.
+   Utilities cover most of the page; these are the pieces that would be
+   unreadable as long utility strings (the reconciliation ticket, the
+   striping rule, the fit lists).
+   ------------------------------------------------------------------ */
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans;
+  }
+  h1, h2, h3 {
+    @apply font-extrabold tracking-tight;
+  }
+}
+
+@layer components {
+
+  /* Buttons -------------------------------------------------------- */
+  .btn {
+    @apply inline-block font-semibold border-2 border-ink bg-stripe text-ink
+           px-6 py-3.5 no-underline transition-colors;
+  }
+  .btn:hover { @apply bg-stripe-hover; }
+
+  .btn-plain {
+    @apply inline-block font-semibold border-2 border-rule bg-transparent text-ink
+           px-6 py-3.5 no-underline transition-colors;
+  }
+  .btn-plain:hover { @apply bg-white border-ink; }
+
+  /* Striping-paint rule — the one bold decorative moment ------------ */
+  .stripe-rule { @apply h-[11px] w-[130px] bg-stripe my-6; }
+
+  /* Reconciliation ticket ------------------------------------------ */
+  .ticket { @apply bg-white border border-rule shadow-ticket; }
+  .ticket-head {
+    @apply flex justify-between gap-3 px-[18px] py-3 border-b border-rule
+           font-mono text-[.72rem] text-slate-light;
+  }
+  .ticket-cols { @apply grid grid-cols-1 sm:grid-cols-2; }
+  .tcol { @apply p-[18px]; }
+  .tcol + .tcol { @apply border-t sm:border-t-0 sm:border-l border-rule-soft; }
+  .trow {
+    @apply flex justify-between gap-3 font-mono text-[.87rem] py-1.5 text-slate;
+  }
+  .trow b { @apply text-ink font-medium tabular-nums; }
+  .tsum {
+    @apply mt-2.5 pt-[11px] border-t border-rule flex justify-between items-baseline;
+  }
+  .tsum span { @apply text-[.87rem] font-semibold; }
+  .tsum .big { @apply font-mono text-[1.75rem] font-semibold leading-none tabular-nums; }
+  .is-leak .big { @apply text-leak; }
+  .is-booked .big { @apply text-booked; }
+  .ticket-foot {
+    @apply border-t border-rule px-[18px] py-3.5 bg-paper text-[.87rem] text-slate;
+  }
+  .ticket-foot b { @apply text-ink; }
+
+  /* Symptom list — striping-paint tick ----------------------------- */
+  .sym { @apply list-none m-0 p-0 border-t border-rule-soft; }
+  .sym li {
+    @apply border-b border-rule-soft py-5 pl-[34px] relative max-w-measure text-slate;
+  }
+  .sym li b { @apply text-ink font-semibold; }
+  .sym li::before {
+    content: "";
+    @apply absolute left-0 top-[29px] w-4 h-[3px] bg-stripe;
+  }
+
+  /* Fit lists ------------------------------------------------------- */
+  .fit-list { @apply list-none m-0 p-0; }
+  .fit-list li { @apply py-2 pl-[26px] relative text-[.97rem] text-slate; }
+  .fit-list li::before { @apply absolute left-0 top-2 font-mono text-[.95rem]; }
+  .fit-yes li::before { content: "+"; @apply text-booked font-semibold; }
+  .fit-no  li::before { content: "\2212"; @apply text-slate-light; }
+
+  /* Pricing feature list -------------------------------------------- */
+  .price-list { @apply list-none m-0 p-0 text-[.93rem]; }
+  .price-list li { @apply py-1.5 pl-5 relative text-slate; }
+  .price-list li::before {
+    content: "";
+    @apply absolute left-0 top-3.5 w-[9px] h-0.5 bg-rule;
+  }
+
+  /* "How we work" list ---------------------------------------------- */
+  .howwe-list { @apply list-none m-0 p-0; }
+  .howwe-list li {
+    @apply py-2.5 pl-6 relative text-[.95rem] text-slate border-b border-rule-soft;
+  }
+  .howwe-list li:last-child { @apply border-b-0; }
+  .howwe-list li::before {
+    content: "";
+    @apply absolute left-0 top-[18px] w-3 h-0.5 bg-stripe;
+  }
+
+  /* Dark-section form fields ---------------------------------------- */
+  .field {
+    @apply w-full px-3 py-3 text-base bg-[#2E3238] border border-[#454B52]
+           text-white rounded-none mb-4;
+  }
+  .field::placeholder { @apply text-slate-light; }
+  .field-label { @apply block text-[.87rem] mb-1.5 text-[#C6CCD2]; }
+
+  /* Build-time placeholders (visible in dev, flagged for removal) ---- */
+  .placeholder-box { @apply border-2 border-dashed border-[#B8B4AB] bg-white p-8 max-w-measure; }
+  .verify-box { @apply border border-[#D9BC5A] bg-[#FFF6DC] p-4 text-[.9rem] text-[#6B5410]; }
+}
+
+@layer utilities {
+  .focus-ring:focus-visible { @apply outline outline-[3px] outline-offset-2 outline-ink; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

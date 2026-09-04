@@ -9,6 +9,8 @@ excerpt: "When your GTM container fails to load, you're not just missing analyti
 diagnosis_time: "4 Minute"
 fix_time: "30 Second"
 problem_layer: "Layer 1 (Infrastructure)"
+step: loading
+card_blurb: "Infrastructure failures diagnosed in under 5 minutes. Before you debug anything else, confirm the script is reaching the page."
 ---
 
 A GTM container fails to load when the snippet code is malformed, placed in the wrong location, or blocked by a Content Security Policy. Check using your browser's Network tab: if the request to googletagmanager.com returns a 4xx error or never appears at all, the container code is broken or blocked at the infrastructure level.

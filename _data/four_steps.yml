@@ -1,0 +1,22 @@
+# The four diagnostic steps, in order. Single source of truth:
+# used by _includes/four-steps.html and by the step tags in the
+# diagnostics grid. `slug` matches the `step:` value in post front matter.
+- n: 1
+  slug: loading
+  title: Loading
+  body: Is the tracking code loading on your site at all — every page, every device?
+
+- n: 2
+  slug: configuration
+  title: Configuration
+  body: Are your ads, forms and phone taps actually wired to fire a conversion when someone acts?
+
+- n: 3
+  slug: delivery
+  title: Data delivery
+  body: Is that conversion actually reaching Google Ads and Analytics — or getting lost on the way?
+
+- n: 4
+  slug: processing
+  title: Processing
+  body: Is what arrives being counted correctly — no double-counting, no dropped calls, no silent filtering?

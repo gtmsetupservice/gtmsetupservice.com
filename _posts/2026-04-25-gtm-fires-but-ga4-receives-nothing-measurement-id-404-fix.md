@@ -19,6 +19,8 @@ faq:
     answer: "It means Google's tag delivery servers don't recognise your measurement ID. This usually happens when a GA4 data stream was created but not fully provisioned on Google's backend. The fix is to delete the data stream and create a new one to generate a freshly provisioned measurement ID."
   - question: "Why does GA4 say 'Data collection active in past 48 hours' when no tracking is working?"
     answer: "The 'Data collection active' indicator updates from GTM Preview Mode (Tag Assistant) sessions. Preview mode sends debug hits to the property regardless of whether the live container is broken. This makes the status indicator an unreliable signal when diagnosing live tracking failures."
+step: delivery
+card_blurb: "How a silent 404 on the tag script kills tracking invisibly, and the one command-line check that finds it."
 ---
 
 GTM can show tags firing while GA4 receives nothing when the gtag/js file for your Measurement ID returns a 404 from Google's servers — a silent failure that passes every GTM check. This happens when a GA4 data stream is deleted and recreated, leaving a stale ID in the container. One command confirms it: `curl -I "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"`.

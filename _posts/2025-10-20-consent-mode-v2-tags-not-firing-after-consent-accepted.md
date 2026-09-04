@@ -15,6 +15,8 @@ faq:
     answer: "Check your browser's developer console to see if a `consent_update` event is being pushed to the dataLayer after a user accepts cookies. If this event is missing, your Consent Management Platform (CMP) is not correctly integrated with GTM."
   - question: "Why do my ad tags (Google Ads, Meta) not work even with Consent Mode V2?"
     answer: "Consent Mode V2 introduced new consent states like `ad_user_data` and `ad_personalization`. If your CMP is only granting `ad_storage` and `analytics_storage`, your ad tags may still be blocked. Ensure all four consent states are being granted upon user acceptance."
+step: configuration
+card_blurb: "Consent Mode V2 misconfigurations that block tags even after the visitor clicks accept. Console snippets included."
 ---
 
 Consent Mode V2 tags fail to fire after consent when the CMP pushes consent signals in the wrong format, GTM's consent initialization fires before the CMP loads, or the tag requires all four consent states — ad_storage, analytics_storage, ad_user_data, ad_personalization — but only some are granted. Check the dataLayer for a consent_update event immediately after acceptance.

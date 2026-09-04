@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<!-- Shared service-page shell. Front matter supplies the copy so the three
+     service pages stay consistent and there is one template to maintain. -->
+<section class="pt-16 pb-2">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-prose">
+      <div class="font-mono text-[.72rem] text-slate-light mb-3">{{ page.kicker }}</div>
+      <h1 class="text-[clamp(2rem,4.4vw,3rem)] leading-tight">{{ page.service_name }}</h1>
+      <div class="stripe-rule" role="presentation"></div>
+      <p class="font-mono text-[1.9rem] font-semibold tracking-tight mb-4">
+        {{ page.price }}{% if page.price_suffix %}<span class="text-[.8rem] font-normal text-slate-light tracking-normal">{{ page.price_suffix }}</span>{% endif %}
+      </p>
+      <p class="text-[1.12rem] text-slate">{{ page.lede }}</p>
+      <a href="#contact" class="btn mt-4 focus-ring">{{ page.cta | default: "Get started" }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="py-14 md:py-[72px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-7 grid lg:grid-cols-2 gap-10">
+    <div class="border border-rule bg-white p-7">
+      <h2 class="text-[1.25rem] font-extrabold tracking-tight mb-4">What you get</h2>
+      <ul class="price-list">
+        {% for item in page.deliverables %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="border border-rule bg-paper p-7">
+      <h2 class="text-[1.25rem] font-extrabold tracking-tight mb-4">What we need from you</h2>
+      <ul class="price-list">
+        {% for item in page.requirements %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5 md:px-7 pb-14 md:pb-[72px]">
+  <div class="max-w-prose">
+    {{ content }}
+  </div>
+</div>
+
+{% include four-steps.html %}
+{% include contact-form.html %}

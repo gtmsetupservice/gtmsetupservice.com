@@ -1,96 +1,115 @@
-<!-- Contact Form with FluentCRM Integration -->
-<section id="contact" class="py-16 bg-blue-600 text-white">
-    <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Get Your GTM Fixed Today</h2>
-            <p class="text-xl opacity-90">
-                Tell us about your tracking problem. We fix problems very quickly.
-            </p>
-        </div>
-
-        <div class="bg-white rounded-lg p-8 text-gray-900">
-            <form id="gtm-contact-form" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                            Full Name *
-                        </label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                            Email Address *
-                        </label>
-                        <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
-                    </label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567"
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                </div>
-
-                <div>
-                    <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
-                        Website URL *
-                    </label>
-                    <input type="url" id="website" name="website" required placeholder="https://yoursite.com"
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                </div>
-
-                <div>
-                    <label for="problem" class="block text-sm font-medium text-gray-700 mb-2">
-                        What's your GTM problem? *
-                    </label>
-                    <select id="problem" name="problem" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="">Select your situation</option>
-                        <option value="emergency">🚨 EMERGENCY: Tracking completely down</option>
-                        <option value="partial">Tags fire but no data in GA4/Google Ads</option>
-                        <option value="conversion">Conversion tracking not working</option>
-                        <option value="server-side">Need server-side GTM setup</option>
-                        <option value="audit">Want comprehensive tracking audit</option>
-                        <option value="other">Other GTM issue</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="details" class="block text-sm font-medium text-gray-700 mb-2">
-                        Additional Details (Optional)
-                    </label>
-                    <textarea id="details" name="details" rows="4" placeholder="Tell us more about your tracking issues..."
-                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-                </div>
-
-                <!-- Hidden fields for segmentation -->
-                <input type="hidden" name="service_type" value="gtm">
-                <input type="hidden" name="source_domain" value="{{ site.url }}">
-                <input type="hidden" id="utm_source" name="utm_source" value="">
-                <input type="hidden" id="utm_medium" name="utm_medium" value="">
-                <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
-
-                <button type="submit" id="submit-btn"
-                        class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-200">
-                    Contact GTM Expert
-                </button>
-
-                <p class="text-sm text-gray-600 text-center">
-                    We'll respond within 30 minutes during business hours
-                </p>
-            </form>
-
-            <!-- Success/Error Messages -->
-            <div id="form-success" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                ✅ Thanks! We'll diagnose your GTM issue and get back to you within 30 minutes.
-            </div>
-            <div id="form-error" class="hidden mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
-                ❌ Something went wrong. Please try again or email us directly.
-            </div>
-        </div>
+<!-- Contact. Rewritten for the local-service ICP: adds trade + ad-spend
+     qualifiers so an enquiry is answerable without a discovery call.
+     Field names/ids preserved where form-handler.js already expects them. -->
+<section id="contact" class="py-14 md:py-[72px] bg-asphalt text-concrete">
+  <div class="max-w-6xl mx-auto px-5 md:px-7">
+    <div class="max-w-[58ch] mb-9">
+      <h2 class="text-[clamp(1.5rem,3.1vw,2.1rem)] leading-tight text-white">Check my tracking</h2>
+      <p class="text-[#A9B0B7] mt-3.5 text-[1.04rem]">
+        Tell us what's not adding up between your ad reports and your actual jobs.
+        We'll tell you what we think is broken before you pay anything.
+      </p>
     </div>
+
+    <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-10 lg:gap-12 items-start">
+
+      <form id="contact-form" method="post" action="{{ site.form_endpoint }}">
+        <div class="grid sm:grid-cols-2 gap-x-4">
+          <div>
+            <label class="field-label" for="name">Your name</label>
+            <input class="field focus-ring" id="name" name="name" type="text" required>
+          </div>
+          <div>
+            <label class="field-label" for="company">Business name</label>
+            <input class="field focus-ring" id="company" name="company" type="text" required>
+          </div>
+          <div>
+            <label class="field-label" for="email">Email</label>
+            <input class="field focus-ring" id="email" name="email" type="email" required>
+          </div>
+          <div>
+            <label class="field-label" for="phone">Phone</label>
+            <input class="field focus-ring" id="phone" name="phone" type="tel" required>
+          </div>
+        </div>
+
+        <label class="field-label" for="website">Your website</label>
+        <input class="field focus-ring" id="website" name="website" type="url" placeholder="https://" required>
+
+        <label class="field-label" for="trade">What kind of work do you do?</label>
+        <select class="field focus-ring" id="trade" name="trade" required>
+          <option value="">Choose one</option>
+          <option>Asphalt sealcoating or striping</option>
+          <option>Hydroseeding, lawn or landscape</option>
+          <option>HVAC</option>
+          <option>Roofing</option>
+          <option>Handyman or general contracting</option>
+          <option>Another local service business</option>
+        </select>
+
+        <label class="field-label" for="ad_spend">Roughly what do you spend on ads each month?</label>
+        <select class="field focus-ring" id="ad_spend" name="ad_spend">
+          <option value="">Choose one</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $3,000</option>
+          <option>$3,000 – $10,000</option>
+          <option>Over $10,000</option>
+        </select>
+
+        <label class="field-label" for="issue">What's not adding up?</label>
+        <select class="field focus-ring" id="issue" name="issue" required>
+          <option value="">Choose one</option>
+          <option>Google Ads shows zero or almost no conversions</option>
+          <option>Phone calls from ads aren't being tracked</option>
+          <option>The number in Ads doesn't match the jobs we booked</option>
+          <option>Our lead form stopped reaching us</option>
+          <option>We can't tell which towns or campaigns produce work</option>
+          <option>Not sure — we just want it all checked</option>
+        </select>
+
+        <label class="field-label" for="message">Anything else worth knowing (optional)</label>
+        <textarea class="field focus-ring min-h-[96px]" id="message" name="message"
+          placeholder="When did you first notice it? Did anything change on the site around then?"></textarea>
+
+        <button type="submit" class="btn w-full text-center focus-ring">Send it over</button>
+
+        <p id="form-success" class="hidden mt-4 text-[.94rem] text-stripe">
+          Thanks — we'll look at your site and reply within one business day.
+        </p>
+        <p id="form-error" class="hidden mt-4 text-[.94rem] text-[#FF9E80]">
+          That didn't send. Email {{ site.author.email }} directly and we'll pick it up there.
+        </p>
+      </form>
+
+      <div>
+        {% if site.phone %}
+        <div class="border border-[#3C4148] p-6">
+          <h3 class="text-white text-[1.08rem] font-semibold mb-3">Rather just call?</h3>
+          <p class="text-[.94rem] text-[#A9B0B7] mb-1">
+            Quicker than a form if you can describe the problem out loud.
+          </p>
+          <a href="tel:{{ site.phone_e164 }}"
+             class="font-mono text-[1.32rem] font-semibold text-stripe no-underline inline-block my-1.5 focus-ring">
+            {{ site.phone }}
+          </a>
+          <p class="font-mono text-[.78rem] text-slate-light leading-relaxed m-0">
+            {{ site.support_hours }}
+          </p>
+        </div>
+        {% endif %}
+
+        <div class="border border-[#3C4148] p-6 {% if site.phone %}mt-[18px]{% endif %}">
+          <h3 class="text-white text-[1.08rem] font-semibold mb-3">What happens next</h3>
+          <p class="text-[.94rem] text-[#A9B0B7] mb-3">
+            We look at your site before we reply, so the first answer you get is an
+            actual opinion rather than a discovery call.
+          </p>
+          <p class="text-[.94rem] text-[#A9B0B7] m-0">
+            If we can tell you the fix in a sentence, we will, and you can do it yourself.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>

@@ -1,120 +1,77 @@
 ---
 layout: default
-title: About GTMSetupService - Professional GTM Implementation
-description: GTMSetupService is a specialized Google Tag Manager implementation company helping businesses unlock the full potential of their analytics.
+title: About
+description: One technical operator, not an agency. Conversion tracking for local service businesses running Google Ads.
+permalink: /about/
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-16" markdown="1">
+<section class="pt-16 pb-2">
+  <div class="max-w-6xl mx-auto px-5 md:px-7 max-w-prose">
+    <h1 class="text-[clamp(2rem,4.4vw,3rem)] leading-tight">One operator, not an agency</h1>
+    <div class="stripe-rule" role="presentation"></div>
+    <p class="text-[1.14rem] text-slate">
+      Brad Hamilton checks the tracking himself. There's no account manager, no
+      team you never speak to, and nobody to hand your account off to.
+    </p>
+  </div>
+</section>
 
-<h1 class="text-4xl md:text-5xl font-bold mb-6">About GTMSetupService</h1>
+<div class="max-w-6xl mx-auto px-5 md:px-7 pb-14 md:pb-[72px]">
+<div class="max-w-prose prose-headings:tracking-tight">
 
-<p class="text-lg mb-12">GTMSetupService is a specialized Google Tag Manager implementation company dedicated to helping businesses unlock the full potential of their website analytics and marketing data.</p>
-
-<h2 class="text-3xl font-bold mt-16 mb-6">Our Mission</h2>
-
-To democratize advanced web analytics by making professional Google Tag Manager implementation accessible and understandable for businesses of all sizes.
-
-<h2 class="text-3xl font-bold mt-16 mb-6">What Sets Us Apart</h2>
-
-<div class="grid md:grid-cols-2 gap-8 my-12">
-    <div class="bg-blue-50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3 text-blue-600">Never Lose Another Conversion</h3>
-        <p class="text-gray-700">Due to tracking failures. Our bulletproof implementations ensure every conversion is captured accurately.</p>
-    </div>
-
-    <div class="bg-green-50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3 text-green-600">Complete Visibility Into ROI</h3>
-        <p class="text-gray-700">Your marketing ROI becomes crystal clear with proper conversion tracking across all channels.</p>
-    </div>
-
-    <div class="bg-purple-50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3 text-purple-600">Bulletproof Analytics</h3>
-        <p class="text-gray-700">That scale with your growth. Our implementations are built to last and adapt as your business evolves.</p>
-    </div>
-
-    <div class="bg-orange-50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-3 text-orange-600">Professional Implementation</h3>
-        <p class="text-gray-700">That just works. No guesswork, no amateur mistakes - just clean, reliable tracking from day one.</p>
-    </div>
+<div class="verify-box mb-8">
+<span class="font-mono text-[.72rem] block mb-2">CONFIRM BEFORE LAUNCH</span>
+The copy below states experience as <code class="font-mono">{{ site.years_experience }}</code>,
+set in <code class="font-mono">_config.yml</code>. Unlike the claims removed from the old
+site, this one is your own verifiable work history — settle on the exact figure you're
+comfortable defending publicly and set it as a specific number rather than a range,
+then delete this block.
 </div>
 
-<h2 class="text-3xl font-bold mt-16 mb-6">Our Services</h2>
+## Why a systems engineer ended up doing this
 
-<div class="bg-gray-50 p-8 rounded-lg my-12">
-    <ul class="space-y-4">
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Complete GTM container setup and configuration</strong> - Full implementation from scratch or fixing existing setups</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Enhanced eCommerce tracking implementation</strong> - Complete purchase funnel visibility for online stores</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Custom event tracking and conversions</strong> - Track exactly what matters to your business</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Cross-domain tracking setup</strong> - Seamless user journey tracking across multiple domains</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Server-side tagging implementation</strong> - Future-proof your tracking with server-side GTM</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>GTM audit and optimization</strong> - Comprehensive review and optimization of existing setups</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="w-6 h-6 text-green-500 mt-1 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span><strong>Training and documentation</strong> - Empower your team with knowledge and comprehensive guides</span>
-        </li>
-    </ul>
-</div>
+I spent {{ site.years_experience }} in systems engineering before any of this — the
+work of finding out why something that should be running isn't, in environments where
+nobody left a note about what changed. Broken conversion tracking is the same problem
+wearing different clothes. Something in a chain of four handoffs stopped working, the
+system reports success anyway, and the only way through is to test each link until one
+fails.
 
-<h2 class="text-3xl font-bold mt-16 mb-6">Ready to Fix Your Tracking?</h2>
+That's why the diagnostic here is a sequence rather than a checklist. Most people who
+work on tracking start clicking around in Tag Manager and stop when something looks
+plausible. A conversion has to survive four separate steps, and it can die at any one
+of them, so the only reliable method is to test them in order.
 
-<div class="text-center py-8">
-    <p class="text-xl mb-6">Stop losing money to broken tracking. Get your GTM fixed today.</p>
-    <a href="/#contact" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-        Get Started - $397
-    </a>
-</div>
+## Why local service businesses specifically
 
-<h2 class="text-3xl font-bold mt-16 mb-6">Company Information</h2>
+Because the gap between reported and real is widest there, and it costs the most.
 
-<div class="bg-white border-2 border-gray-200 p-8 rounded-lg my-12">
-    <p class="mb-6 text-lg">GTMSetupService is a division of <strong>B and B Holdings LLC</strong>, a Wyoming limited liability company committed to providing professional digital marketing and analytics services.</p>
+An e-commerce store notices broken tracking fairly quickly — revenue and orders are
+easy to reconcile. A contractor running Google Ads has no such loop. Jobs get booked
+over the phone, written on a board, invoiced from a truck. Nothing automatically
+compares that to what Google Ads claims happened. So the gap sits there, quietly, and
+every budget decision gets made against the wrong number.
 
-    <div class="grid md:grid-cols-2 gap-8">
-        <div>
-            <h4 class="font-bold text-gray-700 mb-2">B and B Holdings LLC</h4>
-            <ul class="text-gray-600 space-y-1">
-                <li>Registered in Wyoming, USA</li>
-                <li>Specializing in Digital Analytics & Marketing Technology</li>
-            </ul>
-        </div>
+That's a problem worth being specific about, which is why this site isn't for
+everyone. If you're a multi-location brand with an analytics team, you don't need me.
 
-        <div>
-            <h4 class="font-bold text-gray-700 mb-2">Legal Notice</h4>
-            <p class="text-gray-600 text-sm">We are not affiliated with Google. Google Tag Manager™ is a trademark of Google LLC.</p>
-        </div>
-    </div>
-</div>
+## How the work actually goes
+
+Async by default. You don't need to take a call to start, and I won't ask for one to
+close. Fixed prices, quoted before anything begins. Support hours are
+{{ site.support_hours }} — stated plainly because a vague "we respond fast" promise is
+worth nothing to someone deciding whether to trust a stranger with account access.
+
+If I can tell you the fix in a sentence, I'll tell you the fix in a sentence, and you
+can go do it yourself. That happens reasonably often and it's fine.
+
+## What I don't do
+
+I don't manage Google Ads campaigns, write ad copy, or advise on bids. I make sure the
+numbers those decisions rest on are real. Plenty of people do the campaign side well;
+far fewer check whether the measurement underneath it works.
 
 </div>
+</div>
+
+{% include contact-form.html %}

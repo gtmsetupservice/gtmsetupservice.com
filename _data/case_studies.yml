@@ -1,0 +1,19 @@
+# Real, permissioned case studies. Empty by design.
+#
+# When you add the first entry, _includes/results.html swaps the placeholder
+# for the real thing automatically — no template edits needed. Ship one real
+# case study rather than three invented ones.
+#
+# Every entry must be a client who has given permission to be named. Metrics
+# come from their own Google Ads account and job records, not estimates.
+#
+# - trade: "Asphalt sealcoating · 2 counties"
+#   metrics:
+#     - label: "Conversions before"
+#       value: "4 / mo"
+#     - label: "Conversions after"
+#       value: "19 / mo"
+#     - label: "Failing step"
+#       value: "Step 2"
+#   quote: "Their words, one or two sentences, about what they can do now that they couldn't before."
+#   attribution: "Full Name, Company, City"

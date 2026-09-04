@@ -16,6 +16,8 @@ faq:
     answer: "Data Thresholding is a privacy feature where Google hides data if user counts are too low. It's often triggered by enabling Google Signals. You can verify this by temporarily disabling Google Signals in your Data Collection settings. The permanent solution is to either accept the data gaps or export your raw, unthresholded data to BigQuery."
   - question: "What is the most common 'hidden' setting that breaks GA4 reports?"
     answer: "Case sensitivity. GTM is case-insensitive, but GA4 is strictly case-sensitive. A common error is sending currency as 'usd' (lowercase) instead of the required 'USD' (uppercase). This causes GA4 to receive the event but discard the revenue value, leading to reports with $0 revenue."
+step: processing
+card_blurb: "Events arrive perfectly and reports still show zero. What Google rejects, filters, or withholds, and why."
 ---
 
 GA4 reports stay empty despite DebugView activity when data thresholds filter out low-traffic properties, internal traffic filters block real users, the reporting identity is misconfigured, or Google's processing pipeline has a 24-48 hour delay. DebugView bypasses all filters — standard reports apply them all.

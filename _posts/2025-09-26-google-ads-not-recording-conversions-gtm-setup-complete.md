@@ -16,6 +16,9 @@ faq:
     answer: "1. Verify the tag fires in GTM Preview Mode with the correct data. 2. Verify the network request in your browser's Developer Tools to ensure the data is being sent successfully to Google. 3. Verify the conversion appears in Google Ads, checking the diagnostics tab for any platform-side issues."
   - question: "Can cross-domain tracking break Google Ads conversions?"
     answer: "Yes. If a user starts on your main domain but checks out on a different domain (e.g., a third-party cart), the link to the original ad click is broken. You must implement cross-domain tracking in GA4 and use the Conversion Linker tag in GTM to preserve the attribution chain."
+step: delivery
+bridge: true
+card_blurb: "The closest diagnostic to a local-service reader: ads spending, conversions not recording. Five fixes."
 ---
 
 Google Ads stops recording conversions when the conversion action in GTM uses a mismatched Conversion ID or label, the Google Ads tag fires before purchase confirmation data is available, or a domain mismatch breaks the attribution chain. Verify that the Conversion ID and label in your GTM tag exactly match the active conversion action in Google Ads.

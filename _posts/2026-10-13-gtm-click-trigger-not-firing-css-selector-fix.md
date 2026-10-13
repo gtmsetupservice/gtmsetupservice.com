@@ -6,7 +6,7 @@ date: 2026-10-13 09:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, gtm-triggers]
 tags: [GTM, click-trigger, css-selector, Layer-2, Implementation]
-featured_image: /assets/images/css-selector-trigger-fix.png
+featured_image: /assets/images/Unsloth_20261013-113838_4280858576.jpg
 fix_time: "2 Minute"
 diagnosis_time: "60 Second"
 problem_layer: "Layer 2 (Implementation)"

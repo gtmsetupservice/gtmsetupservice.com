@@ -6,7 +6,7 @@ date: 2026-10-13 17:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, ga4-configuration, enhanced-measurement]
 tags: [GA4, Enhanced-Measurement, form_submit, GTM, Layer-1, Configuration]
-featured_image: /assets/images/enhanced-measurement-form-submit.jpg
+featured_image: /assets/images/Unsloth_20261013-183852_4117449527.jpg
 fix_time: "2 Minute"
 diagnosis_time: "60 Second"
 problem_layer: "Layer 1 (Configuration)"

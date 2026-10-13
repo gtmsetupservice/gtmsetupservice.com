@@ -6,7 +6,7 @@ date: 2026-10-13 16:30:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, ga4-parameters, gtm-variables]
 tags: [GTM, GA4, DOM-Element-variable, select, form-tracking, Layer-2, Implementation]
-featured_image: /assets/images/dom-element-select-value-fix.jpg
+featured_image: /assets/images/Unsloth_20261013-162757_666553440.jpg
 fix_time: "3 Minute"
 diagnosis_time: "60 Second"
 problem_layer: "Layer 2 (Implementation)"

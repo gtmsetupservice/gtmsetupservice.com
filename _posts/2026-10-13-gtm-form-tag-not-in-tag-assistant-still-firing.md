@@ -6,7 +6,7 @@ date: 2026-10-13 16:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, gtm-triggers, debugging]
 tags: [GTM, form-submission, wait-for-tags, tag-assistant, GA4, Layer-2, Implementation]
-featured_image: /assets/images/wait-for-tags-debug-fix.jpg
+featured_image: /assets/images/Unsloth_20261013-183553_1408409910.jpg
 fix_time: "5 Minute"
 diagnosis_time: "2 Minute"
 problem_layer: "Layer 2 (Implementation)"

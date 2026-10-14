@@ -6,7 +6,7 @@ date: 2026-10-14 14:00:00 +0800
 author: GTM Setup Service
 categories: [diagnostics, ga4-configuration, custom-dimensions]
 tags: [GA4, Custom-Dimensions, Explore, Propagation-Delay, Layer-4, Processing]
-featured_image: /assets/images/custom-dimension-propagation-delay.jpg
+featured_image: /assets/images/Unsloth_20261014-142508_2089332715.jpg
 fix_time: "0 Minute (wait)"
 diagnosis_time: "2 Minute"
 problem_layer: "Layer 4 (Processing)"

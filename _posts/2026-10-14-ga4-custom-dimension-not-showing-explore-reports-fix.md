@@ -19,6 +19,8 @@ faq:
     answer: "No. A custom dimension only applies going forward from the moment it's registered. Any event parameter values sent before that point are not retroactively mapped to the dimension, even though the raw parameter data was already being collected and was visible in DebugView the whole time."
   - question: "How can I see my custom dimension's values while I wait for Explore to catch up?"
     answer: "GA4 Realtime already breaks down event parameters without needing a registered custom dimension. Open Realtime overview, find your event under 'Event count by Event name,' and click into it — the parameter values and their counts show up immediately, even on the same day you registered the dimension."
+  - question: "My custom dimension showed up in the Explore picker — why is the report still empty?"
+    answer: "Showing up in the picker and actually holding usable data are two more separate steps on two more separate timelines. A dimension becoming selectable in Explore just means GA4 now recognizes it as a reportable field — it doesn't mean the historical data behind it has finished processing. Even after the picker shows it, expect a further wait (commonly a couple of hours) before a report built with that dimension returns real rows instead of \"No data available.\""
 step: diagnostic
 card_blurb: "The dimension is registered correctly. GA4 just hasn't caught up to showing it yet."
 ---
@@ -28,6 +30,7 @@ A newly registered GA4 custom dimension that doesn't appear in Explore's dimensi
 ### What You're Seeing
 *   [Dimension Registered, But Missing from the Explore Picker](#missing-from-picker)
 *   [Realtime and DebugView Show the Data, Reports Don't](#data-exists-reports-dont)
+*   [Dimension Is in the Picker, But the Report Is Still Empty](#picker-but-empty)
 
 ### The Fix
 *   [Confirm the Dimension Is Actually Registered Correctly](#confirm-registration)
@@ -59,6 +62,19 @@ If DebugView and Realtime both show the parameter and its values correctly, but 
 
 ---
 
+<a name="picker-but-empty"></a>
+### Dimension Is in the Picker, But the Report Is Still Empty
+
+**What's Happening:**
+This is the step that catches people after they've already cleared the first delay. The dimension now shows up when you click "Select dimensions" in Explore — it's officially a selectable field. So you drop it into Rows, add an Event name filter for your event, and the report still comes back with "No data available" or a single `(not set)` row.
+
+This isn't a sign the first fix didn't work. Becoming *selectable* and having its *historical data finished processing* are two different milestones GA4 reaches on two different timelines. The picker listing tells you GA4 now recognizes the field exists — it says nothing about whether the rows behind it are ready to query yet.
+
+**The Diagnostic:**
+Confirm the event and parameter are still showing correctly in Realtime (same check as above). If they are, and the dimension is listed in the picker but the report is empty, the dimension itself is still processing. In testing, this stage has consistently taken a couple of hours after picker-availability, even for parameters that had been firing correctly the whole time — there's no configuration step that speeds this up; it's purely a wait.
+
+---
+
 <a name="confirm-registration"></a>
 ## Fix 1: Confirm the Dimension Is Actually Registered Correctly
 
@@ -81,7 +97,9 @@ A new custom dimension also never backfills. Any data sent before the dimension 
 
 **Step 3 — Click into the event name.** Realtime drills down into that event's parameters and shows each value with its own count — the exact breakdown you were trying to build in Explore, available immediately, no propagation wait required.
 
-**Step 4 — Check back on the Explore dimension picker later** (later the same day, or the next day for a slower rollout). Once the "Custom" count in the picker matches the number of dimensions actually listed in Custom definitions, the new one is ready to build full Explore reports with.
+**Step 4 — Check back on the Explore dimension picker later** (later the same day, or the next day for a slower rollout). Once the "Custom" count in the picker matches the number of dimensions actually listed in Custom definitions, the dimension is officially recognized — but treat that as the halfway point, not the finish line.
+
+**Step 5 — Give it another couple of hours after it first appears in the picker before expecting a populated report.** Build the report the same way (dimension in Rows, Event name filter applied) and re-check periodically. If Realtime still confirms the data is flowing, an empty report at this stage is still the same processing delay, just in its second phase.
 
 Realtime only holds a short rolling window of data, so it's a short-term stand-in, not a replacement for Explore's historical reporting — but it's enough to confirm your setup is working correctly without losing a day staring at an empty dimension picker.
 

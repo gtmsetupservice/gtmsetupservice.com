@@ -180,10 +180,10 @@ layout: default
     {% for item in page.faq %}
     {
       "@type": "Question",
-      "name": "{{ item.question }}",
+      "name": {{ item.question | jsonify }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.answer }}"
+        "text": {{ item.answer | jsonify }}
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}

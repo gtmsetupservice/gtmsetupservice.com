@@ -113,4 +113,12 @@ By following these three verification steps, you can pinpoint whether the failur
 
 ---
 
+## Related Reading
+
+- [GA4 Events Not Reaching Google? 3 Transmission Fixes That Work](/blog/ga4-events-not-reaching-google-transmission-diagnostic/)
+- [fbclid in the URL But GA4 Shows Direct? Cross-Domain Tracking Fix](/blog/fbclid-cross-domain-tracking-ga4-shows-direct-gtm-fix/)
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+
+For Google's own documentation on this, see [Google Ads' own guide to setting up conversion tracking](https://support.google.com/google-ads/answer/12216226).
+
 *Having GTM conversion tracking issues that don't make sense? We specialize in Layer 3 diagnostic problems that other consultants miss. Our systematic approach identifies exactly where tracking breaks down and provides immediate fixes. [Get your conversion tracking diagnosed today](/contact) - most issues can be resolved in a single diagnostic call.*

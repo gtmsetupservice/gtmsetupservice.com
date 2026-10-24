@@ -156,4 +156,12 @@ If you've tried fixes from forums or AI tools and they didn't work, it's likely 
 
 ---
 
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [GTM Form Tag Not Showing in Tag Assistant? It May Still Be Firing](/blog/gtm-form-tag-not-in-tag-assistant-still-firing/)
+- [GA4 Events Not Reaching Google? 3 Transmission Fixes That Work](/blog/ga4-events-not-reaching-google-transmission-diagnostic/)
+
+For Google's own documentation on this, see [Google's Consent Mode overview](https://developers.google.com/tag-platform/security/concepts/consent-mode).
+
 *Need a comprehensive GTM implementation audit? Our diagnostic service reviews your complete tag, trigger, and variable configuration, identifies gaps and errors, and provides a prioritized remediation plan. [Learn more about our GTM Audit Service](/services).*

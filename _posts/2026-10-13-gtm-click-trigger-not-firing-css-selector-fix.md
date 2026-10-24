@@ -97,4 +97,12 @@ Once it's confirmed in Preview, publish the container. This isn't a one-time fix
 
 ---
 
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [GA4 Dropdown Parameter Sending Blank? The DOM Element Variable Mistake](/blog/ga4-dropdown-parameter-blank-dom-element-variable-fix/)
+- [GA4 Shows form_submit But Your GTM Tag Isn't the One Firing](/blog/ga4-form-submit-showing-but-gtm-tag-not-firing/)
+
+For Google's own documentation on this, see [Google's documentation on the click trigger](https://support.google.com/tagmanager/answer/7679320).
+
 *Click trigger set up correctly but still not firing in production? We audit the full trigger-to-tag chain — selector syntax, trigger type, and tag firing order — and fix what's broken in a single session. [Get a diagnostic.](/#contact)*

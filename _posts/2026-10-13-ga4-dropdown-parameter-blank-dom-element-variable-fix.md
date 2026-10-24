@@ -95,4 +95,12 @@ A quick note on the old DOM Element variable: a blank Attribute Name falls back 
 
 ---
 
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [GTM Click Trigger Not Firing? The CSS Selector Fix That Works Every Time](/blog/gtm-click-trigger-not-firing-css-selector-fix/)
+- [GTM Form Tag Not Showing in Tag Assistant? It May Still Be Firing](/blog/gtm-form-tag-not-in-tag-assistant-still-firing/)
+
+For Google's own documentation on this, see [Google's documentation on the DOM Element variable](https://support.google.com/tagmanager/answer/7683362).
+
 *A GA4 parameter sending blank is rarely the trigger or the tag — it's almost always the variable reading the wrong representation of the data. We audit every variable in your container against what it's actually supposed to capture. [Get a diagnostic.](/#contact)*

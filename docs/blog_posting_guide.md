@@ -249,7 +249,64 @@ posts going forward.
 
 ---
 
-## 7. Pre-Publish Checklist
+## 7. Internal Links & External Citations — Required Starting 2026-10-24
+
+Decided 2026-10-24, same competitive check as Section 6 (full writeup in
+the Claude Project under `decisions/content-standards.md`). Found two more
+concrete gaps beyond screenshots: **zero internal links between any of our
+posts** and **zero external citations** anywhere, site-wide. Pages beating
+us on winnable queries link heavily to their own related content (topic
+clusters) and cite primary sources (Google's own docs) for E-E-A-T.
+
+### Rule
+
+Every new diagnostic/how-to post gets a `## Related Reading` section near
+the end, placed immediately before the closing italic CTA paragraph,
+containing:
+
+- **2–3 internal links** to other posts on topically related failures or
+  the adjacent layer in the diagnostic flow (e.g. an Implementation-layer
+  post links to the Installation-layer post that precedes it and to other
+  Implementation-layer posts covering related triggers/variables)
+- **1 external citation** linking to the relevant official Google support
+  or developer doc for the specific feature/behavior being diagnosed —
+  `support.google.com/tagmanager/...`, `support.google.com/analytics/...`,
+  or `developers.google.com/tag-platform/...`
+
+```markdown
+---
+
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [GTM Click Trigger Not Firing? The CSS Selector Fix That Works Every Time](/blog/gtm-click-trigger-not-firing-css-selector-fix/)
+
+For Google's own documentation on this, see [Google's guide to previewing and debugging a container](https://support.google.com/tagmanager/answer/6107056).
+
+*Need a comprehensive GTM implementation audit? ...*
+```
+
+**Verify every citation URL before using it.** Do not guess a numeric
+`support.google.com/.../answer/NNNNNNN` ID from memory — search for the
+specific help article and fetch it to confirm the title and content
+actually match what you're citing it for. A wrong or dead citation link is
+worse than no citation.
+
+### Pre-publish check
+
+- [ ] `## Related Reading` section present, placed right before the closing CTA
+- [ ] 2–3 internal links, each to a genuinely related post (not just any post)
+- [ ] 1 external citation to a verified, on-topic Google support/developer doc
+- [ ] Citation URL fetched and confirmed before publishing — not guessed
+
+### Existing posts
+
+Retrofitted 2026-10-24 — all 13 posts published before this date now have
+a `Related Reading` section (commit `81583a0`, merged to `main`).
+
+---
+
+## 8. Pre-Publish Checklist
 
 ### Front Matter
 - [ ] `layout: post`
@@ -268,6 +325,7 @@ posts going forward.
 - [ ] Each TOC link has a matching `<a name="...">` anchor in the body
 - [ ] Each main section has "What's Happening" + "The Diagnostic" or "The Fix"
 - [ ] 3–5 inline screenshots at the steps they illustrate (see Section 6 — required starting 2026-10-24)
+- [ ] `## Related Reading` section present with 2–3 internal links and 1 verified external citation (see Section 7 — required starting 2026-10-24)
 - [ ] Credibility section present
 - [ ] Closing CTA in italics at the bottom
 

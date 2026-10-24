@@ -187,7 +187,69 @@ End with a single italicised paragraph — no heading:
 
 ---
 
-## 6. Pre-Publish Checklist
+## 6. Screenshots — Required Starting 2026-10-24
+
+Decided 2026-10-24 after a competitive check against pages outranking us for
+queries we already have impressions on (full writeup in the Claude Project
+under `decisions/content-standards.md`). Our posts already matched competitors
+on structure — TOC, author box, FAQ schema — but had **zero inline
+screenshots**, just a single decorative `featured_image`. Pages beating us
+(e.g. on "fbclid ga4") win with 3–5 real screenshots of the actual tool UI
+at each step. This is the cheapest, most concrete lever we have, so it's now
+a requirement, not a nice-to-have.
+
+### Rule
+
+Every new diagnostic/how-to post gets **3–5 real inline screenshots** of the
+actual click-path, placed at the step they illustrate — not bunched at the
+top, not replaced by prose alone. Good candidates, depending on the post:
+
+- GTM Preview / Debug panel showing the tag firing (or not)
+- Tag Assistant / Google Tag Assistant Legacy output
+- GA4 DebugView showing the event (or its absence)
+- The DataLayer Inspector extension's output
+- Chrome DevTools Network tab showing the actual request/response (e.g. a `204` or a blocked request)
+- The exact GTM/GA4 admin screen a step tells the reader to click into
+
+A screenshot of an *error state* (the thing going wrong) is just as valuable
+as one of the fix — often more, since it's what confirms the reader is
+looking at the same problem.
+
+### Where they go
+
+Inline in the body, in a markdown image tag immediately after the paragraph
+or step it illustrates:
+
+```markdown
+### 2. The "Hidden Variable" Most People Miss (Race Conditions)
+
+Open GTM Preview mode and check the Variables tab on the tag that should
+have fired. If the variable shows `undefined`, the dataLayer push happened
+after the tag's trigger evaluated it, not before.
+
+![GTM Preview Variables tab showing an undefined dataLayer variable](/assets/images/post-slug/variables-undefined.png)
+```
+
+Store screenshots under `/assets/images/<post-slug>/` (one subfolder per
+post) rather than dumping them all in the flat `/assets/images/` root used
+for `featured_image` — keeps a growing screenshot library navigable.
+
+### Pre-publish check
+
+- [ ] 3–5 inline screenshots present, each placed directly after the step/claim it supports
+- [ ] At least one shows an actual error/failure state, not just the fix
+- [ ] Each has real, descriptive alt text (not `image1.png`)
+- [ ] Screenshots live in `/assets/images/<post-slug>/`, separate from the post's `featured_image`
+
+### Existing posts
+
+The 12 posts published before this date have no inline screenshots. Not yet
+retrofitted — do this as a separate pass when there's time, not blocking new
+posts going forward.
+
+---
+
+## 7. Pre-Publish Checklist
 
 ### Front Matter
 - [ ] `layout: post`
@@ -203,8 +265,9 @@ End with a single italicised paragraph — no heading:
 ### Content
 - [ ] Direct answer paragraph near the top (for featured snippet)
 - [ ] Single flat symptom-based TOC with anchor links
-- [ ] Each TOC link has a matching `<a name="..."></a>` anchor in the body
+- [ ] Each TOC link has a matching `<a name="...">` anchor in the body
 - [ ] Each main section has "What's Happening" + "The Diagnostic" or "The Fix"
+- [ ] 3–5 inline screenshots at the steps they illustrate (see Section 6 — required starting 2026-10-24)
 - [ ] Credibility section present
 - [ ] Closing CTA in italics at the bottom
 

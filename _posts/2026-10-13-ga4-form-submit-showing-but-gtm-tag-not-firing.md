@@ -81,4 +81,12 @@ Whether to disable it depends on whether you want Enhanced Measurement's broad, 
 
 ---
 
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [GTM Form Tag Not Showing in Tag Assistant? It May Still Be Firing](/blog/gtm-form-tag-not-in-tag-assistant-still-firing/)
+- [GTM Click Trigger Not Firing? The CSS Selector Fix That Works Every Time](/blog/gtm-click-trigger-not-firing-css-selector-fix/)
+
+For Google's own documentation on this, see [Google's documentation on the form submission trigger](https://support.google.com/tagmanager/answer/7679217).
+
 *Confused about which GA4 events are coming from your GTM container and which are automatic? We map out exactly what's firing, where it's coming from, and whether it's telling you what you think it is. [Get a diagnostic.](/#contact)*

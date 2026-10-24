@@ -178,4 +178,12 @@ The lesson: **always run the `gtag/js` curl check before any other GA4 diagnosti
 
 ---
 
+## Related Reading
+
+- [GA4 Events Not Reaching Google? 3 Transmission Fixes That Work](/blog/ga4-events-not-reaching-google-transmission-diagnostic/)
+- [fbclid in the URL But GA4 Shows Direct? Cross-Domain Tracking Fix](/blog/fbclid-cross-domain-tracking-ga4-shows-direct-gtm-fix/)
+- [GA4 DebugView Shows Data But Reports Empty? 4 Fixes That Work](/blog/ga4-debugview-shows-data-reports-empty-processing-diagnostic/)
+
+For Google's own documentation on this, see [Google's own guide to finding your GA4 Measurement ID](https://support.google.com/analytics/answer/12270356).
+
 *Tracking setup looks right but data still isn't flowing? Our diagnostic service identifies the exact break point across your GTM container, GA4 property, and network layer — and fixes it in a single session. [Get a diagnostic.](/#contact)*

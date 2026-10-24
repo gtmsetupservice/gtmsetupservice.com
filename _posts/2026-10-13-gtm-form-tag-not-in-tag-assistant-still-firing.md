@@ -87,4 +87,12 @@ If both the JSON export and DebugView confirm the tag is firing correctly, the "
 
 ---
 
+## Related Reading
+
+- [GA4 Shows form_submit But Your GTM Tag Isn't the One Firing](/blog/ga4-form-submit-showing-but-gtm-tag-not-firing/)
+- [Consent Mode V2 Tags Won't Fire After Consent? 3 Fixes That Work](/blog/consent-mode-v2-tags-not-firing-after-consent-accepted/)
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+
+For Google's own documentation on this, see [Google's guide to the Tag Assistant Chrome extension](https://support.google.com/tagmanager/answer/16463290).
+
 *Can't tell whether your form tags are actually firing in production, or just not showing up where you're looking? We trace the full trigger-to-hit chain — Tag Assistant exports, GA4 DebugView, and the network payload itself — and tell you exactly what's really happening. [Get a diagnostic.](/#contact)*

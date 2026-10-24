@@ -105,4 +105,12 @@ Realtime only holds a short rolling window of data, so it's a short-term stand-i
 
 ---
 
+## Related Reading
+
+- [GA4 DebugView Shows Data But Reports Empty? 4 Fixes That Work](/blog/ga4-debugview-shows-data-reports-empty-processing-diagnostic/)
+- [GTM Fires But GA4 Receives Nothing? How a Silent 404 Kills Your Tracking](/blog/gtm-fires-but-ga4-receives-nothing-measurement-id-404-fix/)
+- [Google Ads Not Recording Conversions? 5 Fixes for Complete GTM Setup](/blog/google-ads-not-recording-conversions-gtm-setup-complete/)
+
+For Google's own documentation on this, see [Google's explanation of data freshness and processing delay](https://support.google.com/analytics/answer/11198161).
+
 *A custom dimension that won't show up where you expect it can look like a broken build when it's actually just GA4's own processing lag. We separate what's actually misconfigured from what's working correctly and just needs time. [Get a diagnostic.](/#contact)*

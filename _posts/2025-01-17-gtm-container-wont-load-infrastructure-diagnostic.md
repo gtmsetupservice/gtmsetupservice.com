@@ -226,4 +226,11 @@ That's why Layer 1 diagnostics come first—always.
 
 ---
 
+## Related Reading
+
+- [GTM Tags Won't Fire? 3-Step Fix That Works in 5 Minutes](/blog/gtm-tags-wont-fire-implementation-diagnostic/)
+- [Google Ads Not Recording Conversions? 5 Fixes for Complete GTM Setup](/blog/google-ads-not-recording-conversions-gtm-setup-complete/)
+
+For Google's own documentation on this, see [Google's instructions for installing the GTM container snippet](https://support.google.com/tagmanager/answer/2574370).
+
 *Having GTM infrastructure issues that won't resolve? Our emergency diagnostic service identifies the root cause in under 2 hours, with a fix or detailed remediation plan delivered the same day. [Learn more about our GTM Emergency Service](/services).*

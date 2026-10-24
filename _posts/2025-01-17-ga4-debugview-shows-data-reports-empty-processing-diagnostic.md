@@ -141,4 +141,12 @@ If you can see your data in BigQuery but not the GA4 UI, you have 100% confirmat
 
 ---
 
+## Related Reading
+
+- [GA4 Custom Dimension Not Showing Up in Reports? It's Not Broken](/blog/ga4-custom-dimension-not-showing-explore-reports-fix/)
+- [GA4 Events Not Reaching Google? 3 Transmission Fixes That Work](/blog/ga4-events-not-reaching-google-transmission-diagnostic/)
+- [GTM Fires But GA4 Receives Nothing? How a Silent 404 Kills Your Tracking](/blog/gtm-fires-but-ga4-receives-nothing-measurement-id-404-fix/)
+
+For Google's own documentation on this, see [Google's own guide to monitoring events in DebugView](https://support.google.com/analytics/answer/7201382).
+
 *Need help diagnosing GA4 processing issues? Our diagnostic service reviews your complete data pipeline from GTM to GA4 reports, identifies where data is being filtered or rejected, and provides a detailed remediation plan with expected data recovery timeline. [Learn more about our GA4 Processing Diagnostic](/services).*

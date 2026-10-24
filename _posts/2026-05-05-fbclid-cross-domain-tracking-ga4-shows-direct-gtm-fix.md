@@ -196,4 +196,12 @@ Most advice treats these as the same problem. They're not. Identify which one yo
 
 ---
 
+## Related Reading
+
+- [GA4 Events Not Reaching Google? 3 Transmission Fixes That Work](/blog/ga4-events-not-reaching-google-transmission-diagnostic/)
+- [Google Ads Not Recording Conversions? 5 Fixes for Complete GTM Setup](/blog/google-ads-not-recording-conversions-gtm-setup-complete/)
+- [GTM Fires But GA4 Receives Nothing? How a Silent 404 Kills Your Tracking](/blog/gtm-fires-but-ga4-receives-nothing-measurement-id-404-fix/)
+
+For Google's own documentation on this, see [Google's own guide to setting up cross-domain measurement](https://support.google.com/analytics/answer/10071811).
+
 *Your Facebook attribution is telling a different story than your ad manager? We audit the full GTM-to-GA4 tracking chain — cross-domain configuration, fbclid capture, referral exclusions, and conversion event accuracy — and fix what's broken in a single session. [Get a diagnostic.](/#contact)*

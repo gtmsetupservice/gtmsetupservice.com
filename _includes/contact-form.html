@@ -71,7 +71,15 @@
         <textarea class="field focus-ring min-h-[96px]" id="message" name="message"
           placeholder="When did you first notice it? Did anything change on the site around then?"></textarea>
 
-        <button type="submit" class="btn w-full text-center focus-ring">Send it over</button>
+        <!-- UTM capture, restored 2026-10-25: form-handler.js reads these on
+             page load and writes the current URL's utm_* params into them.
+             They were dropped in the local-service-ICP rewrite, which crashed
+             form-handler.js on load. -->
+        <input type="hidden" id="utm_source" name="utm_source">
+        <input type="hidden" id="utm_medium" name="utm_medium">
+        <input type="hidden" id="utm_campaign" name="utm_campaign">
+
+        <button type="submit" id="submit-btn" class="btn w-full text-center focus-ring">Send it over</button>
 
         <p id="form-success" class="hidden mt-4 text-[.94rem] text-stripe">
           Thanks — we'll look at your site and reply within one business day.

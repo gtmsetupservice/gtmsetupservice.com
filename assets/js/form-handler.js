@@ -1,6 +1,6 @@
 // FluentCRM Form Handler for GTM Setup Services
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('gtm-contact-form');
+    const form = document.getElementById('contact-form'); // fixed 2026-10-25: was 'gtm-contact-form', never matched the live markup
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('form-success');
     const errorMsg = document.getElementById('form-error');
@@ -39,15 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: data.name,
                 phone: data.phone,
                 website: data.website,
-                problem: data.problem,
-                details: data.details || '',
-                service_type: data.service_type,
-                source_domain: data.source_domain,
+                trade: data.trade || '',
+                ad_spend: data.ad_spend || '',
+                issue: data.issue,
+                message: data.message || '',
+                service_type: 'gtm',
+                source_domain: window.location.hostname,
                 utm_source: data.utm_source || '',
                 utm_medium: data.utm_medium || '',
                 utm_campaign: data.utm_campaign || '',
                 form_submitted: new Date().toISOString()
-            };
+            }; // fixed 2026-10-25: fields remapped to match the rewritten contact-form.html (problem->issue, details->message), added trade/ad_spend, hardcoded service_type, derived source_domain from location
 
             let errorType = 'network_error';
 
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         'event': 'form_submission',
                         'form_name': 'gtm_contact_form',
                         'service_type': 'gtm',
-                        'problem_type': data.problem,
+                        'problem_type': data.issue, // fixed 2026-10-25: was data.problem, field renamed to 'issue' in contact-form.html
                         'conversion_value': 397,
                         'utm_source': data.utm_source || '',
                         'utm_medium': data.utm_medium || '',
@@ -101,17 +103,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Track form interactions
-    const formFields = form.querySelectorAll('input, select, textarea');
-    formFields.forEach(field => {
-        field.addEventListener('focus', function() {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_field_focus', {
-                    'field_name': this.name,
-                    'form_name': 'gtm_contact_form'
-                });
-            }
+    if (form) { // fixed 2026-10-25: guard added so this doesn't crash on pages without the contact form
+        const formFields = form.querySelectorAll('input, select, textarea');
+        formFields.forEach(field => {
+            field.addEventListener('focus', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_field_focus', {
+                        'field_name': this.name,
+                        'form_name': 'gtm_contact_form'
+                    });
+                }
+            });
         });
-    });
+    }
 
     // Track page scroll depth for conversion optimization
     let maxScroll = 0;
